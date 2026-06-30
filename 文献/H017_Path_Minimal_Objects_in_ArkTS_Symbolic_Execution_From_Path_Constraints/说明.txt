@@ -1,0 +1,16 @@
+Path-Minimal Objects in ArkTS Symbolic Execution: From Path Constraints to TypeScript Tests
+
+编号：H017
+分类：应用测试与质量
+相关性：强相关
+年份/来源：2025 / None
+DOI：10.1109/iccq65694.2025.11314570
+
+为什么收录：
+ArkTS符号执行与测试生成。
+
+PDF状态：
+未找到可直接下载的开放 PDF。
+
+核验说明：
+已核验：DOI/学术索引页命中题名；未保存本地 PDF 的原因是未找到可直接下载的开放 PDF 或出版商访问受限。

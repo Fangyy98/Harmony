@@ -1,0 +1,5 @@
+Title: CPBIS: Achieving Theoretical Minimum Discovery-latency in Offline Finding Network via Certain Proportion Broadcast Intervals Screening Mechanism
+DOI: 10.1016/j.jnca.2026.104539
+Paper: https://doi.org/10.1016/j.jnca.2026.104539
+Google Scholar: https://scholar.google.com/scholar?q=CPBIS%3A+Achieving+Theoretical+Minimum+Discovery-latency+in+Offline+Finding+Network+via+Certain+Proportion+Broadcast+Intervals+Screening+Mechanism
+Web search: https://www.google.com/search?q=%22CPBIS%3A+Achieving+Theoretical+Minimum+Discovery-latency+in+Offline+Finding+Network+via+Certain+Proportion+Broadcast+Intervals+Screening+Mechanism%22+paper

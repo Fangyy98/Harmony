@@ -1,0 +1,5 @@
+Title: CROSS2OH: Enabling Seamless Porting of C/C++ Software Libraries to OpenHarmony
+DOI: 10.1109/ase63991.2025.00146
+Paper: https://doi.org/10.1109/ase63991.2025.00146
+Google Scholar: https://scholar.google.com/scholar?q=CROSS2OH%3A+Enabling+Seamless+Porting+of+C%2FC%2B%2B+Software+Libraries+to+OpenHarmony
+Web search: https://www.google.com/search?q=%22CROSS2OH%3A+Enabling+Seamless+Porting+of+C%2FC%2B%2B+Software+Libraries+to+OpenHarmony%22+paper

@@ -1,0 +1,16 @@
+How to Copy Memory? Coordinated Asynchronous Copy as a First-Class OS Service
+
+编号：H001
+分类：系统与运行时优化
+相关性：平台相关
+年份/来源：2025 / SOSP 2025
+DOI：10.1145/3731569.3764800
+
+为什么收录：
+文档称集成到鸿蒙5.0用于视频解码优化。
+
+PDF状态：
+有 PDF 入口，但当前环境未能直接落地，通常是出版商访问限制。
+
+核验说明：
+已核验：ACM DL/SOSP 2025 论文页，作者主页也列出 DOI。 ACM PDF 入口已保留，但当前环境直接下载返回访问限制。

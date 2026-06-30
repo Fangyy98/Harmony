@@ -1,0 +1,15 @@
+OS Rendering Service Made Parallel with Out-of-Order Execution and In-Order Commit
+
+编号：H002
+分类：系统与运行时优化
+相关性：平台相关
+年份/来源：2025 / OSDI 2025
+
+为什么收录：
+面向华为/鸿蒙图形渲染服务与多屏场景。
+
+PDF状态：
+已保存本地 PDF：H002.pdf
+
+核验说明：
+已核验：USENIX OSDI 2025 正式页面与 PDF；ACM DL 也有 10.5555 索引页但 USENIX 为主入口。

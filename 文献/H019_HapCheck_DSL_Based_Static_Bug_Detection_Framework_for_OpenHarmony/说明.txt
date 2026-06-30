@@ -1,0 +1,15 @@
+HapCheck: DSL-Based Static Bug Detection Framework for OpenHarmony
+
+编号：H019
+分类：应用测试与质量
+相关性：强相关
+年份/来源：2026 / ICSE 2026 SEIP
+
+为什么收录：
+OpenHarmony静态缺陷检测框架；文档标注刚录用未发表。
+
+PDF状态：
+未找到可直接下载的开放 PDF。
+
+核验说明：
+已核验：作者主页列为 Accepted by ICSE’26 SEIP；暂未找到 DOI/PDF/会议详情页。

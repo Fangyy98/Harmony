@@ -1,0 +1,16 @@
+CPBIS: Achieving Theoretical Minimum Discovery-latency in Offline Finding Network via Certain Proportion Broadcast Intervals Screening Mechanism
+
+编号：H028
+分类：通信与设备协同
+相关性：设备生态弱相关
+年份/来源：2025 / Journal of Network and Computer Applications
+DOI：10.1016/j.jnca.2026.104539
+
+为什么收录：
+同属离线查找网络BLE广播优化。
+
+PDF状态：
+未找到可直接下载的开放 PDF。
+
+核验说明：
+已核验：Crossref/DOI 指向 JNCA 2026 文章；与 H027 的 arXiv 预印本题名/内容高度相关，保留为正式发表项。

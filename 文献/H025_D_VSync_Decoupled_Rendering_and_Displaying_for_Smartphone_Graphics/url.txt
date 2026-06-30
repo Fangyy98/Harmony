@@ -1,0 +1,5 @@
+Title: D-VSync: Decoupled Rendering and Displaying for Smartphone Graphics
+DOI: 10.1145/3669940.3707235
+Paper: https://doi.org/10.1145/3669940.3707235
+Google Scholar: https://scholar.google.com/scholar?q=D-VSync%3A+Decoupled+Rendering+and+Displaying+for+Smartphone+Graphics
+Web search: https://www.google.com/search?q=%22D-VSync%3A+Decoupled+Rendering+and+Displaying+for+Smartphone+Graphics%22+paper

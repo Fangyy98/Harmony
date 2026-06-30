@@ -1,0 +1,16 @@
+An Empirical Study on UI Overlap in OpenHarmony Applications
+
+编号：H005
+分类：应用测试与质量
+相关性：强相关
+年份/来源：2025 / None
+DOI：10.1109/ase63991.2025.00274
+
+为什么收录：
+OpenHarmony应用UI重叠实证研究。
+
+PDF状态：
+未找到可直接下载的开放 PDF。
+
+核验说明：
+已核验：DOI/学术索引页命中题名；未保存本地 PDF 的原因是未找到可直接下载的开放 PDF 或出版商访问受限。

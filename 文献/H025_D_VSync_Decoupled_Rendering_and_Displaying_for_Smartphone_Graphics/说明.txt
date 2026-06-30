@@ -1,0 +1,16 @@
+D-VSync: Decoupled Rendering and Displaying for Smartphone Graphics
+
+编号：H025
+分类：系统与运行时优化
+相关性：平台相关
+年份/来源：2025 / None
+DOI：10.1145/3669940.3707235
+
+为什么收录：
+在OpenHarmony与Android评估，已集成HarmonyOS NEXT。
+
+PDF状态：
+未找到可直接下载的开放 PDF。
+
+核验说明：
+已核验：DOI/学术索引页命中题名；未保存本地 PDF 的原因是未找到可直接下载的开放 PDF 或出版商访问受限。

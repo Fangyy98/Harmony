@@ -1,0 +1,5 @@
+Title: HarmoBridge: Bridging ArkTS and C/C++ for Cross-Language Static Analysis on HarmonyOS
+DOI: 10.1109/ase63991.2025.00261
+Paper: https://doi.org/10.1109/ase63991.2025.00261
+Google Scholar: https://scholar.google.com/scholar?q=HarmoBridge%3A+Bridging+ArkTS+and+C%2FC%2B%2B+for+Cross-Language+Static+Analysis+on+HarmonyOS
+Web search: https://www.google.com/search?q=%22HarmoBridge%3A+Bridging+ArkTS+and+C%2FC%2B%2B+for+Cross-Language+Static+Analysis+on+HarmonyOS%22+paper

@@ -1,0 +1,6 @@
+Title: OS Rendering Service Made Parallel with Out-of-Order Execution and In-Order Commit
+Paper: https://www.usenix.org/conference/osdi25/presentation/wu-yuanpei
+PDF source: https://www.usenix.org/system/files/osdi25-wu-yuanpei.pdf
+Local PDF: ./H002.pdf
+Google Scholar: https://scholar.google.com/scholar?q=OS+Rendering+Service+Made+Parallel+with+Out-of-Order+Execution+and+In-Order+Commit
+Web search: https://www.google.com/search?q=%22OS+Rendering+Service+Made+Parallel+with+Out-of-Order+Execution+and+In-Order+Commit%22+paper

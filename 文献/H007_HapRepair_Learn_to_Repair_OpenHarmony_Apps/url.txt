@@ -1,0 +1,6 @@
+Title: HapRepair: Learn to Repair OpenHarmony Apps
+DOI: 10.1145/3696630.3728556
+Paper: https://doi.org/10.1145/3696630.3728556
+PDF source: https://dl.acm.org/doi/pdf/10.1145/3696630.3728556
+Google Scholar: https://scholar.google.com/scholar?q=HapRepair%3A+Learn+to+Repair+OpenHarmony+Apps
+Web search: https://www.google.com/search?q=%22HapRepair%3A+Learn+to+Repair+OpenHarmony+Apps%22+paper

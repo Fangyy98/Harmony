@@ -1,0 +1,7 @@
+Title: ArkTS-CodeSearch: A Open-Source ArkTS Dataset for Code Retrieval
+DOI: 10.48550/arXiv.2602.05550
+Paper: http://arxiv.org/abs/2602.05550
+PDF source: https://arxiv.org/pdf/2602.05550
+Local PDF: ./H006.pdf
+Google Scholar: https://scholar.google.com/scholar?q=ArkTS-CodeSearch%3A+A+Open-Source+ArkTS+Dataset+for+Code+Retrieval
+Web search: https://www.google.com/search?q=%22ArkTS-CodeSearch%3A+A+Open-Source+ArkTS+Dataset+for+Code+Retrieval%22+paper

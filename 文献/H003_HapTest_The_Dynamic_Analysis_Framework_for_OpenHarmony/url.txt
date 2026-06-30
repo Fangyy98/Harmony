@@ -1,0 +1,6 @@
+Title: HapTest: The Dynamic Analysis Framework for OpenHarmony
+DOI: 10.1145/3696630.3728565
+Paper: https://doi.org/10.1145/3696630.3728565
+PDF source: https://dl.acm.org/doi/pdf/10.1145/3696630.3728565
+Google Scholar: https://scholar.google.com/scholar?q=HapTest%3A+The+Dynamic+Analysis+Framework+for+OpenHarmony
+Web search: https://www.google.com/search?q=%22HapTest%3A+The+Dynamic+Analysis+Framework+for+OpenHarmony%22+paper

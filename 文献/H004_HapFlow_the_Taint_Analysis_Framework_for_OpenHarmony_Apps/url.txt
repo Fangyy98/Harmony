@@ -1,0 +1,5 @@
+Title: HapFlow: the Taint Analysis Framework for OpenHarmony Apps
+DOI: 10.1145/3793863
+Paper: https://doi.org/10.1145/3793863
+Google Scholar: https://scholar.google.com/scholar?q=HapFlow%3A+the+Taint+Analysis+Framework+for+OpenHarmony+Apps
+Web search: https://www.google.com/search?q=%22HapFlow%3A+the+Taint+Analysis+Framework+for+OpenHarmony+Apps%22+paper

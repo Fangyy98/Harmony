@@ -1,0 +1,15 @@
+Phantom Rendering Detection: Identifying and Analyzing unnecessary UI computations
+
+编号：H009
+分类：应用测试与质量
+相关性：平台相关
+年份/来源：2026 / FSE 2026
+
+为什么收录：
+文档列于鸿蒙技术俱乐部条目，刚录用未发表；疑似鸿蒙UI性能缺陷检测。
+
+PDF状态：
+已保存本地 PDF：H009.pdf
+
+核验说明：
+已核验：FSE 2026 researchr 页面、作者 PDF、GitHub 仓库；题名公开版含 “in OpenHarmony Apps”。

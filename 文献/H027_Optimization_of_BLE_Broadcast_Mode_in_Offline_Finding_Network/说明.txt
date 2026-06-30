@@ -1,0 +1,16 @@
+Optimization of BLE Broadcast Mode in Offline Finding Network
+
+编号：H027
+分类：通信与设备协同
+相关性：设备生态弱相关
+年份/来源：2025 / arXiv preprint
+DOI：10.48550/arXiv.2504.01422
+
+为什么收录：
+与离线查找网络BLE广播优化相关，可能服务鸿蒙/华为设备生态。
+
+PDF状态：
+已保存本地 PDF：H027.pdf
+
+核验说明：
+已核验：arXiv:2504.01422；这是 CPBIS 机制的预印本，文档中 H027/H028 实际存在重叠。

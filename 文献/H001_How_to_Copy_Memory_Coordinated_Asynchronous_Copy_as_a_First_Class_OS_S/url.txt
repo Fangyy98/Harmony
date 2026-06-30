@@ -1,0 +1,6 @@
+Title: How to Copy Memory? Coordinated Asynchronous Copy as a First-Class OS Service
+DOI: 10.1145/3731569.3764800
+Paper: https://dl.acm.org/doi/10.1145/3731569.3764800
+PDF source: https://dl.acm.org/doi/pdf/10.1145/3731569.3764800
+Google Scholar: https://scholar.google.com/scholar?q=How+to+Copy+Memory%3F+Coordinated+Asynchronous+Copy+as+a+First-Class+OS+Service
+Web search: https://www.google.com/search?q=%22How+to+Copy+Memory%3F+Coordinated+Asynchronous+Copy+as+a+First-Class+OS+Service%22+paper

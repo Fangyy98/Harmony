@@ -1,0 +1,16 @@
+Framework-Aware Code Generation with API Knowledge Graph-Constructed Data: A Study on HarmonyOS
+
+编号：H011
+分类：代码智能与数据集
+相关性：强相关
+年份/来源：2025 / arXiv preprint
+DOI：10.48550/arXiv.2512.00380
+
+为什么收录：
+以HarmonyOS为案例的框架感知代码生成。
+
+PDF状态：
+已保存本地 PDF：H011.pdf
+
+核验说明：
+已核验：arXiv:2512.00380 与作者主页。

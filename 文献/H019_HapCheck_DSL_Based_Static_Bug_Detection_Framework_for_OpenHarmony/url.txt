@@ -1,0 +1,4 @@
+Title: HapCheck: DSL-Based Static Bug Detection Framework for OpenHarmony
+Paper: https://zhoumingyi.github.io/publications/
+Google Scholar: https://scholar.google.com/scholar?q=HapCheck%3A+DSL-Based+Static+Bug+Detection+Framework+for+OpenHarmony
+Web search: https://www.google.com/search?q=%22HapCheck%3A+DSL-Based+Static+Bug+Detection+Framework+for+OpenHarmony%22+paper

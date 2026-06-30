@@ -1,0 +1,5 @@
+Title: HarmonyFlow: 基于方舟Panda IR 的HarmonyOS 应用静态分析框架
+DOI: 10.13328/j.cnki.jos.007477
+Paper: https://www.jos.org.cn/jos/article/abstract/7477
+Google Scholar: https://scholar.google.com/scholar?q=HarmonyFlow%3A+%E5%9F%BA%E4%BA%8E%E6%96%B9%E8%88%9FPanda+IR+%E7%9A%84HarmonyOS+%E5%BA%94%E7%94%A8%E9%9D%99%E6%80%81%E5%88%86%E6%9E%90%E6%A1%86%E6%9E%B6
+Web search: https://www.google.com/search?q=%22HarmonyFlow%3A+%E5%9F%BA%E4%BA%8E%E6%96%B9%E8%88%9FPanda+IR+%E7%9A%84HarmonyOS+%E5%BA%94%E7%94%A8%E9%9D%99%E6%80%81%E5%88%86%E6%9E%90%E6%A1%86%E6%9E%B6%22+paper

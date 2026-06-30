@@ -1,0 +1,5 @@
+Title: Path-Minimal Objects in ArkTS Symbolic Execution: From Path Constraints to TypeScript Tests
+DOI: 10.1109/iccq65694.2025.11314570
+Paper: https://doi.org/10.1109/iccq65694.2025.11314570
+Google Scholar: https://scholar.google.com/scholar?q=Path-Minimal+Objects+in+ArkTS+Symbolic+Execution%3A+From+Path+Constraints+to+TypeScript+Tests
+Web search: https://www.google.com/search?q=%22Path-Minimal+Objects+in+ArkTS+Symbolic+Execution%3A+From+Path+Constraints+to+TypeScript+Tests%22+paper

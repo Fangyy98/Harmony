@@ -1,0 +1,16 @@
+Software Engineering for OpenHarmony: A Research Roadmap
+
+编号：H020
+分类：综述与路线图
+相关性：强相关
+年份/来源：2025 / ACM Computing Surveys
+DOI：10.1145/3720538
+
+为什么收录：
+OpenHarmony软件工程研究路线图。
+
+PDF状态：
+有 PDF 入口，但当前环境未能直接落地，通常是出版商访问限制。
+
+核验说明：
+已核验：DOI/学术索引页命中题名；未保存本地 PDF 的原因是未找到可直接下载的开放 PDF 或出版商访问受限。 ACM PDF 入口已保留，但当前环境直接下载返回访问限制。

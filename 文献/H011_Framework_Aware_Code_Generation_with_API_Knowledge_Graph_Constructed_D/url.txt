@@ -1,0 +1,7 @@
+Title: Framework-Aware Code Generation with API Knowledge Graph-Constructed Data: A Study on HarmonyOS
+DOI: 10.48550/arXiv.2512.00380
+Paper: https://arxiv.org/abs/2512.00380
+PDF source: https://arxiv.org/pdf/2512.00380
+Local PDF: ./H011.pdf
+Google Scholar: https://scholar.google.com/scholar?q=Framework-Aware+Code+Generation+with+API+Knowledge+Graph-Constructed+Data%3A+A+Study+on+HarmonyOS
+Web search: https://www.google.com/search?q=%22Framework-Aware+Code+Generation+with+API+Knowledge+Graph-Constructed+Data%3A+A+Study+on+HarmonyOS%22+paper

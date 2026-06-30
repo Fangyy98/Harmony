@@ -1,0 +1,16 @@
+Toward Optimal Broadcast Mode in Offline Finding Network
+
+编号：H026
+分类：通信与设备协同
+相关性：设备生态弱相关
+年份/来源：2025 / IEEE Transactions on Mobile Computing
+DOI：10.1109/tmc.2025.3545561
+
+为什么收录：
+涉及HarmonyOS扫描模式和华为Tag，非OpenHarmony应用论文。
+
+PDF状态：
+未找到可直接下载的开放 PDF。
+
+核验说明：
+已核验：DOI/学术索引页命中题名；未保存本地 PDF 的原因是未找到可直接下载的开放 PDF 或出版商访问受限。

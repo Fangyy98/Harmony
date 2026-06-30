@@ -1,0 +1,16 @@
+ArkTS code generation: A comprehensive evaluation with large language models
+
+编号：H008
+分类：代码智能与数据集
+相关性：强相关
+年份/来源：2026 / Empirical Software Engineering
+DOI：10.1007/s10664-026-10844-0
+
+为什么收录：
+评估LLM在ArkTS上的代码生成能力。
+
+PDF状态：
+已保存本地 PDF：H008.pdf
+
+核验说明：
+已核验：DOI/学术索引页命中题名；未保存本地 PDF 的原因是未找到可直接下载的开放 PDF 或出版商访问受限。

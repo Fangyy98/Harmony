@@ -1,0 +1,16 @@
+HACMony: Automatically Detecting Hopping-related Audio-stream Conflict Issues on HarmonyOS
+
+编号：H016
+分类：应用测试与动态分析
+相关性：强相关
+年份/来源：2025 / ArXiv.org
+DOI：10.48550/arxiv.2504.07472
+
+为什么收录：
+HarmonyOS跨设备迁移音频冲突检测。
+
+PDF状态：
+已保存本地 PDF：H016.pdf
+
+核验说明：
+已核验：DOI/学术索引页命中题名；未保存本地 PDF 的原因是未找到可直接下载的开放 PDF 或出版商访问受限。

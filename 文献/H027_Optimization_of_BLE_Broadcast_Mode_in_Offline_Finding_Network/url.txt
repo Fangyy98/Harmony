@@ -1,0 +1,7 @@
+Title: Optimization of BLE Broadcast Mode in Offline Finding Network
+DOI: 10.48550/arXiv.2504.01422
+Paper: https://arxiv.org/abs/2504.01422
+PDF source: https://arxiv.org/pdf/2504.01422
+Local PDF: ./H027.pdf
+Google Scholar: https://scholar.google.com/scholar?q=Optimization+of+BLE+Broadcast+Mode+in+Offline+Finding+Network
+Web search: https://www.google.com/search?q=%22Optimization+of+BLE+Broadcast+Mode+in+Offline+Finding+Network%22+paper

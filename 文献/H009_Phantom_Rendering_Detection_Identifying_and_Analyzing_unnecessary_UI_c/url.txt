@@ -1,0 +1,7 @@
+Title: Phantom Rendering Detection: Identifying and Analyzing unnecessary UI computations
+Paper: https://conf.researchr.org/details/fse-2026/fse-2026-research-papers/172/Phantom-Rendering-Detection-Identifying-and-Analyzing-unnecessary-UI-computations
+PDF source: https://mathieu0905.github.io/papers/hapray_fse.pdf
+Local PDF: ./H009.pdf
+Code: https://github.com/SMAT-Lab/PhantomRendering
+Google Scholar: https://scholar.google.com/scholar?q=Phantom+Rendering+Detection%3A+Identifying+and+Analyzing+unnecessary+UI+computations
+Web search: https://www.google.com/search?q=%22Phantom+Rendering+Detection%3A+Identifying+and+Analyzing+unnecessary+UI+computations%22+paper

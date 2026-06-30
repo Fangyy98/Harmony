@@ -1,0 +1,7 @@
+Title: HACMony: Automatically Detecting Hopping-related Audio-stream Conflict Issues on HarmonyOS
+DOI: 10.48550/arxiv.2504.07472
+Paper: http://arxiv.org/abs/2504.07472
+PDF source: https://arxiv.org/pdf/2504.07472
+Local PDF: ./H016.pdf
+Google Scholar: https://scholar.google.com/scholar?q=HACMony%3A+Automatically+Detecting+Hopping-related+Audio-stream+Conflict+Issues+on+HarmonyOS
+Web search: https://www.google.com/search?q=%22HACMony%3A+Automatically+Detecting+Hopping-related+Audio-stream+Conflict+Issues+on+HarmonyOS%22+paper

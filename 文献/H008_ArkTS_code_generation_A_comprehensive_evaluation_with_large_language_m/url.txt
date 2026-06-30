@@ -1,0 +1,7 @@
+Title: ArkTS code generation: A comprehensive evaluation with large language models
+DOI: 10.1007/s10664-026-10844-0
+Paper: https://doi.org/10.1007/s10664-026-10844-0
+PDF source: https://link.springer.com/content/pdf/10.1007/s10664-026-10844-0.pdf
+Local PDF: ./H008.pdf
+Google Scholar: https://scholar.google.com/scholar?q=ArkTS+code+generation%3A+A+comprehensive+evaluation+with+large+language+models
+Web search: https://www.google.com/search?q=%22ArkTS+code+generation%3A+A+comprehensive+evaluation+with+large+language+models%22+paper

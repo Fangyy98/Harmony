@@ -1,0 +1,5 @@
+Title: ArkObfux: a multi-layer reinforcement system designed for HarmonyOS terminal applications
+DOI: 10.2139/ssrn.6432372
+Paper: https://doi.org/10.2139/ssrn.6432372
+Google Scholar: https://scholar.google.com/scholar?q=ArkObfux%3A+a+multi-layer+reinforcement+system+designed+for+HarmonyOS+terminal+applications
+Web search: https://www.google.com/search?q=%22ArkObfux%3A+a+multi-layer+reinforcement+system+designed+for+HarmonyOS+terminal+applications%22+paper
