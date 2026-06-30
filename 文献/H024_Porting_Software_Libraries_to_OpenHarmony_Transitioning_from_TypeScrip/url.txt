@@ -1,5 +1,6 @@
 Title: Porting Software Libraries to OpenHarmony: Transitioning from TypeScript or JavaScript to ArkTS
 DOI: 10.1145/3728941
 Paper: https://doi.org/10.1145/3728941
+Local PDF: ./H024.pdf
 Google Scholar: https://scholar.google.com/scholar?q=Porting+Software+Libraries+to+OpenHarmony%3A+Transitioning+from+TypeScript+or+JavaScript+to+ArkTS
 Web search: https://www.google.com/search?q=%22Porting+Software+Libraries+to+OpenHarmony%3A+Transitioning+from+TypeScript+or+JavaScript+to+ArkTS%22+paper

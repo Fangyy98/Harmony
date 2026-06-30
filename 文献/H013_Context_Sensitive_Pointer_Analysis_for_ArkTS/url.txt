@@ -1,5 +1,6 @@
 Title: Context-Sensitive Pointer Analysis for ArkTS
 DOI: 10.1109/ase63991.2025.00269
 Paper: https://doi.org/10.1109/ase63991.2025.00269
+Local PDF: ./H013.pdf
 Google Scholar: https://scholar.google.com/scholar?q=Context-Sensitive+Pointer+Analysis+for+ArkTS
 Web search: https://www.google.com/search?q=%22Context-Sensitive+Pointer+Analysis+for+ArkTS%22+paper

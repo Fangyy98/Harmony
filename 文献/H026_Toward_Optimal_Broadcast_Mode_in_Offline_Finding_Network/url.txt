@@ -1,5 +1,6 @@
 Title: Toward Optimal Broadcast Mode in Offline Finding Network
 DOI: 10.1109/tmc.2025.3545561
 Paper: https://doi.org/10.1109/tmc.2025.3545561
+Local PDF: ./H026.pdf
 Google Scholar: https://scholar.google.com/scholar?q=Toward+Optimal+Broadcast+Mode+in+Offline+Finding+Network
 Web search: https://www.google.com/search?q=%22Toward+Optimal+Broadcast+Mode+in+Offline+Finding+Network%22+paper

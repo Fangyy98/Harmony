@@ -1,5 +1,6 @@
 Title: An Empirical Study on UI Overlap in OpenHarmony Applications
 DOI: 10.1109/ase63991.2025.00274
 Paper: https://doi.org/10.1109/ase63991.2025.00274
+Local PDF: ./H005.pdf
 Google Scholar: https://scholar.google.com/scholar?q=An+Empirical+Study+on+UI+Overlap+in+OpenHarmony+Applications
 Web search: https://www.google.com/search?q=%22An+Empirical+Study+on+UI+Overlap+in+OpenHarmony+Applications%22+paper

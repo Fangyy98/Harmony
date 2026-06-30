@@ -2,5 +2,6 @@ Title: Software Engineering for OpenHarmony: A Research Roadmap
 DOI: 10.1145/3720538
 Paper: https://doi.org/10.1145/3720538
 PDF source: https://dl.acm.org/doi/pdf/10.1145/3720538
+Local PDF: ./H020.pdf
 Google Scholar: https://scholar.google.com/scholar?q=Software+Engineering+for+OpenHarmony%3A+A+Research+Roadmap
 Web search: https://www.google.com/search?q=%22Software+Engineering+for+OpenHarmony%3A+A+Research+Roadmap%22+paper

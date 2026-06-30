@@ -1,5 +1,6 @@
 Title: LiScopeLens: An Open-Source License Incompatibility Analysis Tool Based on Scope Representation of License Terms
 DOI: 10.1109/issre62328.2024.00013
 Paper: https://doi.org/10.1109/issre62328.2024.00013
+Local PDF: ./H021.pdf
 Google Scholar: https://scholar.google.com/scholar?q=LiScopeLens%3A+An+Open-Source+License+Incompatibility+Analysis+Tool+Based+on+Scope+Representation+of+License+Terms
 Web search: https://www.google.com/search?q=%22LiScopeLens%3A+An+Open-Source+License+Incompatibility+Analysis+Tool+Based+on+Scope+Representation+of+License+Terms%22+paper

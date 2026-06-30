@@ -1,5 +1,6 @@
 Title: Unveiling SparkLink Low Energy: a Comparative Measurement Study
 DOI: 10.1145/3776559
 Paper: https://doi.org/10.1145/3776559
+Local PDF: ./H029.pdf
 Google Scholar: https://scholar.google.com/scholar?q=Unveiling+SparkLink+Low+Energy%3A+a+Comparative+Measurement+Study
 Web search: https://www.google.com/search?q=%22Unveiling+SparkLink+Low+Energy%3A+a+Comparative+Measurement+Study%22+paper

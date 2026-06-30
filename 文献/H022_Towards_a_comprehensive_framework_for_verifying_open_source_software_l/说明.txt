@@ -10,7 +10,7 @@ DOI：10.1007/s10664-025-10751-w
 文档称LiScopeLens-Plus在OpenHarmony 5.0上验证。
 
 PDF状态：
-未找到可直接下载的开放 PDF。
+已保存本地 PDF：H022.pdf
 
 核验说明：
 已核验：Springer/ACM 索引与 ResearchGate 摘要均指向 Empirical Software Engineering 2026, 31:15。

@@ -1,5 +1,6 @@
 Title: ArkAnalyzer: The Static Analysis Framework for OpenHarmony Apps
 DOI: 10.1109/icse-seip66354.2025.00018
 Paper: https://doi.org/10.1109/icse-seip66354.2025.00018
+Local PDF: ./H010.pdf
 Google Scholar: https://scholar.google.com/scholar?q=ArkAnalyzer%3A+The+Static+Analysis+Framework+for+OpenHarmony+Apps
 Web search: https://www.google.com/search?q=%22ArkAnalyzer%3A+The+Static+Analysis+Framework+for+OpenHarmony+Apps%22+paper
