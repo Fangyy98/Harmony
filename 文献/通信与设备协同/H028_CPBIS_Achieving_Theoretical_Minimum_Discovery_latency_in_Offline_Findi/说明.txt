@@ -1,4 +1,5 @@
 CPBIS: Achieving Theoretical Minimum Discovery-latency in Offline Finding Network via Certain Proportion Broadcast Intervals Screening Mechanism
+中文译名：CPBIS：通过特定比例广播区间筛选机制在离线查找网络中达到理论最低发现延迟
 
 编号：H028
 分类：通信与设备协同

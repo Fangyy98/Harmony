@@ -1,4 +1,5 @@
 HapFlow: the Taint Analysis Framework for OpenHarmony Apps
+中文译名：HapFlow：面向 OpenHarmony 应用的污点分析框架
 
 编号：H004
 分类：安全与静态分析

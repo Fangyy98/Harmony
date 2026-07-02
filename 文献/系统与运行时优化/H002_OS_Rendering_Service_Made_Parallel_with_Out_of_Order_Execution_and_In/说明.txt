@@ -1,4 +1,5 @@
 OS Rendering Service Made Parallel with Out-of-Order Execution and In-Order Commit
+中文译名：让 OS 渲染服务并行化：乱序执行与顺序提交
 
 编号：H002
 分类：系统与运行时优化

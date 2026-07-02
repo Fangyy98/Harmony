@@ -1,4 +1,5 @@
 Software Engineering for OpenHarmony: A Research Roadmap
+中文译名：面向 OpenHarmony 的软件工程：研究路线图
 
 编号：H020
 分类：综述与路线图

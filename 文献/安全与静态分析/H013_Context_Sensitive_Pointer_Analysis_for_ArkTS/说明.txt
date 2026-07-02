@@ -1,4 +1,5 @@
 Context-Sensitive Pointer Analysis for ArkTS
+中文译名：面向 ArkTS 的上下文敏感指针分析
 
 编号：H013
 分类：安全与静态分析

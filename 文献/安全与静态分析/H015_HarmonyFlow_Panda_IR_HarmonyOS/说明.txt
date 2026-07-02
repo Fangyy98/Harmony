@@ -1,4 +1,5 @@
 HarmonyFlow: 基于方舟Panda IR 的HarmonyOS 应用静态分析框架
+中文译名：HarmonyFlow：基于方舟 Panda IR 的 HarmonyOS 应用静态分析框架
 
 编号：H015
 分类：安全与静态分析

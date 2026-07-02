@@ -1,4 +1,5 @@
 HapCheck: DSL-Based Static Bug Detection Framework for OpenHarmony
+中文译名：HapCheck：面向 OpenHarmony 的基于 DSL 的静态缺陷检测框架
 
 编号：H019
 分类：应用测试与质量

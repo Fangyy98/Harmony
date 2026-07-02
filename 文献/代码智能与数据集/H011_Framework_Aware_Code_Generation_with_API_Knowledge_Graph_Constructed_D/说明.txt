@@ -1,4 +1,5 @@
 Framework-Aware Code Generation with API Knowledge Graph-Constructed Data: A Study on HarmonyOS
+中文译名：使用 API 知识图谱构造数据的框架感知代码生成：以 HarmonyOS 为例
 
 编号：H011
 分类：代码智能与数据集

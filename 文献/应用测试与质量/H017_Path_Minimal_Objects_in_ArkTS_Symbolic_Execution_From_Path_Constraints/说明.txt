@@ -1,4 +1,5 @@
 Path-Minimal Objects in ArkTS Symbolic Execution: From Path Constraints to TypeScript Tests
+中文译名：ArkTS 符号执行中的路径最小对象：从路径约束到 TypeScript 测试
 
 编号：H017
 分类：应用测试与质量

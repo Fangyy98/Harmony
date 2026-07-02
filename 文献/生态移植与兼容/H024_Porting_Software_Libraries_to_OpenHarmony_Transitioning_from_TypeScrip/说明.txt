@@ -1,4 +1,5 @@
 Porting Software Libraries to OpenHarmony: Transitioning from TypeScript or JavaScript to ArkTS
+中文译名：软件库移植到 OpenHarmony：从 TypeScript/JavaScript 到 ArkTS
 
 编号：H024
 分类：生态移植与兼容

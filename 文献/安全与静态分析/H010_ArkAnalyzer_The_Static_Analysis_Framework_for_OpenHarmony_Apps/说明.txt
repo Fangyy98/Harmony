@@ -1,4 +1,5 @@
 ArkAnalyzer: The Static Analysis Framework for OpenHarmony Apps
+中文译名：ArkAnalyzer：面向 OpenHarmony 应用的静态分析框架
 
 编号：H010
 分类：安全与静态分析

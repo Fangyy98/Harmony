@@ -1,4 +1,5 @@
 HarmoBridge: Bridging ArkTS and C/C++ for Cross-Language Static Analysis on HarmonyOS
+中文译名：HarmoBridge：桥接 ArkTS 与 C/C++ 的 HarmonyOS 跨语言静态分析
 
 编号：H014
 分类：安全与静态分析

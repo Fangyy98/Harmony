@@ -1,4 +1,5 @@
 ArkTS code generation: A comprehensive evaluation with large language models
+中文译名：ArkTS 代码生成：大语言模型综合评测
 
 编号：H008
 分类：代码智能与数据集

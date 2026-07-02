@@ -1,4 +1,5 @@
 Phantom Rendering Detection: Identifying and Analyzing unnecessary UI computations
+中文译名：幽灵渲染检测：识别并分析不必要的 UI 计算
 
 编号：H009
 分类：应用测试与质量

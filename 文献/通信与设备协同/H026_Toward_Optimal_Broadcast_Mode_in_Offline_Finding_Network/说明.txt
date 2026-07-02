@@ -1,4 +1,5 @@
 Toward Optimal Broadcast Mode in Offline Finding Network
+中文译名：迈向离线查找网络中的最优广播模式
 
 编号：H026
 分类：通信与设备协同

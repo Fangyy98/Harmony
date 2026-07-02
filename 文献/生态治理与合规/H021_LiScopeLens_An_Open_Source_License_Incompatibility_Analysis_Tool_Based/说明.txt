@@ -1,4 +1,5 @@
 LiScopeLens: An Open-Source License Incompatibility Analysis Tool Based on Scope Representation of License Terms
+中文译名：LiScopeLens：基于许可证条款作用域表示的开源许可证不兼容分析工具
 
 编号：H021
 分类：生态治理与合规

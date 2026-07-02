@@ -1,4 +1,5 @@
 Optimization of BLE Broadcast Mode in Offline Finding Network
+中文译名：离线查找网络中的 BLE 广播模式优化
 
 编号：H027
 分类：通信与设备协同

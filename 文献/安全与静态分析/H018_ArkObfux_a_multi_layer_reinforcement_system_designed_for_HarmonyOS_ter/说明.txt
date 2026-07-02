@@ -1,4 +1,5 @@
 ArkObfux: a multi-layer reinforcement system designed for HarmonyOS terminal applications
+中文译名：ArkObfux：面向 HarmonyOS 终端应用的多层加固系统
 
 编号：H018
 分类：安全与静态分析

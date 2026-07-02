@@ -1,4 +1,5 @@
 ArkTS-CodeSearch: A Open-Source ArkTS Dataset for Code Retrieval
+中文译名：ArkTS-CodeSearch：面向代码检索的开源 ArkTS 数据集
 
 编号：H006
 分类：代码智能与数据集

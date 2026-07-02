@@ -1,4 +1,5 @@
 Unveiling SparkLink Low Energy: a Comparative Measurement Study
+中文译名：揭秘星闪低能耗（SLE）：一项对比测量研究
 
 编号：H029
 分类：通信与设备协同
