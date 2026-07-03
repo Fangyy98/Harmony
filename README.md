@@ -11,7 +11,7 @@
 ├── 代码智能与数据集/        # ArkTS 代码检索、代码生成评测、框架感知生成
 ├── 安全与静态分析/          # 污点分析、指针分析、跨语言分析、静态分析框架、应用加固
 ├── 应用测试与动态分析/      # 动态分析框架、自动化测试、跨设备音频冲突检测
-├── 应用测试与质量/          # UI 重叠、缺陷修复、幽灵渲染、符号执行测试、静态缺陷检测
+├── 应用测试与质量/          # UI 重叠、缺陷修复、幽灵渲染、符号执行测试、静态缺陷检测、移动 UI 质量基线
 ├── 生态治理与合规/          # 开源许可证兼容性分析
 ├── 生态移植与兼容/          # C/C++ 与 TS/JS 库向 OpenHarmony / ArkTS 移植
 ├── 系统与运行时优化/        # 内存拷贝、渲染服务并行化、VSync 解耦
@@ -28,9 +28,9 @@
 
 ## 总览
 
-- 文献目录数：29
-- 本地 PDF：28 个（H019 暂未发现公开 PDF）
-- 相关性口径：**强相关** = 直接研究 OpenHarmony / HarmonyOS / ArkTS / HAP / ArkUI；**平台相关** = 鸿蒙系统服务或 HarmonyOS NEXT 等平台能力；**设备生态弱相关** = 通信、离线查找、星闪等设备生态。
+- 文献目录数：31
+- 本地 PDF：30 个（H019 暂未发现公开 PDF）
+- 相关性口径：**强相关** = 直接研究 OpenHarmony / HarmonyOS / ArkTS / HAP / ArkUI；**平台相关** = 鸿蒙系统服务或 HarmonyOS NEXT 等平台能力；**移动应用 UI 质量相关** = Android/移动端 UI 显示、布局与质量检测相关工作，可作为 OpenHarmony UI 质量研究的背景或基线；**设备生态弱相关** = 通信、离线查找、星闪等设备生态。
 
 ---
 
@@ -169,6 +169,22 @@
 - **会议详情页**：<https://conf.researchr.org/details/icse-2026/icse-2026-software-engineering-in-practice/40/HapCheck-DSL-Based-Static-Bug-Detection-Framework-for-OpenHarmony>
 - **作者主页**：<https://zhoumingyi.github.io/>
 - **本地 PDF**：暂无（待论文公开后补充）
+
+#### H030 Owl Eyes: Spotting UI Display Issues via Visual Understanding
+- **中文译名**：Owl Eyes：通过视觉理解发现 UI 显示问题
+- **简介**：面向 Android 应用 GUI 截图中的 UI 显示缺陷，提出 OwlEye，用 CNN 建模截图视觉信息并用 Grad-CAM 定位问题区域。论文构造了 4470 张带显示问题的 GUI 截图数据集，并用启发式数据增强扩充训练样本；在检测 UI 显示问题上达到 85% 精确率和 84% 召回率，定位准确率约 90%，还在 Google Play 和 F-Droid 应用中发现 57 个此前未发现的问题。
+- **发表信息**：2020 / ASE 2020（DOI: 10.1145/3324884.3416547）
+- **论文**：<https://doi.org/10.1145/3324884.3416547>
+- **arXiv**：<https://arxiv.org/abs/2009.01417>
+- **本地 PDF**：[文献/应用测试与质量/H030_.../H030.pdf](文献/应用测试与质量/H030_Owl_Eyes_Spotting_UI_Display_Issues_via_Visual_Understanding/H030.pdf)
+
+#### H031 LAD: A Layout Anomaly Detector for Android Applications
+- **中文译名**：LAD：面向 Android 应用的布局异常检测器
+- **简介**：提出 LAD（Layout Anomaly Detector）检测 Android 应用在不同屏幕尺寸和分辨率下的布局异常，覆盖组件缺失、文本裁剪、组件重叠、组件溢出、组件错位以及组件/文本缩放不适配六类问题。工具支持脚本化导航、独立检测和对比检测两种模式，并在四个真实 Android 应用上验证了对布局异常的检测效果。
+- **发表信息**：2019 / SEKE 2019（DOI: 10.18293/seke2019-186）
+- **论文**：<https://doi.org/10.18293/seke2019-186>
+- **PDF**：<http://ksiresearchorg.ipage.com/seke/seke19paper/seke19paper_186.pdf>
+- **本地 PDF**：[文献/应用测试与质量/H031_.../H031.pdf](文献/应用测试与质量/H031_LAD_A_Layout_Anomaly_Detector_for_Android_Applications/H031.pdf)
 
 ### 生态治理与合规
 

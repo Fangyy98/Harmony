@@ -1,0 +1,9 @@
+Title: Owl Eyes: Spotting UI Display Issues via Visual Understanding
+DOI: 10.1145/3324884.3416547
+Paper: https://doi.org/10.1145/3324884.3416547
+ACM DL: https://dl.acm.org/doi/10.1145/3324884.3416547
+arXiv: https://arxiv.org/abs/2009.01417
+PDF: https://arxiv.org/pdf/2009.01417
+Local PDF: ./H030.pdf
+Google Scholar: https://scholar.google.com/scholar?q=Owl+Eyes+Spotting+UI+Display+Issues+via+Visual+Understanding
+Web search: https://www.google.com/search?q=%22Owl+Eyes%3A+Spotting+UI+Display+Issues+via+Visual+Understanding%22+paper

@@ -1,0 +1,17 @@
+Owl Eyes: Spotting UI Display Issues via Visual Understanding
+中文译名：Owl Eyes：通过视觉理解发现 UI 显示问题
+
+编号：H030
+分类：应用测试与质量
+相关性：移动应用 UI 质量相关
+年份/来源：2020 / ASE 2020
+DOI：10.1145/3324884.3416547
+
+为什么收录：
+Android 移动应用 UI 显示缺陷检测的代表性视觉理解工作，是 OpenHarmony UI 重叠、遮挡和显示质量研究的重要相关工作与对照基线。
+
+PDF状态：
+已保存本地 PDF：H030.pdf
+
+核验说明：
+已核验：Crossref/ACM DOI 元数据与 arXiv 公开版本一致；已从 arXiv 保存本地 PDF。

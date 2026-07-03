@@ -1,0 +1,8 @@
+Title: LAD: A Layout Anomaly Detector for Android Applications
+DOI: 10.18293/seke2019-186
+Paper: https://doi.org/10.18293/seke2019-186
+Proceedings PDF: http://ksiresearchorg.ipage.com/seke/seke19paper/seke19paper_186.pdf
+Crossref metadata: https://api.crossref.org/works/10.18293%2Fseke2019-186
+Local PDF: ./H031.pdf
+Google Scholar: https://scholar.google.com/scholar?q=LAD+A+Layout+Anomaly+Detector+for+Android+Applications
+Web search: https://www.google.com/search?q=%22LAD%3A+A+Layout+Anomaly+Detector+for+Android+Applications%22+paper

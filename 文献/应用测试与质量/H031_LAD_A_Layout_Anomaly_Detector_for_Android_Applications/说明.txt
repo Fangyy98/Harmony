@@ -1,0 +1,17 @@
+LAD: A Layout Anomaly Detector for Android Applications
+中文译名：LAD：面向 Android 应用的布局异常检测器
+
+编号：H031
+分类：应用测试与质量
+相关性：移动应用 UI 质量相关
+年份/来源：2019 / SEKE 2019
+DOI：10.18293/seke2019-186
+
+为什么收录：
+Android 应用布局异常检测的早期系统化工具论文，覆盖组件缺失、文本裁剪、组件重叠、组件溢出、错位和缩放不适配等问题，可作为 OpenHarmony/ArkUI 布局质量研究的相关工作。
+
+PDF状态：
+已保存本地 PDF：H031.pdf
+
+核验说明：
+已核验：Crossref DOI 元数据指向 SEKE 2019 会议 PDF；已从会议站点保存本地 PDF。
