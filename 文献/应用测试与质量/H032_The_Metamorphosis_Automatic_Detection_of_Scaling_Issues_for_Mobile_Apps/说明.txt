@@ -1,0 +1,17 @@
+The Metamorphosis: Automatic Detection of Scaling Issues for Mobile Apps
+中文译名：The Metamorphosis：移动应用缩放问题的自动检测
+
+编号：H032
+分类：应用测试与质量
+相关性：移动应用 UI 质量相关
+年份/来源：2022 / ASE 2022
+DOI：10.1145/3551349.3556935
+
+为什么收录：
+Android 移动应用在系统字体缩放和显示缩放下产生布局异常的代表性检测工作，覆盖文本截断、组件重叠、视图裁剪和组件缺失等问题。论文提出 dVermin，通过比较默认缩放和放大缩放下的视图树与截图差异来自动识别 scaling issues，可作为 OpenHarmony/ArkUI 多设备和无障碍缩放适配测试的重要参考。
+
+PDF状态：
+已保存本地 PDF：H032.pdf
+
+核验说明：
+已核验：DBLP/Crossref/ACM DOI 元数据与 arXiv 公开版本一致；已从 arXiv 保存本地 PDF。

@@ -11,7 +11,7 @@
 ├── 代码智能与数据集/        # ArkTS 代码检索、代码生成评测、框架感知生成
 ├── 安全与静态分析/          # 污点分析、指针分析、跨语言分析、静态分析框架、应用加固
 ├── 应用测试与动态分析/      # 动态分析框架、自动化测试、跨设备音频冲突检测
-├── 应用测试与质量/          # UI 重叠、缺陷修复、幽灵渲染、符号执行测试、静态缺陷检测、移动 UI 质量基线
+├── 应用测试与质量/          # UI 重叠、缺陷修复、幽灵渲染、符号执行测试、静态缺陷检测、移动 UI 显示/布局质量基线
 ├── 生态治理与合规/          # 开源许可证兼容性分析
 ├── 生态移植与兼容/          # C/C++ 与 TS/JS 库向 OpenHarmony / ArkTS 移植
 ├── 系统与运行时优化/        # 内存拷贝、渲染服务并行化、VSync 解耦
@@ -28,9 +28,9 @@
 
 ## 总览
 
-- 文献目录数：31
-- 本地 PDF：30 个（H019 暂未发现公开 PDF）
-- 相关性口径：**强相关** = 直接研究 OpenHarmony / HarmonyOS / ArkTS / HAP / ArkUI；**平台相关** = 鸿蒙系统服务或 HarmonyOS NEXT 等平台能力；**移动应用 UI 质量相关** = Android/移动端 UI 显示、布局与质量检测相关工作，可作为 OpenHarmony UI 质量研究的背景或基线；**设备生态弱相关** = 通信、离线查找、星闪等设备生态。
+- 文献目录数：36
+- 本地 PDF：34 个（H019、H034 暂未发现公开 PDF）
+- 相关性口径：**强相关** = 直接研究 OpenHarmony / HarmonyOS / ArkTS / HAP / ArkUI；**平台相关** = 鸿蒙系统服务或 HarmonyOS NEXT 等平台能力；**移动应用 UI 质量相关** = Android/移动端 UI 显示、布局缩放、跨平台 GUI 一致性与质量检测相关工作，可作为 OpenHarmony UI 质量研究的背景或基线；**设备生态弱相关** = 通信、离线查找、星闪等设备生态。
 
 ---
 
@@ -185,6 +185,47 @@
 - **论文**：<https://doi.org/10.18293/seke2019-186>
 - **PDF**：<http://ksiresearchorg.ipage.com/seke/seke19paper/seke19paper_186.pdf>
 - **本地 PDF**：[文献/应用测试与质量/H031_.../H031.pdf](文献/应用测试与质量/H031_LAD_A_Layout_Anomaly_Detector_for_Android_Applications/H031.pdf)
+
+#### H032 The Metamorphosis: Automatic Detection of Scaling Issues for Mobile Apps
+- **中文译名**：The Metamorphosis：移动应用缩放问题的自动检测
+- **简介**：Android 移动应用在系统字体缩放和显示缩放下产生布局异常的代表性检测工作，覆盖文本截断、组件重叠、视图裁剪和组件缺失等问题。论文提出 dVermin，通过比较默认缩放和放大缩放下的视图树与截图差异来自动识别 scaling issues，可作为 OpenHarmony/ArkUI 多设备和无障碍缩放适配测试的重要参考。
+- **发表信息**：2022 / ASE 2022（DOI: 10.1145/3551349.3556935）
+- **论文**：<https://doi.org/10.1145/3551349.3556935>
+- **arXiv**：<https://arxiv.org/abs/2212.04388>
+- **本地 PDF**：[文献/应用测试与质量/H032_.../H032.pdf](文献/应用测试与质量/H032_The_Metamorphosis_Automatic_Detection_of_Scaling_Issues_for_Mobile_Apps/H032.pdf)
+
+#### H033 OwlEyes-online: a fully automated platform for detecting and localizing UI display issues
+- **中文译名**：OwlEyes-Online：自动检测和定位 UI 显示问题的平台
+- **简介**：OwlEyes 的在线平台化版本，面向 Android APK 自动执行、采集截图和 UI 层次信息，并生成 UI 显示问题检测与定位报告。它补充了从算法到可用测试平台的工程流程，对构建 OpenHarmony/ArkUI UI 质量检测服务有直接参考价值。
+- **发表信息**：2021 / ESEC/FSE 2021 Demo（DOI: 10.1145/3468264.3473109）
+- **论文**：<https://doi.org/10.1145/3468264.3473109>
+- **arXiv**：<https://arxiv.org/abs/2107.02364>
+- **开源代码**：<https://github.com/franklinbill/owleyes>
+- **本地 PDF**：[文献/应用测试与质量/H033_.../H033.pdf](文献/应用测试与质量/H033_OwlEyes_Online_A_Fully_Automated_Platform_for_Detecting_and_Localizing_UI_Display_Issues/H033.pdf)
+
+#### H034 Automated cross-platform inconsistency detection for mobile apps `【暂未发现公开 PDF】`
+- **中文译名**：移动应用跨平台不一致性的自动检测
+- **简介**：面向 Android/iOS 多平台移动应用的一致性检测工作，通过自动探索和跨平台 GUI/行为对比发现实现不一致。虽然不是纯 Android-only 论文，但它是移动端 GUI 差分测试的重要代表，可为 Android 与 OpenHarmony/ArkUI 应用在跨端移植、页面结构和视觉布局一致性检测中的基线设计提供参考。
+- **发表信息**：2017 / ASE 2017（DOI: 10.1109/ASE.2017.8115644）
+- **论文**：<https://doi.org/10.1109/ASE.2017.8115644>
+- **IEEE Xplore**：<https://ieeexplore.ieee.org/document/8115644>
+- **本地 PDF**：暂无（暂未发现可直连公开 PDF）
+
+#### H035 Guided Bug Crush: Assist Manual GUI Testing of Android Apps via Hint Moves
+- **中文译名**：Guided Bug Crush：用提示动作辅助 Android 应用手工 GUI 测试
+- **简介**：面向 Android 应用手工 GUI 测试效率不足的问题，提出 NaviDroid，通过分析当前界面和历史探索状态为测试人员推荐 hint moves。该工作本身不专门检测布局异常，但能提高 GUI 页面和状态探索覆盖，是发现 Android UI 布局、显示和交互质量问题时的重要测试辅助技术。
+- **发表信息**：2022 / CHI 2022（DOI: 10.1145/3491102.3501903）
+- **论文**：<https://doi.org/10.1145/3491102.3501903>
+- **arXiv**：<https://arxiv.org/abs/2201.12085>
+- **本地 PDF**：[文献/应用测试与质量/H035_.../H035.pdf](文献/应用测试与质量/H035_Guided_Bug_Crush_Assist_Manual_GUI_Testing_of_Android_Apps_via_Hint_Moves/H035.pdf)
+
+#### H036 Nighthawk: Fully Automated Localizing UI Display Issues via Visual Understanding
+- **中文译名**：Nighthawk：通过视觉理解全自动定位 UI 显示问题
+- **简介**：Owl Eyes 系列的期刊扩展工作，针对 Android 应用 UI 显示问题进一步做自动定位，并通过视觉理解和自动训练数据生成提升检测与定位能力。虽然不是顶会论文，但它与 Android UI 布局/显示缺陷测试高度相关，可作为 H030/H033 的后续扩展基线。
+- **发表信息**：2023 / IEEE Transactions on Software Engineering（DOI: 10.1109/TSE.2022.3150876）
+- **论文**：<https://doi.org/10.1109/TSE.2022.3150876>
+- **arXiv**：<https://arxiv.org/abs/2205.13945>
+- **本地 PDF**：[文献/应用测试与质量/H036_.../H036.pdf](文献/应用测试与质量/H036_Nighthawk_Fully_Automated_Localizing_UI_Display_Issues_via_Visual_Understanding/H036.pdf)
 
 ### 生态治理与合规
 

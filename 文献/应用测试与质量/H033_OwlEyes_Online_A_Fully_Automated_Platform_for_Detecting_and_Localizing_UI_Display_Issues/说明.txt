@@ -1,0 +1,17 @@
+OwlEyes-online: a fully automated platform for detecting and localizing UI display issues
+中文译名：OwlEyes-Online：自动检测和定位 UI 显示问题的平台
+
+编号：H033
+分类：应用测试与质量
+相关性：移动应用 UI 质量相关
+年份/来源：2021 / ESEC/FSE 2021 Demo
+DOI：10.1145/3468264.3473109
+
+为什么收录：
+OwlEyes 的在线平台化版本，面向 Android APK 自动执行、采集截图和 UI 层次信息，并生成 UI 显示问题检测与定位报告。它补充了从算法到可用测试平台的工程流程，对构建 OpenHarmony/ArkUI UI 质量检测服务有直接参考价值。
+
+PDF状态：
+已保存本地 PDF：H033.pdf
+
+核验说明：
+已核验：DBLP/Crossref/ACM DOI 元数据与 arXiv 公开版本一致；已从 arXiv 保存本地 PDF。

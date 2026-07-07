@@ -1,0 +1,10 @@
+Title: Guided Bug Crush: Assist Manual GUI Testing of Android Apps via Hint Moves
+DOI: 10.1145/3491102.3501903
+Paper: https://doi.org/10.1145/3491102.3501903
+ACM DL: https://dl.acm.org/doi/10.1145/3491102.3501903
+arXiv: https://arxiv.org/abs/2201.12085
+PDF: https://arxiv.org/pdf/2201.12085
+Local PDF: ./H035.pdf
+DBLP: https://dblp.org/rec/conf/chi/LiuCWHHW22
+Google Scholar: https://scholar.google.com/scholar?q=Guided+Bug+Crush+Assist+Manual+GUI+Testing+of+Android+Apps+via+Hint+Moves
+Web search: https://www.google.com/search?q=%22Guided+Bug+Crush%3A+Assist+Manual+GUI+Testing+of+Android+Apps+via+Hint+Moves%22

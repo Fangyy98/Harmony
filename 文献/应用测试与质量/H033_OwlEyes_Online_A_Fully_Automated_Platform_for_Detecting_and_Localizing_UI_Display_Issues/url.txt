@@ -1,0 +1,11 @@
+Title: OwlEyes-online: a fully automated platform for detecting and localizing UI display issues
+DOI: 10.1145/3468264.3473109
+Paper: https://doi.org/10.1145/3468264.3473109
+ACM DL: https://dl.acm.org/doi/10.1145/3468264.3473109
+arXiv: https://arxiv.org/abs/2107.02364
+PDF: https://arxiv.org/pdf/2107.02364
+Code/Project: https://github.com/franklinbill/owleyes
+Local PDF: ./H033.pdf
+DBLP: https://dblp.org/rec/conf/sigsoft/SuLC0W21
+Google Scholar: https://scholar.google.com/scholar?q=OwlEyes-online+a+fully+automated+platform+for+detecting+and+localizing+UI+display+issues
+Web search: https://www.google.com/search?q=%22OwlEyes-online%3A+a+fully+automated+platform+for+detecting+and+localizing+UI+display+issues%22

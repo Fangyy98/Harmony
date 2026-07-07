@@ -1,0 +1,17 @@
+Nighthawk: Fully Automated Localizing UI Display Issues via Visual Understanding
+中文译名：Nighthawk：通过视觉理解全自动定位 UI 显示问题
+
+编号：H036
+分类：应用测试与质量
+相关性：移动应用 UI 质量相关
+年份/来源：2023 / IEEE Transactions on Software Engineering
+DOI：10.1109/TSE.2022.3150876
+
+为什么收录：
+Owl Eyes 系列的期刊扩展工作，针对 Android 应用 UI 显示问题进一步做自动定位，并通过视觉理解和自动训练数据生成提升检测与定位能力。虽然不是顶会论文，但它与 Android UI 布局/显示缺陷测试高度相关，可作为 H030/H033 的后续扩展基线。
+
+PDF状态：
+已保存本地 PDF：H036.pdf
+
+核验说明：
+已核验：Crossref/IEEE DOI 元数据与 arXiv 公开版本一致；已从 arXiv 保存本地 PDF。

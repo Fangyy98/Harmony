@@ -1,0 +1,17 @@
+Automated cross-platform inconsistency detection for mobile apps
+中文译名：移动应用跨平台不一致性的自动检测
+
+编号：H034
+分类：应用测试与质量
+相关性：移动应用 UI 质量相关
+年份/来源：2017 / ASE 2017
+DOI：10.1109/ASE.2017.8115644
+
+为什么收录：
+面向 Android/iOS 多平台移动应用的一致性检测工作，通过自动探索和跨平台 GUI/行为对比发现实现不一致。虽然不是纯 Android-only 论文，但它是移动端 GUI 差分测试的重要代表，可为 Android 与 OpenHarmony/ArkUI 应用在跨端移植、页面结构和视觉布局一致性检测中的基线设计提供参考。
+
+PDF状态：
+暂未保存本地 PDF：IEEE Xplore PDF 入口未能获取到可直连公开 PDF。
+
+核验说明：
+已核验：DBLP/Crossref/IEEE DOI 元数据一致；本地未保存 PDF，url.txt 记录 DOI、IEEE Xplore 和 DBLP 链接。

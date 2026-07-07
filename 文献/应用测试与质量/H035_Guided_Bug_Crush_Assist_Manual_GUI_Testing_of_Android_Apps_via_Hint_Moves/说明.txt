@@ -1,0 +1,17 @@
+Guided Bug Crush: Assist Manual GUI Testing of Android Apps via Hint Moves
+中文译名：Guided Bug Crush：用提示动作辅助 Android 应用手工 GUI 测试
+
+编号：H035
+分类：应用测试与质量
+相关性：移动应用 UI 质量相关
+年份/来源：2022 / CHI 2022
+DOI：10.1145/3491102.3501903
+
+为什么收录：
+面向 Android 应用手工 GUI 测试效率不足的问题，提出 NaviDroid，通过分析当前界面和历史探索状态为测试人员推荐 hint moves。该工作本身不专门检测布局异常，但能提高 GUI 页面和状态探索覆盖，是发现 Android UI 布局、显示和交互质量问题时的重要测试辅助技术。
+
+PDF状态：
+已保存本地 PDF：H035.pdf
+
+核验说明：
+已核验：DBLP/Crossref/ACM DOI 元数据与 arXiv 公开版本一致；已从 arXiv 保存本地 PDF。

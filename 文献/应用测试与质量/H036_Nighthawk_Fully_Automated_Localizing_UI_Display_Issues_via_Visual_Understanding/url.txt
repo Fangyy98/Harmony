@@ -1,0 +1,9 @@
+Title: Nighthawk: Fully Automated Localizing UI Display Issues via Visual Understanding
+DOI: 10.1109/TSE.2022.3150876
+Paper: https://doi.org/10.1109/TSE.2022.3150876
+IEEE Xplore: https://ieeexplore.ieee.org/document/9713940
+arXiv: https://arxiv.org/abs/2205.13945
+PDF: https://arxiv.org/pdf/2205.13945
+Local PDF: ./H036.pdf
+Google Scholar: https://scholar.google.com/scholar?q=Nighthawk+Fully+Automated+Localizing+UI+Display+Issues+via+Visual+Understanding
+Web search: https://www.google.com/search?q=%22Nighthawk%3A+Fully+Automated+Localizing+UI+Display+Issues+via+Visual+Understanding%22

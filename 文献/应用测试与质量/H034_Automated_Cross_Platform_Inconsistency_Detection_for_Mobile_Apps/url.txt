@@ -1,0 +1,9 @@
+Title: Automated cross-platform inconsistency detection for mobile apps
+DOI: 10.1109/ASE.2017.8115644
+Paper: https://doi.org/10.1109/ASE.2017.8115644
+IEEE Xplore: https://ieeexplore.ieee.org/document/8115644
+DBLP: https://dblp.org/rec/conf/kbse/FazziniO17
+PDF: 暂未发现可直连公开 PDF
+Local PDF: 暂无
+Google Scholar: https://scholar.google.com/scholar?q=Automated+cross-platform+inconsistency+detection+for+mobile+apps
+Web search: https://www.google.com/search?q=%22Automated+cross-platform+inconsistency+detection+for+mobile+apps%22

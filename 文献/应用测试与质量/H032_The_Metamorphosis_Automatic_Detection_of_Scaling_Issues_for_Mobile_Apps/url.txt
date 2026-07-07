@@ -1,0 +1,10 @@
+Title: The Metamorphosis: Automatic Detection of Scaling Issues for Mobile Apps
+DOI: 10.1145/3551349.3556935
+Paper: https://doi.org/10.1145/3551349.3556935
+ACM DL: https://dl.acm.org/doi/10.1145/3551349.3556935
+arXiv: https://arxiv.org/abs/2212.04388
+PDF: https://arxiv.org/pdf/2212.04388
+Local PDF: ./H032.pdf
+DBLP: https://dblp.org/rec/conf/kbse/SuCWLWLW22
+Google Scholar: https://scholar.google.com/scholar?q=The+Metamorphosis+Automatic+Detection+of+Scaling+Issues+for+Mobile+Apps
+Web search: https://www.google.com/search?q=%22The+Metamorphosis%3A+Automatic+Detection+of+Scaling+Issues+for+Mobile+Apps%22+paper
