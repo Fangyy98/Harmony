@@ -1,0 +1,6 @@
+Title: GUI Element Detection Using SOTA YOLO Deep Learning Models
+arXiv: https://arxiv.org/abs/2408.03507
+PDF: https://arxiv.org/pdf/2408.03507
+Local PDF: ./H042.pdf
+Google Scholar: https://scholar.google.com/scholar?q=GUI+Element+Detection+Using+SOTA+YOLO+Deep+Learning+Models
+Web search: https://www.google.com/search?q=%22GUI+Element+Detection+Using+SOTA+YOLO+Deep+Learning+Models%22

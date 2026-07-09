@@ -1,0 +1,16 @@
+DRS-GUI: Dynamic Region Search for Training-Free GUI Grounding
+中文译名：DRS-GUI：面向免训练 GUI 定位的动态区域搜索
+
+编号：H037
+分类：应用测试与质量
+相关性：移动应用 UI 质量相关
+年份/来源：2026 / arXiv preprint（arXiv:2605.15542）
+
+为什么收录：
+面向高分辨率、复杂截图中的 GUI grounding 问题，提出免训练的动态区域搜索框架 DRS-GUI。方法通过 UI Perceptor 的 Focus、Shift、Scatter 三类感知动作生成候选区域，并用 MCTS 规划搜索过程，减少无关 UI 组件干扰。对 OpenHarmony/ArkUI 的复杂页面控件定位、布局检测和自动化测试坐标定位有直接参考价值。
+
+PDF状态：
+已保存本地 PDF：H037.pdf
+
+核验说明：
+已核验：arXiv 元数据与本地 PDF 标题一致；本地 PDF 可由 pdfinfo 正常读取，共 11 页。

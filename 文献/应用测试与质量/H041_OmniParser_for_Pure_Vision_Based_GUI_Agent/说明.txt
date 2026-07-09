@@ -1,0 +1,16 @@
+OmniParser for Pure Vision Based GUI Agent
+中文译名：OmniParser：面向纯视觉 GUI Agent 的界面解析器
+
+编号：H041
+分类：应用测试与质量
+相关性：移动应用 UI 质量相关
+年份/来源：2024 / arXiv preprint（arXiv:2408.00203）
+
+为什么收录：
+OmniParser 将 UI 截图解析为结构化元素，重点解决可交互图标检测、元素语义理解和动作区域绑定问题。它构建交互图标检测数据和图标描述数据，训练检测模型与 caption 模型，并在 ScreenSpot、Mind2Web、AITW 等任务上提升纯截图输入的 GUI agent 能力。对没有 DOM/控件树时的 OpenHarmony 截图级 UI 元素检测和布局结构恢复很有参考价值。
+
+PDF状态：
+已保存本地 PDF：H041.pdf
+
+核验说明：
+已核验：arXiv 页面与本地 PDF 首页标题一致；本地 PDF 可由 pdfinfo 正常读取，共 14 页。

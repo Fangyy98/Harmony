@@ -1,0 +1,7 @@
+Title: ScreenSpot-Pro: GUI Grounding for Professional High-Resolution Computer Use
+arXiv: https://arxiv.org/abs/2504.07981
+PDF: https://arxiv.org/pdf/2504.07981
+Project and leaderboard: https://gui-agent.github.io/grounding-leaderboard/
+Local PDF: ./H040.pdf
+Google Scholar: https://scholar.google.com/scholar?q=ScreenSpot-Pro+GUI+Grounding+for+Professional+High-Resolution+Computer+Use
+Web search: https://www.google.com/search?q=%22ScreenSpot-Pro%3A+GUI+Grounding+for+Professional+High-Resolution+Computer+Use%22

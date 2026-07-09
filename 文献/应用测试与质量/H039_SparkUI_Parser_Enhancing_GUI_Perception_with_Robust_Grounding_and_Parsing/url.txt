@@ -1,0 +1,7 @@
+Title: SparkUI-Parser: Enhancing GUI Perception with Robust Grounding and Parsing
+arXiv: https://arxiv.org/abs/2509.04908
+PDF: https://arxiv.org/pdf/2509.04908
+Code: https://github.com/antgroup/SparkUI-Parser
+Local PDF: ./H039.pdf
+Google Scholar: https://scholar.google.com/scholar?q=SparkUI-Parser+Enhancing+GUI+Perception+with+Robust+Grounding+and+Parsing
+Web search: https://www.google.com/search?q=%22SparkUI-Parser%3A+Enhancing+GUI+Perception+with+Robust+Grounding+and+Parsing%22

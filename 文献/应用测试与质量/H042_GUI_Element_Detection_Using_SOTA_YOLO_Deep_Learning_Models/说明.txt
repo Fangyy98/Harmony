@@ -1,0 +1,16 @@
+GUI Element Detection Using SOTA YOLO Deep Learning Models
+中文译名：使用 SOTA YOLO 深度学习模型进行 GUI 元素检测
+
+编号：H042
+分类：应用测试与质量
+相关性：移动应用 UI 质量相关
+年份/来源：2024 / arXiv preprint（arXiv:2408.03507）
+
+为什么收录：
+直接把 GUI 元素检测视作特定领域目标检测问题，系统比较多种最新 YOLO 模型在 GUI 元素检测任务上的表现。论文指出 GUI 截图相比自然图像有目标密集、重叠近邻多、类别少但实例多等特点，因此通用检测模型结论不能直接迁移。该工作适合作为 OpenHarmony/ArkUI 控件检测模型选型和 YOLO 系列基线评估的入口。
+
+PDF状态：
+已保存本地 PDF：H042.pdf
+
+核验说明：
+已核验：arXiv 元数据与本地 PDF 标题一致；本地 PDF 可由 pdfinfo 正常读取，共 9 页。

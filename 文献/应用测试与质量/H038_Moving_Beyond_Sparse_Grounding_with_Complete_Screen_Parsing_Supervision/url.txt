@@ -1,0 +1,7 @@
+Title: ScreenParse: Moving Beyond Sparse Grounding with Complete Screen Parsing Supervision
+arXiv: https://arxiv.org/abs/2602.14276
+PDF: https://arxiv.org/pdf/2602.14276
+Project: https://saidgurbuz.github.io/screenparse/
+Local PDF: ./H038.pdf
+Google Scholar: https://scholar.google.com/scholar?q=ScreenParse+Moving+Beyond+Sparse+Grounding+with+Complete+Screen+Parsing+Supervision
+Web search: https://www.google.com/search?q=%22ScreenParse%3A+Moving+Beyond+Sparse+Grounding+with+Complete+Screen+Parsing+Supervision%22

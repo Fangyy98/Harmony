@@ -1,0 +1,7 @@
+Title: UI Semantic Group Detection: Grouping UI Elements with Similar Semantics in Mobile Graphical User Interface
+arXiv: https://arxiv.org/abs/2403.04984
+PDF: https://arxiv.org/pdf/2403.04984
+arXiv DOI: https://doi.org/10.48550/arXiv.2403.04984
+Local PDF: ./H043.pdf
+Google Scholar: https://scholar.google.com/scholar?q=UI+Semantic+Group+Detection+Grouping+UI+Elements+with+Similar+Semantics+in+Mobile+Graphical+User+Interface
+Web search: https://www.google.com/search?q=%22UI+Semantic+Group+Detection%3A+Grouping+UI+Elements+with+Similar+Semantics+in+Mobile+Graphical+User+Interface%22

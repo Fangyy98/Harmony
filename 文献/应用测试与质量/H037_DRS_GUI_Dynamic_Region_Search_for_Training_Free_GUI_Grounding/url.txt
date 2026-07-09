@@ -1,0 +1,6 @@
+Title: DRS-GUI: Dynamic Region Search for Training-Free GUI Grounding
+arXiv: https://arxiv.org/abs/2605.15542
+PDF: https://arxiv.org/pdf/2605.15542
+Local PDF: ./H037.pdf
+Google Scholar: https://scholar.google.com/scholar?q=DRS-GUI+Dynamic+Region+Search+for+Training-Free+GUI+Grounding
+Web search: https://www.google.com/search?q=%22DRS-GUI%3A+Dynamic+Region+Search+for+Training-Free+GUI+Grounding%22

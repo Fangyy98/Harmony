@@ -1,0 +1,16 @@
+SparkUI-Parser: Enhancing GUI Perception with Robust Grounding and Parsing
+中文译名：SparkUI-Parser：通过鲁棒定位与解析增强 GUI 感知
+
+编号：H039
+分类：应用测试与质量
+相关性：移动应用 UI 质量相关
+年份/来源：2025 / arXiv preprint（arXiv:2509.04908）
+
+为什么收录：
+面向 GUI 感知中坐标离散建模不准、只能定位预定义元素而难以整页解析的问题，提出端到端 SparkUI-Parser。方法通过连续坐标建模、token router、coordinate decoder 和拒识机制提升定位精度、速度和整页解析能力，并在 ScreenSpot、ScreenSpot-v2、CAGUI-Grounding、ScreenParse 等基准上评测。对构建 OpenHarmony 截图级 UI 元素检测和布局解析模型有直接借鉴价值。
+
+PDF状态：
+已保存本地 PDF：H039.pdf
+
+核验说明：
+已核验：arXiv 元数据与本地 PDF 标题一致；本地 PDF 可由 pdfinfo 正常读取，共 8 页；url.txt 记录论文声明的 GitHub 仓库。

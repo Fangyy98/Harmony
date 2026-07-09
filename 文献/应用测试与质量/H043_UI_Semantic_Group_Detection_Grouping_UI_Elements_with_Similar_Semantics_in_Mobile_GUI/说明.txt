@@ -1,0 +1,16 @@
+UI Semantic Group Detection: Grouping UI Elements with Similar Semantics in Mobile Graphical User Interface
+中文译名：UI 语义组检测：在移动图形用户界面中对语义相似的 UI 元素分组
+
+编号：H043
+分类：应用测试与质量
+相关性：移动应用 UI 质量相关
+年份/来源：2024 / Displays；arXiv preprint（arXiv:2403.04984）
+
+为什么收录：
+该工作关注移动 GUI 中文本、控件和图片并非孤立工作，而是按交互功能和视觉信息形成语义组件组。论文提出 UISCGD，在 deformable-DETR 基础上加入 UI 元素颜色表示和组分布先验，用 1988 个 iOS/Android 移动 GUI 截图训练语义组检测器。它比单个控件检测更接近布局结构理解，可用于 UI-to-code、可访问性数据生成、感知组检索和 ArkUI 页面结构质量分析。
+
+PDF状态：
+已保存本地 PDF：H043.pdf
+
+核验说明：
+已核验：arXiv 元数据与本地 PDF 标题一致；本地 PDF 可由 pdfinfo 正常读取，共 16 页；arXiv 页面标注 Accepted at Displays。

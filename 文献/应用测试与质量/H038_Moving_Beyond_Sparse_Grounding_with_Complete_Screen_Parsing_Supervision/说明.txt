@@ -1,0 +1,16 @@
+ScreenParse: Moving Beyond Sparse Grounding with Complete Screen Parsing Supervision
+中文译名：ScreenParse：用完整屏幕解析监督超越稀疏定位
+
+编号：H038
+分类：应用测试与质量
+相关性：移动应用 UI 质量相关
+年份/来源：2026 / arXiv preprint（arXiv:2602.14276）
+
+为什么收录：
+该工作把 GUI 感知从只标注少量任务相关元素的 sparse grounding 推进到 complete screen parsing：对屏幕中所有可见 UI 元素提供边界框、类别和文本标注。论文构建 ScreenParse 数据集并训练 ScreenVLM，对 UI 元素检测、页面结构抽取、布局恢复和自动化测试前置感知都很关键，可作为后续 ArkUI 截图解析数据集与检测模型的最新基线。
+
+PDF状态：
+已保存本地 PDF：H038.pdf
+
+核验说明：
+已核验：arXiv 元数据与本地 PDF 标题一致；本地 PDF 可由 pdfinfo 正常读取，共 28 页。

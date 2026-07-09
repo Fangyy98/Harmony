@@ -1,0 +1,6 @@
+Title: OmniParser for Pure Vision Based GUI Agent
+arXiv: https://arxiv.org/abs/2408.00203
+PDF: https://arxiv.org/pdf/2408.00203
+Local PDF: ./H041.pdf
+Google Scholar: https://scholar.google.com/scholar?q=OmniParser+for+Pure+Vision+Based+GUI+Agent
+Web search: https://www.google.com/search?q=%22OmniParser+for+Pure+Vision+Based+GUI+Agent%22

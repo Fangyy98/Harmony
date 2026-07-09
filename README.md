@@ -11,7 +11,7 @@
 ├── 代码智能与数据集/        # ArkTS 代码检索、代码生成评测、框架感知生成
 ├── 安全与静态分析/          # 污点分析、指针分析、跨语言分析、静态分析框架、应用加固
 ├── 应用测试与动态分析/      # 动态分析框架、自动化测试、跨设备音频冲突检测
-├── 应用测试与质量/          # UI 重叠、缺陷修复、幽灵渲染、符号执行测试、静态缺陷检测、移动 UI 显示/布局质量基线
+├── 应用测试与质量/          # UI 重叠、缺陷修复、幽灵渲染、符号执行测试、静态缺陷检测、移动 UI 显示/布局质量与 GUI 元素/屏幕解析基线
 ├── 生态治理与合规/          # 开源许可证兼容性分析
 ├── 生态移植与兼容/          # C/C++ 与 TS/JS 库向 OpenHarmony / ArkTS 移植
 ├── 系统与运行时优化/        # 内存拷贝、渲染服务并行化、VSync 解耦
@@ -21,16 +21,16 @@
 
 每个文献文件夹固定包含：
 
-- `Hxxx.pdf`：论文 PDF（H019 暂未发现公开 PDF，仅有会议页面信息）。
+- `Hxxx.pdf`：论文 PDF（H019、H034 暂未发现公开 PDF）。
 - `url.txt`：论文页、DOI、PDF 入口、Google Scholar 等链接，部分含开源代码地址。
 - `说明.txt`：编号、分类、相关性、收录原因、PDF 状态和核验说明。
 
 
 ## 总览
 
-- 文献目录数：36
-- 本地 PDF：34 个（H019、H034 暂未发现公开 PDF）
-- 相关性口径：**强相关** = 直接研究 OpenHarmony / HarmonyOS / ArkTS / HAP / ArkUI；**平台相关** = 鸿蒙系统服务或 HarmonyOS NEXT 等平台能力；**移动应用 UI 质量相关** = Android/移动端 UI 显示、布局缩放、跨平台 GUI 一致性与质量检测相关工作，可作为 OpenHarmony UI 质量研究的背景或基线；**设备生态弱相关** = 通信、离线查找、星闪等设备生态。
+- 文献目录数：43
+- 本地 PDF：41 个（H019、H034 暂未发现公开 PDF）
+- 相关性口径：**强相关** = 直接研究 OpenHarmony / HarmonyOS / ArkTS / HAP / ArkUI；**平台相关** = 鸿蒙系统服务或 HarmonyOS NEXT 等平台能力；**移动应用 UI 质量相关** = Android/移动端/通用 GUI 的 UI 显示、布局缩放、组件检测、屏幕解析、跨平台 GUI 一致性与质量检测相关工作，可作为 OpenHarmony UI 质量研究的背景或基线；**设备生态弱相关** = 通信、离线查找、星闪等设备生态。
 
 ---
 
@@ -226,6 +226,58 @@
 - **论文**：<https://doi.org/10.1109/TSE.2022.3150876>
 - **arXiv**：<https://arxiv.org/abs/2205.13945>
 - **本地 PDF**：[文献/应用测试与质量/H036_.../H036.pdf](文献/应用测试与质量/H036_Nighthawk_Fully_Automated_Localizing_UI_Display_Issues_via_Visual_Understanding/H036.pdf)
+
+#### H037 DRS-GUI: Dynamic Region Search for Training-Free GUI Grounding
+- **中文译名**：DRS-GUI：面向免训练 GUI 定位的动态区域搜索
+- **简介**：面向高分辨率、复杂截图中的 GUI grounding 问题，提出免训练动态区域搜索框架，通过 Focus、Shift、Scatter 三类感知动作和 MCTS 规划逐步收缩候选区域，减少无关 UI 组件干扰。可作为复杂页面控件定位和自动化测试坐标定位的最新基线。
+- **发表信息**：2026 / arXiv preprint（arXiv:2605.15542）
+- **论文**：<https://arxiv.org/abs/2605.15542>
+- **本地 PDF**：[文献/应用测试与质量/H037_.../H037.pdf](文献/应用测试与质量/H037_DRS_GUI_Dynamic_Region_Search_for_Training_Free_GUI_Grounding/H037.pdf)
+
+#### H038 ScreenParse: Moving Beyond Sparse Grounding with Complete Screen Parsing Supervision
+- **中文译名**：ScreenParse：用完整屏幕解析监督超越稀疏定位
+- **简介**：把 GUI 感知从少量任务相关元素定位推进到完整屏幕解析，对所有可见 UI 元素提供边界框、类别和文本标注，并训练 ScreenVLM。对截图级 UI 元素检测、页面结构抽取、布局恢复和自动化测试前置感知都有直接参考价值。
+- **发表信息**：2026 / arXiv preprint（arXiv:2602.14276）
+- **论文**：<https://arxiv.org/abs/2602.14276>
+- **项目主页**：<https://saidgurbuz.github.io/screenparse/>
+- **本地 PDF**：[文献/应用测试与质量/H038_.../H038.pdf](文献/应用测试与质量/H038_Moving_Beyond_Sparse_Grounding_with_Complete_Screen_Parsing_Supervision/H038.pdf)
+
+#### H039 SparkUI-Parser: Enhancing GUI Perception with Robust Grounding and Parsing
+- **中文译名**：SparkUI-Parser：通过鲁棒定位与解析增强 GUI 感知
+- **简介**：提出端到端 GUI 感知框架，用连续坐标建模、token router、coordinate decoder 和拒识机制提升定位精度、速度和整页解析能力，并在多个 GUI grounding / parsing 基准上评测。适合作为 OpenHarmony 截图级 UI 元素检测和布局解析模型的近年参考。
+- **发表信息**：2025 / arXiv preprint（arXiv:2509.04908）
+- **论文**：<https://arxiv.org/abs/2509.04908>
+- **开源代码**：<https://github.com/antgroup/SparkUI-Parser>
+- **本地 PDF**：[文献/应用测试与质量/H039_.../H039.pdf](文献/应用测试与质量/H039_SparkUI_Parser_Enhancing_GUI_Perception_with_Robust_Grounding_and_Parsing/H039.pdf)
+
+#### H040 ScreenSpot-Pro: GUI Grounding for Professional High-Resolution Computer Use
+- **中文译名**：ScreenSpot-Pro：面向专业高分辨率计算机使用的 GUI 定位
+- **简介**：提出面向专业软件和高分辨率屏幕的 GUI grounding 基准，覆盖密集小目标和复杂工作流界面，并给出 ScreenSeekeR 级联视觉搜索方法。对大屏、平板、多窗口和专业应用中的 UI 元素定位与布局检测有参考价值。
+- **发表信息**：2025 / arXiv preprint（arXiv:2504.07981）
+- **论文**：<https://arxiv.org/abs/2504.07981>
+- **项目/榜单**：<https://gui-agent.github.io/grounding-leaderboard/>
+- **本地 PDF**：[文献/应用测试与质量/H040_.../H040.pdf](文献/应用测试与质量/H040_ScreenSpot_Pro_GUI_Grounding_for_Professional_High_Resolution_Computer_Use/H040.pdf)
+
+#### H041 OmniParser for Pure Vision Based GUI Agent
+- **中文译名**：OmniParser：面向纯视觉 GUI Agent 的界面解析器
+- **简介**：将 UI 截图解析为结构化元素，重点解决可交互图标检测、元素语义理解和动作区域绑定问题。它在没有 DOM/控件树时提供可交互区域检测和语义描述能力，对 OpenHarmony 截图级 UI 元素检测与布局结构恢复有较高参考价值。
+- **发表信息**：2024 / arXiv preprint（arXiv:2408.00203）
+- **论文**：<https://arxiv.org/abs/2408.00203>
+- **本地 PDF**：[文献/应用测试与质量/H041_.../H041.pdf](文献/应用测试与质量/H041_OmniParser_for_Pure_Vision_Based_GUI_Agent/H041.pdf)
+
+#### H042 GUI Element Detection Using SOTA YOLO Deep Learning Models
+- **中文译名**：使用 SOTA YOLO 深度学习模型进行 GUI 元素检测
+- **简介**：直接比较多种最新 YOLO 模型在 GUI 元素检测任务上的表现，强调 GUI 截图具有目标密集、近邻重叠多、类别少但实例多等不同于自然图像的特点。适合作为 ArkUI 控件检测模型选型和 YOLO 系列基线评估入口。
+- **发表信息**：2024 / arXiv preprint（arXiv:2408.03507）
+- **论文**：<https://arxiv.org/abs/2408.03507>
+- **本地 PDF**：[文献/应用测试与质量/H042_.../H042.pdf](文献/应用测试与质量/H042_GUI_Element_Detection_Using_SOTA_YOLO_Deep_Learning_Models/H042.pdf)
+
+#### H043 UI Semantic Group Detection: Grouping UI Elements with Similar Semantics in Mobile Graphical User Interface
+- **中文译名**：UI 语义组检测：在移动图形用户界面中对语义相似的 UI 元素分组
+- **简介**：提出 UISCGD，在 deformable-DETR 基础上加入 UI 元素颜色表示和组分布先验，检测移动 GUI 中由文本、控件和图片组成的语义组件组。相比单个控件检测，它更接近布局结构理解，可用于 UI-to-code、可访问性数据生成、感知组检索和 ArkUI 页面结构质量分析。
+- **发表信息**：2024 / Displays；arXiv preprint（arXiv:2403.04984）
+- **论文**：<https://arxiv.org/abs/2403.04984>
+- **本地 PDF**：[文献/应用测试与质量/H043_.../H043.pdf](文献/应用测试与质量/H043_UI_Semantic_Group_Detection_Grouping_UI_Elements_with_Similar_Semantics_in_Mobile_GUI/H043.pdf)
 
 ### 生态治理与合规
 

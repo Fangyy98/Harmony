@@ -1,0 +1,16 @@
+ScreenSpot-Pro: GUI Grounding for Professional High-Resolution Computer Use
+中文译名：ScreenSpot-Pro：面向专业高分辨率计算机使用的 GUI 定位
+
+编号：H040
+分类：应用测试与质量
+相关性：移动应用 UI 质量相关
+年份/来源：2025 / arXiv preprint（arXiv:2504.07981）
+
+为什么收录：
+提出 ScreenSpot-Pro 基准，评估多模态模型在专业软件、高分辨率、密集小目标界面中的 GUI grounding 能力，并给出 ScreenSeekeR 级联视觉搜索方法。该问题与移动端/鸿蒙端的复杂页面控件定位同源，尤其适合作为大屏、平板、多窗口和专业应用场景下 UI 元素定位与布局检测的参考基线。
+
+PDF状态：
+已保存本地 PDF：H040.pdf
+
+核验说明：
+已核验：arXiv 页面与本地 PDF 首页标题一致；本地 PDF 可由 pdfinfo 正常读取，共 17 页。
