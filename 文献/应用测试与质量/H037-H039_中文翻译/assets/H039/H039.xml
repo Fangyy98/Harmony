@@ -1,0 +1,1757 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pdf2xml SYSTEM "pdf2xml.dtd">
+
+<pdf2xml producer="poppler" version="26.06.0">
+<page number="1" position="absolute" top="0" left="0" height="1188" width="918">
+	<fontspec id="0" size="22" family="CLYLVV+NimbusRomNo9L-Medi" color="#000000"/>
+	<fontspec id="1" size="18" family="CLYLVV+NimbusRomNo9L-Medi" color="#000000"/>
+	<fontspec id="2" size="12" family="UONHBK+NimbusRomNo9L-Regu" color="#000000"/>
+	<fontspec id="3" size="10" family="UONHBK+NimbusRomNo9L-Regu" color="#000000"/>
+	<fontspec id="4" size="15" family="UONHBK+NimbusRomNo9L-Regu" color="#000000"/>
+	<fontspec id="5" size="15" family="YNWTQO+CMSY10" color="#000000"/>
+	<fontspec id="6" size="15" family="CLYLVV+NimbusRomNo9L-Medi" color="#000000"/>
+	<fontspec id="7" size="13" family="UONHBK+NimbusRomNo9L-Regu" color="#000000"/>
+	<fontspec id="8" size="13" family="UONHBK+NimbusRomNo9L-Regu" color="#0000ff"/>
+	<fontspec id="9" size="9" family="UONHBK+NimbusRomNo9L-Regu" color="#000000"/>
+	<fontspec id="10" size="30" family="Times" color="#7f7f7f"/>
+<text top="148" left="85" width="749" height="19" font="0">SparkUI-Parser: Enhancing GUI Perception with Robust Grounding and Parsing</text>
+<text top="192" left="145" width="93" height="16" font="1">Hongyi Jing</text>
+<text top="190" left="238" width="13" height="13" font="2">2*</text>
+<text top="192" left="252" width="93" height="16" font="1">, Jiafu Chen</text>
+<text top="190" left="345" width="13" height="13" font="2">1*</text>
+<text top="192" left="358" width="85" height="16" font="1">, Chen Rao</text>
+<text top="190" left="444" width="6" height="11" font="2">1</text>
+<text top="192" left="450" width="114" height="16" font="1">, Ziqiang Dang</text>
+<text top="190" left="564" width="6" height="11" font="2">2</text>
+<text top="192" left="571" width="92" height="16" font="1">, Jiajie Teng</text>
+<text top="190" left="664" width="6" height="11" font="2">2</text>
+<text top="192" left="670" width="96" height="16" font="1">, Tianyi Chu</text>
+<text top="190" left="766" width="6" height="11" font="2">1</text>
+<text top="192" left="773" width="4" height="16" font="1">,</text>
+<text top="213" left="134" width="109" height="16" font="1">JunCheng Mo</text>
+<text top="211" left="243" width="6" height="11" font="2">1</text>
+<text top="213" left="249" width="91" height="16" font="1">, Shuo Fang</text>
+<text top="211" left="340" width="6" height="11" font="2">2</text>
+<text top="213" left="347" width="124" height="16" font="1">, Huaizhong Lin</text>
+<text top="211" left="471" width="6" height="11" font="2">1</text>
+<text top="213" left="478" width="62" height="16" font="1">, Rui Lv</text>
+<text top="211" left="540" width="12" height="11" font="2">2†</text>
+<text top="213" left="553" width="127" height="16" font="1">, Chenguang Ma</text>
+<text top="211" left="680" width="12" height="11" font="2">2†</text>
+<text top="213" left="692" width="78" height="16" font="1">, Lei Zhao</text>
+<text top="211" left="771" width="13" height="11" font="2">1†</text>
+<text top="237" left="359" width="5" height="9" font="3">1</text>
+<text top="240" left="365" width="119" height="13" font="4">Zhejiang University</text>
+<text top="237" left="488" width="5" height="9" font="3">2</text>
+<text top="240" left="494" width="64" height="13" font="4">Ant Group</text>
+<text top="255" left="188" width="7" height="14" font="5">{</text>
+<text top="256" left="196" width="239" height="13" font="4">jinghongyi.jhy, dijun.lr, chenguang.mcg</text>
+<text top="255" left="434" width="7" height="14" font="5">}</text>
+<text top="256" left="442" width="100" height="13" font="4">@antgroup.com,</text>
+<text top="255" left="546" width="7" height="14" font="5">{</text>
+<text top="256" left="553" width="94" height="13" font="4">chenjiafu, cszhl</text>
+<text top="255" left="647" width="7" height="14" font="5">}</text>
+<text top="256" left="655" width="75" height="13" font="4">@zju.edu.cn</text>
+<text top="329" left="232" width="56" height="13" font="6">Abstract</text>
+<text top="356" left="96" width="328" height="12" font="7">The existing Multimodal Large Language Models (MLLMs)</text>
+<text top="371" left="96" width="328" height="12" font="7">for GUI perception have made great progress. However,</text>
+<text top="386" left="96" width="328" height="12" font="7">the following challenges still exist in prior methods: 1)</text>
+<text top="401" left="96" width="328" height="12" font="7">They model discrete coordinates based on text autoregres-</text>
+<text top="415" left="96" width="328" height="12" font="7">sive mechanism, which results in lower grounding accu-</text>
+<text top="430" left="96" width="328" height="12" font="7">racy and slower inference speed. 2) They can only locate</text>
+<text top="445" left="96" width="328" height="12" font="7">predefined sets of elements and are not capable of parsing</text>
+<text top="460" left="96" width="328" height="12" font="7">the entire interface, which hampers the broad application</text>
+<text top="475" left="96" width="328" height="12" font="7">and support for downstream tasks. To address the above is-</text>
+<text top="490" left="96" width="328" height="12" font="7">sues, we propose SparkUI-Parser, a novel end-to-end frame-</text>
+<text top="505" left="96" width="328" height="12" font="7">work where higher localization precision and fine-grained</text>
+<text top="520" left="96" width="328" height="12" font="7">parsing capability of the entire interface are simultaneously</text>
+<text top="535" left="96" width="328" height="12" font="7">achieved. Specifically, instead of using probability-based dis-</text>
+<text top="550" left="96" width="328" height="12" font="7">crete modeling, we perform continuous modeling of coor-</text>
+<text top="565" left="96" width="328" height="12" font="7">dinates based on a pre-trained Multimodal Large Language</text>
+<text top="580" left="96" width="328" height="12" font="7">Model (MLLM) with an additional token router and coor-</text>
+<text top="595" left="96" width="328" height="12" font="7">dinate decoder. This effectively mitigates the limitations in-</text>
+<text top="610" left="96" width="328" height="12" font="7">herent in the discrete output characteristics and the token-by-</text>
+<text top="625" left="96" width="328" height="12" font="7">token generation process of MLLMs, consequently boosting</text>
+<text top="640" left="96" width="328" height="12" font="7">both the accuracy and the inference speed. To further en-</text>
+<text top="655" left="96" width="328" height="12" font="7">hance robustness, a rejection mechanism based on a modi-</text>
+<text top="669" left="96" width="328" height="12" font="7">fied Hungarian matching algorithm is introduced, which em-</text>
+<text top="684" left="96" width="328" height="12" font="7">powers the model to identify and reject non-existent ele-</text>
+<text top="699" left="96" width="328" height="12" font="7">ments, thereby reducing false positives. Moreover, we present</text>
+<text top="714" left="96" width="328" height="12" font="7">ScreenParse, a rigorously constructed benchmark to system-</text>
+<text top="729" left="96" width="328" height="12" font="7">atically assess structural perception capabilities of GUI mod-</text>
+<text top="744" left="96" width="328" height="12" font="7">els across diverse scenarios. Extensive experiments demon-</text>
+<text top="759" left="96" width="328" height="12" font="7">strate that our approach consistently outperforms SOTA</text>
+<text top="774" left="96" width="328" height="12" font="7">methods on ScreenSpot, ScreenSpot-v2, CAGUI-Grounding</text>
+<text top="789" left="96" width="328" height="12" font="7">and ScreenParse benchmarks. The resources are available at</text>
+<text top="804" left="96" width="237" height="12" font="8">https://github.com/antgroup/SparkUI-Parser</text>
+<text top="804" left="333" width="3" height="12" font="7">.</text>
+<text top="849" left="198" width="9" height="16" font="1">1</text>
+<text top="849" left="225" width="97" height="16" font="1">Introduction</text>
+<text top="873" left="81" width="358" height="13" font="4">GUI-oriented MLLMs is capable of integrating visual and</text>
+<text top="889" left="81" width="358" height="13" font="4">textual data to understand and interact with graphical user</text>
+<text top="906" left="81" width="358" height="13" font="4">interfaces, providing a solid foundation for creating GUI</text>
+<text top="922" left="81" width="358" height="13" font="4">agents. GUI agents have the potential to autonomously op-</text>
+<text top="938" left="81" width="358" height="13" font="4">erate a wide range of devices, thereby transforming human-</text>
+<text top="955" left="81" width="358" height="13" font="4">computer interaction from entirely manual process to auto-</text>
+<text top="971" left="81" width="358" height="13" font="4">mated and delegated workflows. Since most of the training</text>
+<text top="998" left="100" width="4" height="8" font="9">*</text>
+<text top="999" left="105" width="185" height="12" font="7">These authors contributed equally.</text>
+<text top="1013" left="100" width="4" height="8" font="9">†</text>
+<text top="1015" left="105" width="120" height="12" font="7">Corresponding author.</text>
+<text top="1029" left="81" width="358" height="12" font="7">Copyright © 2026, Association for the Advancement of Artificial</text>
+<text top="1044" left="81" width="260" height="12" font="7">Intelligence (www.aaai.org). All rights reserved.</text>
+<text top="329" left="479" width="358" height="13" font="4">data for general MLLMs are natural images, their percep-</text>
+<text top="345" left="479" width="358" height="13" font="4">tion ability on GUI images is insufficient, which limits their</text>
+<text top="362" left="479" width="358" height="13" font="4">effectiveness in GUI-specific contexts. Natural images of-</text>
+<text top="378" left="479" width="358" height="13" font="4">ten contain complex scenes with diverse objects and back-</text>
+<text top="395" left="479" width="358" height="13" font="4">grounds, whereas GUI images are more structured, featur-</text>
+<text top="411" left="479" width="358" height="13" font="4">ing elements like texts, buttons, and input boxes that have</text>
+<text top="427" left="479" width="358" height="13" font="4">specific functions and layouts. For GUI scenario perception</text>
+<text top="444" left="479" width="358" height="13" font="4">and advanced tasks, ideal GUI MLLMs not only need to un-</text>
+<text top="460" left="479" width="358" height="13" font="4">derstand the ever-changing and high information-density in-</text>
+<text top="477" left="479" width="358" height="13" font="4">terfaces on various devices, but also exactly perform basic</text>
+<text top="493" left="479" width="358" height="13" font="4">operations, such as understanding the semantics of interface</text>
+<text top="510" left="479" width="266" height="13" font="4">elements and outputting precise coordinates.</text>
+<text top="530" left="494" width="343" height="13" font="4">To construct such powerful GUI MLLMs, several works</text>
+<text top="546" left="479" width="358" height="13" font="4">(Cheng et al. 2024; Xu et al. 2024; Gou et al. 2024) have</text>
+<text top="563" left="479" width="358" height="13" font="4">already post-trained MLLMs on GUI interfaces and tasks.</text>
+<text top="579" left="479" width="358" height="13" font="4">They focus on improving the GUI perception by locating</text>
+<text top="595" left="479" width="358" height="13" font="4">icons or texts on GUI interfaces, which have shown promis-</text>
+<text top="612" left="479" width="358" height="13" font="4">ing results. However, there are still a few limitations in these</text>
+<text top="628" left="479" width="358" height="13" font="4">previous methods in terms of perceiving GUI interfaces.</text>
+<text top="645" left="479" width="358" height="13" font="4">Firstly, they are directly fine-tuned on general MLLMs, in</text>
+<text top="661" left="479" width="358" height="13" font="4">which the text autoregressive mechanism based on the prob-</text>
+<text top="678" left="479" width="358" height="13" font="4">ability distribution of discrete tokens results in inaccurate</text>
+<text top="694" left="479" width="358" height="13" font="4">results and low efficiency. Therefore, it may not achieve the</text>
+<text top="710" left="479" width="358" height="13" font="4">accuracy of traditional models for grounding tasks. Also,</text>
+<text top="727" left="479" width="358" height="13" font="4">token-by-token prediction manner of high-precision coor-</text>
+<text top="743" left="479" width="358" height="13" font="4">dinates could be a bottleneck when rapid response time is</text>
+<text top="760" left="479" width="358" height="13" font="4">required. Secondly, they only focus on locating and inter-</text>
+<text top="776" left="479" width="358" height="13" font="4">acting with specified elements and fail to provide a detailed</text>
+<text top="793" left="479" width="358" height="13" font="4">parsing perception of broader context and relationships be-</text>
+<text top="809" left="479" width="358" height="13" font="4">tween elements on the entire user interface. Thirdly, previ-</text>
+<text top="826" left="479" width="358" height="13" font="4">ous models will return incorrect locations or generate irrele-</text>
+<text top="842" left="479" width="358" height="13" font="4">vant responses when a non-existent element is required to be</text>
+<text top="858" left="479" width="358" height="13" font="4">located, leading to failures in downstream tasks, which can</text>
+<text top="875" left="479" width="350" height="13" font="4">significantly impact user experience and system reliability.</text>
+<text top="895" left="494" width="343" height="13" font="4">To address the above limitations, we propose a novel end-</text>
+<text top="911" left="479" width="358" height="13" font="4">to-end model to realize robust grounding and parsing within</text>
+<text top="928" left="479" width="358" height="13" font="4">a model. Specifically, we design a route-then-predict frame-</text>
+<text top="944" left="479" width="358" height="13" font="4">work to efficiently process both vision and language infor-</text>
+<text top="961" left="479" width="358" height="13" font="4">mation, consisting of an MLLM, a token router, a vision</text>
+<text top="977" left="479" width="358" height="13" font="4">adapter, a coordinate decoder, and an additional element</text>
+<text top="994" left="479" width="358" height="13" font="4">matcher for training phase only. The output tokens from the</text>
+<text top="1010" left="479" width="358" height="13" font="4">MLLM are classified by the token router into text tokens and</text>
+<text top="1026" left="479" width="358" height="13" font="4">visual grounding tokens. Text tokens are decoded into ele-</text>
+<text top="1043" left="479" width="358" height="13" font="4">ment semantics, while visual grounding tokens, combined</text>
+<text top="823" left="48" width="0" height="27" font="10">arXiv:2509.04908v1  [cs.AI]  5 Sep 2025</text>
+</page>
+<page number="2" position="absolute" top="0" left="0" height="1188" width="918">
+	<fontspec id="11" size="10" family="AAAAAC+TimesNewRomanPSMT" color="#000000"/>
+	<fontspec id="12" size="10" family="AAAAAE+TimesNewRomanPS" color="#000000"/>
+	<fontspec id="13" size="10" family="AAAAAC+TimesNewRomanPSMT" color="#548235"/>
+	<fontspec id="14" size="10" family="AAAAAC+TimesNewRomanPSMT" color="#7030a0"/>
+	<fontspec id="15" size="11" family="AAAAAG+TimesNewRomanPSMT" color="#000000"/>
+	<fontspec id="16" size="9" family="AAAAAI+TimesNewRomanPSMT" color="#000000"/>
+	<fontspec id="17" size="9" family="AAAAAI+TimesNewRomanPSMT" color="#c00000"/>
+	<fontspec id="18" size="9" family="AAAAAK+SimSun" color="#000000"/>
+	<fontspec id="19" size="9" family="AAAAAI+TimesNewRomanPSMT" color="#0070c0"/>
+	<fontspec id="20" size="7" family="AAAAAM+TimesNewRomanPSMT" color="#548235"/>
+	<fontspec id="21" size="7" family="AAAAAM+TimesNewRomanPSMT" color="#7030a0"/>
+	<fontspec id="22" size="10" family="AAAAAC+TimesNewRomanPSMT" color="#7f7f7f"/>
+	<fontspec id="23" size="11" family="AAAAAN+ComicSansMS" color="#ff0000"/>
+	<fontspec id="24" size="11" family="AAAAAN+ComicSansMS" color="#548235"/>
+	<fontspec id="25" size="11" family="AAAAAN+ComicSansMS" color="#7f7f7f"/>
+	<fontspec id="26" size="10" family="AAAAAO+Chalkboard" color="#000000"/>
+	<fontspec id="27" size="11" family="AAAAAN+ComicSansMS" color="#ffadf2"/>
+	<fontspec id="28" size="11" family="AAAAAN+ComicSansMS" color="#843c0c"/>
+	<fontspec id="29" size="7" family="AAAAAM+TimesNewRomanPSMT" color="#7f7f7f"/>
+	<fontspec id="30" size="15" family="OSUYTG+CMR10" color="#000000"/>
+	<fontspec id="31" size="16" family="CLYLVV+NimbusRomNo9L-Medi" color="#000000"/>
+<image top="131" left="607" width="45" height="101" src="/home/fang/Harmony/文献/应用测试与质量/H037-H039_中文翻译/assets/H039/H039-2_1.jpg"/>
+<image top="170" left="604" width="28" height="22" src="/home/fang/Harmony/文献/应用测试与质量/H037-H039_中文翻译/assets/H039/H039-2_2.jpg"/>
+<image top="81" left="169" width="26" height="26" src="/home/fang/Harmony/文献/应用测试与质量/H037-H039_中文翻译/assets/H039/H039-2_3.png"/>
+<image top="191" left="421" width="26" height="26" src="/home/fang/Harmony/文献/应用测试与质量/H037-H039_中文翻译/assets/H039/H039-2_4.jpg"/>
+<image top="81" left="83" width="82" height="183" src="/home/fang/Harmony/文献/应用测试与质量/H037-H039_中文翻译/assets/H039/H039-2_5.jpg"/>
+<image top="86" left="541" width="26" height="26" src="/home/fang/Harmony/文献/应用测试与质量/H037-H039_中文翻译/assets/H039/H039-2_6.png"/>
+<image top="165" left="203" width="21" height="22" src="/home/fang/Harmony/文献/应用测试与质量/H037-H039_中文翻译/assets/H039/H039-2_7.jpg"/>
+<image top="121" left="811" width="26" height="26" src="/home/fang/Harmony/文献/应用测试与质量/H037-H039_中文翻译/assets/H039/H039-2_8.jpg"/>
+<image top="246" left="203" width="22" height="22" src="/home/fang/Harmony/文献/应用测试与质量/H037-H039_中文翻译/assets/H039/H039-2_9.png"/>
+<image top="230" left="472" width="21" height="22" src="/home/fang/Harmony/文献/应用测试与质量/H037-H039_中文翻译/assets/H039/H039-2_10.png"/>
+<image top="241" left="698" width="22" height="22" src="/home/fang/Harmony/文献/应用测试与质量/H037-H039_中文翻译/assets/H039/H039-2_11.png"/>
+<image top="126" left="421" width="26" height="26" src="/home/fang/Harmony/文献/应用测试与质量/H037-H039_中文翻译/assets/H039/H039-2_12.jpg"/>
+<image top="122" left="472" width="26" height="26" src="/home/fang/Harmony/文献/应用测试与质量/H037-H039_中文翻译/assets/H039/H039-2_13.jpg"/>
+<image top="131" left="659" width="47" height="102" src="/home/fang/Harmony/文献/应用测试与质量/H037-H039_中文翻译/assets/H039/H039-2_14.jpg"/>
+<image top="170" left="657" width="28" height="22" src="/home/fang/Harmony/文献/应用测试与质量/H037-H039_中文翻译/assets/H039/H039-2_15.jpg"/>
+<image top="189" left="665" width="72" height="55" src="/home/fang/Harmony/文献/应用测试与质量/H037-H039_中文翻译/assets/H039/H039-2_16.png"/>
+<image top="72" left="666" width="137" height="295" src="/home/fang/Harmony/文献/应用测试与质量/H037-H039_中文翻译/assets/H039/H039-2_17.jpg"/>
+<image top="189" left="577" width="72" height="55" src="/home/fang/Harmony/文献/应用测试与质量/H037-H039_中文翻译/assets/H039/H039-2_18.png"/>
+<image top="72" left="578" width="133" height="293" src="/home/fang/Harmony/文献/应用测试与质量/H037-H039_中文翻译/assets/H039/H039-2_19.jpg"/>
+<text top="99" left="213" width="209" height="11" font="11">Please provide the position of command in this user </text>
+<text top="111" left="213" width="43" height="11" font="11">interface : </text>
+<text top="111" left="256" width="65" height="11" font="12"><b>transfer money</b></text>
+<text top="111" left="321" width="5" height="11" font="11">, </text>
+<text top="111" left="326" width="124" height="11" font="12"><b>scan QR code, play the music</b></text>
+<text top="111" left="450" width="2" height="11" font="11">.</text>
+<text top="206" left="217" width="67" height="11" font="12"><b>transfer money </b></text>
+<text top="206" left="284" width="20" height="11" font="13">box1</text>
+<text top="218" left="217" width="61" height="11" font="12"><b>scan QR code </b></text>
+<text top="218" left="278" width="20" height="11" font="14">box2</text>
+<text top="230" left="217" width="64" height="11" font="12"><b>play the music </b></text>
+<text top="230" left="281" width="115" height="11" font="11">doesn’t exist on the interface</text>
+<text top="271" left="98" width="354" height="12" font="15">(a) Multi-target Grounding and Rejection of Non-existent Elements Grounding</text>
+<text top="104" left="586" width="186" height="11" font="11">Please parse all elements in this user interface.</text>
+<text top="138" left="514" width="56" height="10" font="16">add new place </text>
+<text top="138" left="570" width="21" height="10" font="17">icon1</text>
+<text top="149" left="514" width="41" height="10" font="16">AC010ML</text>
+<text top="150" left="555" width="19" height="9" font="18">的家</text>
+<text top="149" left="574" width="2" height="10" font="16"> </text>
+<text top="149" left="576" width="19" height="10" font="19">text1</text>
+<text top="160" left="514" width="37" height="10" font="16">6 devices </text>
+<text top="160" left="551" width="19" height="10" font="19">text2</text>
+<text top="172" left="514" width="9" height="10" font="16">…</text>
+<text top="183" left="514" width="28" height="10" font="16">Scenes </text>
+<text top="183" left="542" width="25" height="10" font="17">icon10</text>
+<text top="194" left="514" width="28" height="10" font="16">Scenes </text>
+<text top="194" left="542" width="23" height="10" font="19">text19</text>
+<text top="205" left="514" width="15" height="10" font="16">Me </text>
+<text top="205" left="529" width="25" height="10" font="17">icon11</text>
+<text top="216" left="514" width="15" height="10" font="16">Me </text>
+<text top="216" left="529" width="23" height="10" font="19">text20</text>
+<text top="271" left="606" width="101" height="12" font="15">(b) Screenshot Parsing</text>
+<text top="138" left="722" width="56" height="10" font="16">add new place </text>
+<text top="138" left="777" width="21" height="10" font="17">icon1</text>
+<text top="149" left="717" width="41" height="10" font="16">AC010ML</text>
+<text top="150" left="758" width="19" height="9" font="18">的家</text>
+<text top="149" left="777" width="2" height="10" font="16"> </text>
+<text top="149" left="779" width="19" height="10" font="19">text1</text>
+<text top="160" left="727" width="50" height="10" font="16">choose place </text>
+<text top="160" left="777" width="21" height="10" font="17">icon2</text>
+<text top="172" left="742" width="37" height="10" font="16">6 devices </text>
+<text top="172" left="779" width="19" height="10" font="19">text2</text>
+<text top="183" left="788" width="9" height="10" font="16">…</text>
+<text top="194" left="744" width="28" height="10" font="16">Scenes </text>
+<text top="194" left="772" width="25" height="10" font="17">icon14</text>
+<text top="205" left="746" width="28" height="10" font="16">Scenes </text>
+<text top="205" left="775" width="23" height="10" font="19">text21</text>
+<text top="216" left="758" width="15" height="10" font="16">Me </text>
+<text top="216" left="772" width="25" height="10" font="17">icon15</text>
+<text top="227" left="760" width="15" height="10" font="16">Me </text>
+<text top="227" left="775" width="23" height="10" font="19">text22</text>
+<text top="114" left="134" width="15" height="8" font="20">box1</text>
+<text top="114" left="86" width="15" height="8" font="21">box2</text>
+<text top="137" left="309" width="61" height="11" font="12"><b>scan QR code </b></text>
+<text top="137" left="370" width="20" height="11" font="14">box2</text>
+<text top="149" left="309" width="64" height="11" font="12"><b>play the music </b></text>
+<text top="149" left="373" width="20" height="11" font="22">box3</text>
+<text top="169" left="206" width="19" height="14" font="23">      </text>
+<text top="169" left="225" width="80" height="14" font="24">Missing targets,</text>
+<text top="169" left="305" width="3" height="14" font="23"> </text>
+<text top="169" left="308" width="120" height="14" font="25">and providing irrelevant </text>
+<text top="181" left="206" width="165" height="14" font="25">outputs for non-existent targets.</text>
+<text top="216" left="423" width="21" height="13" font="26">Ours</text>
+<text top="119" left="789" width="21" height="13" font="26">Ours</text>
+<text top="119" left="502" width="56" height="13" font="26">Qwen2.5-VL</text>
+<text top="250" left="207" width="233" height="14" font="23">      Correctly handling all elements in command.</text>
+<text top="234" left="493" width="87" height="14" font="24">Missing elements,</text>
+<text top="234" left="580" width="3" height="14" font="23"> </text>
+<text top="247" left="493" width="101" height="14" font="27">redundant elements,</text>
+<text top="247" left="594" width="3" height="14" font="23"> </text>
+<text top="259" left="493" width="114" height="14" font="28">and locating deviations.</text>
+<text top="245" left="721" width="100" height="14" font="23">Parsing all elements </text>
+<text top="258" left="721" width="54" height="14" font="23">accurately.</text>
+<text top="151" left="407" width="56" height="13" font="26">Qwen2.5-VL</text>
+<text top="145" left="101" width="15" height="8" font="29">box3</text>
+<text top="307" left="81" width="756" height="13" font="4">Figure 1: A demonstration of multi-target grounding, rejection of non-existent elements grounding, and parsing on Qwen2.5-</text>
+<text top="324" left="81" width="78" height="13" font="4">VL and ours.</text>
+<text top="374" left="81" width="358" height="13" font="4">with visual features from the vision adapter, are processed</text>
+<text top="390" left="81" width="358" height="13" font="4">by the coordinate decoder for localization. The lightweight</text>
+<text top="407" left="81" width="358" height="13" font="4">coordinate decoder bridges the gap between the probability-</text>
+<text top="423" left="81" width="358" height="13" font="4">based discrete generation of the MLLM and the continuous</text>
+<text top="439" left="81" width="358" height="13" font="4">characteristic of image space, and provides higher-precision</text>
+<text top="456" left="81" width="358" height="13" font="4">grounding ability and more efficient inference. The element</text>
+<text top="472" left="81" width="358" height="13" font="4">matcher is utilized to ensure that element semantics and co-</text>
+<text top="489" left="81" width="358" height="13" font="4">ordinates are correctly matched for multi-target grounding</text>
+<text top="505" left="81" width="358" height="13" font="4">and parsing of user interfaces. Leveraging self-constructed</text>
+<text top="522" left="81" width="358" height="13" font="4">parsing datasets, we train our model for parsing to extract</text>
+<text top="538" left="81" width="358" height="13" font="4">a comprehensive representation of all elements, including</text>
+<text top="554" left="81" width="358" height="13" font="4">their semantics and corresponding locations, empowering</text>
+<text top="571" left="81" width="358" height="13" font="4">our model with parsing capability on the entire user in-</text>
+<text top="587" left="81" width="358" height="13" font="4">terface. Besides, we also introduce reject tokens to repre-</text>
+<text top="604" left="81" width="358" height="13" font="4">sent elements that do not exist in the user interface. When</text>
+<text top="620" left="81" width="358" height="13" font="4">reject tokens appear, their coordinate decoding process is</text>
+<text top="637" left="81" width="358" height="13" font="4">skipped straightforwardly, avoiding unnecessary computa-</text>
+<text top="653" left="81" width="358" height="13" font="4">tions and reducing the risk of generating incorrect coordi-</text>
+<text top="670" left="81" width="358" height="13" font="4">nates. A demonstration of robust grounding and interface</text>
+<text top="686" left="81" width="158" height="13" font="4">parsing is shown in Fig. 1.</text>
+<text top="702" left="96" width="343" height="13" font="4">To summarize, our main contributions are listed as follow:</text>
+<text top="724" left="88" width="351" height="13" font="4">• To the best of our knowledge, we are the first to introduce</text>
+<text top="740" left="100" width="338" height="13" font="4">an end-to-end MLLM for GUI perception, which simul-</text>
+<text top="757" left="100" width="338" height="13" font="4">taneously achieves robust grounding and parsing on user</text>
+<text top="773" left="100" width="338" height="13" font="4">interfaces, providing a comprehensive perception of se-</text>
+<text top="790" left="100" width="137" height="13" font="4">mantics and structures.</text>
+<text top="809" left="88" width="351" height="13" font="4">• A novel route-then-predict framework by transforming</text>
+<text top="826" left="100" width="338" height="13" font="4">discrete vocabulary coordinate modeling into continu-</text>
+<text top="842" left="100" width="338" height="13" font="4">ous spatial coordinate values is proposed for better GUI</text>
+<text top="859" left="100" width="338" height="13" font="4">grounding and parsing. By processing semantics and</text>
+<text top="875" left="100" width="338" height="13" font="4">coordinates of the element separately, our method im-</text>
+<text top="892" left="100" width="250" height="13" font="4">proves precision in grounding by around</text>
+<text top="891" left="356" width="20" height="13" font="30">3%</text>
+<text top="892" left="381" width="58" height="13" font="4">averagely</text>
+<text top="908" left="100" width="249" height="13" font="4">and speeds up grounding and parsing by</text>
+<text top="908" left="355" width="7" height="13" font="30">5</text>
+<text top="908" left="367" width="59" height="13" font="4">times and</text>
+<text top="908" left="431" width="7" height="13" font="30">4</text>
+<text top="925" left="100" width="101" height="13" font="4">times in average.</text>
+<text top="944" left="88" width="351" height="13" font="4">• We propose a benchmark for GUI parsing, ScreenParse,</text>
+<text top="961" left="100" width="338" height="13" font="4">which provides an evaluation for the performance of</text>
+<text top="977" left="100" width="338" height="13" font="4">models in both locating specific elements and perceiving</text>
+<text top="994" left="100" width="338" height="13" font="4">the overall structure of user interfaces. Moreover, metrics</text>
+<text top="1010" left="100" width="338" height="13" font="4">including element recall, element precision and seman-</text>
+<text top="1026" left="100" width="338" height="13" font="4">tic similarity are proposed for quantitative evaluation of</text>
+<text top="1043" left="100" width="48" height="13" font="4">parsing.</text>
+<text top="374" left="486" width="351" height="13" font="4">• The ability of multi-target grounding and rejection of</text>
+<text top="390" left="499" width="338" height="13" font="4">non-existent elements on user interfaces are also in-</text>
+<text top="407" left="499" width="338" height="13" font="4">troduced, enhancing robustness and reliability for real-</text>
+<text top="423" left="499" width="98" height="13" font="4">world scenarios.</text>
+<text top="467" left="588" width="9" height="16" font="1">2</text>
+<text top="467" left="615" width="114" height="16" font="1">Related Works</text>
+<text top="495" left="479" width="20" height="15" font="31">2.1</text>
+<text top="495" left="516" width="120" height="15" font="31">General MLLMs</text>
+<text top="521" left="479" width="358" height="13" font="4">Recent years have witnessed rapid progress in General</text>
+<text top="538" left="479" width="358" height="13" font="4">MLLMs. GPT-4V (Yang et al. 2023) and Gemini (Team</text>
+<text top="554" left="479" width="358" height="13" font="4">et al. 2023) boosted performance via massive web-scale data</text>
+<text top="571" left="479" width="358" height="13" font="4">and reinforcement learning from human feedback, achieving</text>
+<text top="587" left="479" width="358" height="13" font="4">strong zero-shot visual understanding and reasoning. Later,</text>
+<text top="604" left="479" width="358" height="13" font="4">open-source models such as LLaVA (Liu et al. 2023), Qwen-</text>
+<text top="620" left="479" width="358" height="13" font="4">VL (Bai et al. 2023) and InternVL (Chen et al. 2024b)</text>
+<text top="636" left="479" width="358" height="13" font="4">leveraged instruction-tuning on curated datasets to align</text>
+<text top="653" left="479" width="358" height="13" font="4">LLMs with visual inputs efficiently. They fused vision en-</text>
+<text top="669" left="479" width="358" height="13" font="4">coders and language decoders end-to-end, supporting di-</text>
+<text top="686" left="479" width="358" height="13" font="4">verse modalities including audio and video. Despite these</text>
+<text top="702" left="479" width="358" height="13" font="4">advances, general MLLMs are mainly trained on natual im-</text>
+<text top="719" left="479" width="358" height="13" font="4">ages rather than GUI images, exhibiting limited perceptual</text>
+<text top="735" left="479" width="218" height="13" font="4">capability in GUI-specific scenarios.</text>
+<text top="770" left="479" width="20" height="15" font="31">2.2</text>
+<text top="770" left="516" width="198" height="15" font="31">MLLMs for GUI Perception</text>
+<text top="796" left="479" width="358" height="13" font="4">To achieve GUI perception, several representative works</text>
+<text top="813" left="479" width="358" height="13" font="4">(Cheng et al. 2024; Gou et al. 2024; Wu et al. 2024; Yang</text>
+<text top="829" left="479" width="358" height="13" font="4">et al. 2024; You et al. 2024; Xu et al. 2024; Qin et al.</text>
+<text top="846" left="479" width="358" height="13" font="4">2025) have explored to fine-tune MLLMs with large-scale</text>
+<text top="862" left="479" width="358" height="13" font="4">text-position pairs extracted from user interfaces. Seeclick</text>
+<text top="878" left="479" width="358" height="13" font="4">(Cheng et al. 2024) achieved automatic GUI perception</text>
+<text top="895" left="479" width="358" height="13" font="4">solely based on user interfaces for the first time, and pro-</text>
+<text top="911" left="479" width="358" height="13" font="4">posed a multi-platform benchmark to evaluate GUI ground-</text>
+<text top="928" left="479" width="358" height="13" font="4">ing. Ferret-UI series (You et al. 2024; Li et al. 2024) used</text>
+<text top="944" left="479" width="358" height="13" font="4">a dynamic resolution strategy to magnify the interface de-</text>
+<text top="961" left="479" width="358" height="13" font="4">tails to enhance visual perception. Aguvis (Xu et al. 2024)</text>
+<text top="977" left="479" width="358" height="13" font="4">and UI-TARS (Qin et al. 2025) collected a large amount of</text>
+<text top="994" left="479" width="358" height="13" font="4">annotated data and utilized reasoning paradigms to achieve</text>
+<text top="1010" left="479" width="358" height="13" font="4">stronger GUI perception capabilities. To fully utilize the se-</text>
+<text top="1026" left="479" width="358" height="13" font="4">mantic and location information of elements in the user in-</text>
+<text top="1043" left="479" width="358" height="13" font="4">terface, OmniParser (Wan et al. 2024) leveraged powerful</text>
+</page>
+<page number="3" position="absolute" top="0" left="0" height="1188" width="918">
+	<fontspec id="32" size="16" family="AAAAAC+TimesNewRomanPSMT" color="#000000"/>
+	<fontspec id="33" size="14" family="AAAAAE+TimesNewRomanPSMT" color="#000000"/>
+	<fontspec id="34" size="14" family="AAAAAG+AppleColorEmoji" color="#000000" opacity="0.000000"/>
+	<fontspec id="35" size="16" family="AAAAAI+AppleColorEmoji" color="#000000" opacity="0.000000"/>
+	<fontspec id="36" size="13" family="AAAAAK+TimesNewRomanPS" color="#000000"/>
+	<fontspec id="37" size="13" family="AAAAAM+TimesNewRomanPSMT" color="#767171"/>
+	<fontspec id="38" size="13" family="AAAAAM+TimesNewRomanPSMT" color="#d43a4e"/>
+	<fontspec id="39" size="13" family="AAAAAM+TimesNewRomanPSMT" color="#4ba7e6"/>
+	<fontspec id="40" size="13" family="AAAAAO+TimesNewRomanPS" color="#000000"/>
+	<fontspec id="41" size="13" family="AAAAAQ+TimesNewRomanPS" color="#000000"/>
+	<fontspec id="42" size="13" family="AAAAAM+TimesNewRomanPSMT" color="#000000"/>
+	<fontspec id="43" size="13" family="AAAAAS+AppleColorEmoji" color="#000000" opacity="0.000000"/>
+	<fontspec id="44" size="15" family="YMSUVU+CMMI10" color="#000000"/>
+	<fontspec id="45" size="10" family="BPHYUP+CMMI7" color="#000000"/>
+	<fontspec id="46" size="10" family="ZSUQOW+CMTI7" color="#000000"/>
+<image top="215" left="331" width="14" height="14" src="/home/fang/Harmony/文献/应用测试与质量/H037-H039_中文翻译/assets/H039/H039-3_1.png"/>
+<image top="177" left="470" width="14" height="14" src="/home/fang/Harmony/文献/应用测试与质量/H037-H039_中文翻译/assets/H039/H039-3_2.png"/>
+<image top="359" left="320" width="16" height="16" src="/home/fang/Harmony/文献/应用测试与质量/H037-H039_中文翻译/assets/H039/H039-3_3.png"/>
+<image top="359" left="448" width="16" height="16" src="/home/fang/Harmony/文献/应用测试与质量/H037-H039_中文翻译/assets/H039/H039-3_4.png"/>
+<image top="106" left="119" width="115" height="238" src="/home/fang/Harmony/文献/应用测试与质量/H037-H039_中文翻译/assets/H039/H039-3_5.png"/>
+<image top="111" left="124" width="106" height="229" src="/home/fang/Harmony/文献/应用测试与质量/H037-H039_中文翻译/assets/H039/H039-3_6.jpg"/>
+<image top="249" left="257" width="13" height="13" src="/home/fang/Harmony/文献/应用测试与质量/H037-H039_中文翻译/assets/H039/H039-3_7.png"/>
+<image top="264" left="256" width="13" height="13" src="/home/fang/Harmony/文献/应用测试与质量/H037-H039_中文翻译/assets/H039/H039-3_8.png"/>
+<image top="84" left="674" width="115" height="238" src="/home/fang/Harmony/文献/应用测试与质量/H037-H039_中文翻译/assets/H039/H039-3_9.png"/>
+<image top="89" left="679" width="106" height="229" src="/home/fang/Harmony/文献/应用测试与质量/H037-H039_中文翻译/assets/H039/H039-3_10.jpg"/>
+<image top="177" left="275" width="14" height="14" src="/home/fang/Harmony/文献/应用测试与质量/H037-H039_中文翻译/assets/H039/H039-3_11.png"/>
+<image top="177" left="437" width="14" height="14" src="/home/fang/Harmony/文献/应用测试与质量/H037-H039_中文翻译/assets/H039/H039-3_12.png"/>
+<image top="214" left="599" width="14" height="14" src="/home/fang/Harmony/文献/应用测试与质量/H037-H039_中文翻译/assets/H039/H039-3_13.png"/>
+<text top="88" left="458" width="100" height="18" font="32">user instruction</text>
+<text top="153" left="439" width="48" height="18" font="32">MLLM</text>
+<text top="177" left="479" width="149" height="16" font="33">  Tokenizer &amp; Embedding</text>
+<text top="177" left="275" width="107" height="16" font="33">     Vision Encoder</text>
+<text top="215" left="331" width="14" height="19" font="34">❄</text>
+<text top="177" left="470" width="14" height="19" font="34">❄</text>
+<text top="214" left="377" width="134" height="16" font="33">Large Language Model</text>
+<text top="373" left="280" width="37" height="16" font="33">Vision</text>
+<text top="390" left="276" width="46" height="16" font="33">Adapter</text>
+<text top="359" left="320" width="16" height="21" font="35">🔥</text>
+<text top="284" left="464" width="78" height="16" font="33">Token Router</text>
+<text top="374" left="386" width="67" height="16" font="33">Coordinate </text>
+<text top="391" left="393" width="49" height="16" font="33">Decoder</text>
+<text top="359" left="448" width="16" height="21" font="35">🔥</text>
+<text top="342" left="616" width="41" height="16" font="33">decode</text>
+<text top="346" left="673" width="81" height="14" font="36"><b>buy the tickets </b></text>
+<text top="346" left="754" width="20" height="14" font="37">null</text>
+<text top="361" left="673" width="80" height="14" font="36"><b>play the music </b></text>
+<text top="376" left="673" width="115" height="14" font="38">[0.75, 0.85, 0.82, 0.88]</text>
+<text top="391" left="673" width="99" height="14" font="36"><b>check my account </b></text>
+<text top="406" left="673" width="115" height="14" font="39">[0.85, 0.11, 0.96, 0.16]</text>
+<text top="324" left="738" width="51" height="16" font="33">visualize</text>
+<text top="114" left="356" width="206" height="14" font="40"><i>Please provide the position of command:</i></text>
+<text top="114" left="562" width="77" height="14" font="41"><i><b> buy the tickets</b></i></text>
+<text top="114" left="640" width="6" height="14" font="40"><i>, </i></text>
+<text top="129" left="356" width="75" height="14" font="41"><i><b>play the music</b></i></text>
+<text top="129" left="431" width="6" height="14" font="40"><i>, </i></text>
+<text top="129" left="437" width="93" height="14" font="41"><i><b>check my account</b></i></text>
+<text top="129" left="530" width="3" height="14" font="40"><i>.</i></text>
+<text top="363" left="535" width="48" height="16" font="33">Element</text>
+<text top="380" left="535" width="48" height="16" font="33">Matcher</text>
+<text top="293" left="282" width="63" height="14" font="42">[REJ] Token</text>
+<text top="250" left="257" width="13" height="16" font="43">❄</text>
+<text top="250" left="282" width="35" height="14" font="42">Frozen</text>
+<text top="264" left="256" width="13" height="16" font="43">🔥</text>
+<text top="265" left="282" width="48" height="14" font="42">Trainable</text>
+<text top="308" left="282" width="61" height="14" font="42">[VG] Token</text>
+<text top="279" left="282" width="56" height="14" font="42">Text Token</text>
+<text top="353" left="149" width="55" height="14" font="42">Train Only</text>
+<text top="372" left="149" width="76" height="14" font="42">Inference Only</text>
+<text top="391" left="149" width="90" height="14" font="42">Train &amp; Inference</text>
+<text top="177" left="275" width="14" height="19" font="34">❄</text>
+<text top="178" left="402" width="36" height="16" font="33">LoRA</text>
+<text top="177" left="437" width="14" height="19" font="34">🔥</text>
+<text top="215" left="564" width="36" height="16" font="33">LoRA</text>
+<text top="215" left="599" width="14" height="19" font="34">🔥</text>
+<text top="88" left="134" width="87" height="18" font="32">user interface</text>
+<text top="444" left="81" width="756" height="13" font="4">Figure 2: Overall architecture of SparkUI-Parser. A token router first classifies output tokens of the MLLM into text and special</text>
+<text top="461" left="81" width="756" height="13" font="4">tokens ([VG] and [REJ]). Text tokens are handled by the MLLM. Features of [VG] tokens and vision-adapter features are jointly</text>
+<text top="477" left="81" width="756" height="13" font="4">decoded for exact coordinates, while [REJ] tokens are discarded. An element matcher aligns predicted elements with ground</text>
+<text top="494" left="81" width="412" height="13" font="4">truth during training to avoid the impact of generated elements order.</text>
+<text top="543" left="81" width="358" height="13" font="4">expert models to extract icons and texts, after which GPT-</text>
+<text top="560" left="81" width="358" height="13" font="4">4V (Yang et al. 2023) was applied to generate function of</text>
+<text top="576" left="81" width="82" height="13" font="4">each element.</text>
+<text top="595" left="96" width="343" height="13" font="4">Although they have made some progress, the following</text>
+<text top="611" left="81" width="358" height="13" font="4">issues still exist: 1) They only achieved grounding of pre-</text>
+<text top="628" left="81" width="358" height="13" font="4">defined elements and could not response correctly when a</text>
+<text top="644" left="81" width="358" height="13" font="4">non-existent element is required to be located. 2) Their way</text>
+<text top="661" left="81" width="358" height="13" font="4">of modeling coordinates is discrete, sacrificing both ground-</text>
+<text top="677" left="81" width="358" height="13" font="4">ing precision and inference speed. 3) They cannot achieve</text>
+<text top="694" left="81" width="358" height="13" font="4">parsing on the entire interface or require the use of addi-</text>
+<text top="710" left="81" width="358" height="13" font="4">tional tools to complete parsing in a non-end-to-end method.</text>
+<text top="726" left="81" width="358" height="13" font="4">We propose an end-to-end and continuous modeling of co-</text>
+<text top="743" left="81" width="358" height="13" font="4">ordinates framework to enable parsing all elements from a</text>
+<text top="759" left="81" width="358" height="13" font="4">user interface and deal with non-existent elements correctly,</text>
+<text top="776" left="81" width="358" height="13" font="4">providing an high-precision, efficient and effective percep-</text>
+<text top="792" left="81" width="135" height="13" font="4">tion of GUI interfaces.</text>
+<text top="832" left="217" width="9" height="16" font="1">3</text>
+<text top="832" left="243" width="60" height="16" font="1">Method</text>
+<text top="862" left="81" width="358" height="13" font="4">Current MLLMs-based GUI perception methods usually</text>
+<text top="878" left="81" width="358" height="13" font="4">generate coordinates in the form of discrete text tokens. This</text>
+<text top="895" left="81" width="358" height="13" font="4">discrete representation based on vocabulary mapping could</text>
+<text top="911" left="81" width="358" height="13" font="4">lead to grounding inaccuracy to some extent, resulting in a</text>
+<text top="928" left="81" width="358" height="13" font="4">performance gap compared to traditional visual grounding</text>
+<text top="944" left="81" width="358" height="13" font="4">methods based on continuous spatial coordinate regression.</text>
+<text top="961" left="81" width="358" height="13" font="4">To reduce the gap and improve accuracy, we design an ef-</text>
+<text top="977" left="81" width="358" height="13" font="4">ficient route-then-predict framework that decouples seman-</text>
+<text top="994" left="81" width="358" height="13" font="4">tic understanding and coordinate optimization, while lever-</text>
+<text top="1010" left="81" width="358" height="13" font="4">aging the native spatial perception capabilities of MLLMs</text>
+<text top="1026" left="81" width="358" height="13" font="4">without injecting additional perception modules. The over-</text>
+<text top="1043" left="81" width="337" height="13" font="4">all architecture of SparkUI-Parser is illustrated in Fig. 2.</text>
+<text top="542" left="479" width="20" height="15" font="31">3.1</text>
+<text top="542" left="516" width="137" height="15" font="31">Model Architecture</text>
+<text top="563" left="479" width="358" height="13" font="4">The framework is composed of an MLLM, a token router,</text>
+<text top="580" left="479" width="358" height="13" font="4">a vision adapter, a coordinate decoder, and an element</text>
+<text top="596" left="479" width="358" height="13" font="4">matcher. Given a user instruction and a user interface, the to-</text>
+<text top="613" left="479" width="358" height="13" font="4">ken router classifies the output tokens of the MLLM into text</text>
+<text top="629" left="479" width="358" height="13" font="4">tokens and special ones (including [VG] tokens and [REJ]</text>
+<text top="645" left="479" width="358" height="13" font="4">tokens). Subsequently, multimodal features from both [VG]</text>
+<text top="662" left="479" width="358" height="13" font="4">tokens and vision adapter are fed into the coordinate decoder</text>
+<text top="678" left="479" width="358" height="13" font="4">for precise coordinate generation, while the [REJ] tokens</text>
+<text top="695" left="479" width="358" height="13" font="4">are simply discarded. The text tokens are decoded by de-</text>
+<text top="711" left="479" width="358" height="13" font="4">fault using MLLM. During the training phase, an element</text>
+<text top="728" left="479" width="358" height="13" font="4">matcher is employed to establish semantic and spatial corre-</text>
+<text top="744" left="479" width="358" height="13" font="4">spondence between predicted and ground-truth elements, ef-</text>
+<text top="761" left="479" width="358" height="13" font="4">fectively mitigating the affection of output order variations.</text>
+<text top="777" left="479" width="324" height="13" font="4">Next, we provide a detailed exposition of this process.</text>
+<text top="801" left="479" width="48" height="13" font="6">MLLM</text>
+<text top="801" left="542" width="295" height="13" font="4">Although the pre-trained MLLM have good mul-</text>
+<text top="818" left="479" width="358" height="13" font="4">timodal understanding capabilities, it lacks the ability to un-</text>
+<text top="834" left="479" width="358" height="13" font="4">derstand and locate GUI interfaces. In order to enhance the</text>
+<text top="851" left="479" width="358" height="13" font="4">GUI perception of MLLM, we fine-tune the vision and lan-</text>
+<text top="867" left="479" width="358" height="13" font="4">guage part of the pre-trained MLLM using LoRA (Hu et al.</text>
+<text top="884" left="479" width="164" height="13" font="4">2022). The user instruction</text>
+<text top="883" left="648" width="9" height="13" font="44">T</text>
+<text top="889" left="657" width="62" height="9" font="45">instruction</text>
+<text top="884" left="724" width="101" height="13" font="4">and the interface</text>
+<text top="883" left="829" width="7" height="13" font="44">I</text>
+<text top="900" left="479" width="262" height="13" font="4">are first processed by an fine-tuned MLLM</text>
+<text top="899" left="746" width="11" height="14" font="5">F</text>
+<text top="905" left="757" width="37" height="9" font="46">MLLM</text>
+<text top="900" left="801" width="36" height="13" font="4">to ob-</text>
+<text top="916" left="479" width="130" height="13" font="4">tain semantic features</text>
+<text top="916" left="613" width="7" height="13" font="44">f</text>
+<text top="922" left="621" width="30" height="9" font="45">token</text>
+<text top="916" left="655" width="12" height="13" font="4">as</text>
+<text top="938" left="553" width="7" height="13" font="44">f</text>
+<text top="944" left="560" width="30" height="9" font="45">token</text>
+<text top="938" left="595" width="12" height="13" font="30">=</text>
+<text top="938" left="611" width="11" height="14" font="5">F</text>
+<text top="944" left="622" width="37" height="9" font="46">MLLM</text>
+<text top="938" left="661" width="6" height="13" font="30">(</text>
+<text top="938" left="667" width="23" height="13" font="44">I, T</text>
+<text top="944" left="690" width="62" height="9" font="45">instruction</text>
+<text top="938" left="753" width="6" height="13" font="30">)</text>
+<text top="938" left="759" width="4" height="13" font="44">.</text>
+<text top="939" left="820" width="17" height="13" font="4">(1)</text>
+<text top="960" left="479" width="88" height="13" font="6">Token Router</text>
+<text top="961" left="582" width="255" height="13" font="4">To model continuous coordinates based on</text>
+<text top="977" left="479" width="358" height="13" font="4">discrete tokens, we divide the output tokens generated by</text>
+<text top="994" left="479" width="358" height="13" font="4">MLLM into semantic tokens and location tokens through a</text>
+<text top="1010" left="479" width="358" height="13" font="4">token router. Based on the logits of output tokens, we iden-</text>
+<text top="1026" left="479" width="358" height="13" font="4">tify location tokens, including [VG] tokens and [REJ] to-</text>
+<text top="1043" left="479" width="358" height="13" font="4">kens. [VG] tokens refer to bounding boxes for targets, and</text>
+</page>
+<page number="4" position="absolute" top="0" left="0" height="1188" width="918">
+	<fontspec id="47" size="11" family="AAAAAC+TimesNewRomanPS" color="#d43a4e"/>
+	<fontspec id="48" size="11" family="AAAAAE+TimesNewRomanPSMT" color="#000000"/>
+	<fontspec id="49" size="9" family="AAAAAG+DengXian" color="#000000"/>
+	<fontspec id="50" size="7" family="EDNOFP+CMR5" color="#000000"/>
+	<fontspec id="51" size="7" family="IEBOQU+CMMI5" color="#000000"/>
+	<fontspec id="52" size="9" family="AAAAAC+TimesNewRomanPSMT" color="#000000"/>
+	<fontspec id="53" size="7" family="AAAAAE+TimesNewRomanPS" color="#000000"/>
+	<fontspec id="54" size="7" family="AAAAAG+TimesNewRomanPSMT" color="#000000"/>
+	<fontspec id="55" size="13" family="AAAAAI+AppleColorEmoji" color="#1f2328" opacity="0.000000"/>
+	<fontspec id="56" size="9" family="AAAAAK+TimesNewRomanPS" color="#000000"/>
+	<fontspec id="57" size="8" family="AAAAAM+TimesNewRomanPSMT" color="#009600"/>
+	<fontspec id="58" size="8" family="AAAAAO+TimesNewRomanPS" color="#000000"/>
+	<fontspec id="59" size="8" family="AAAAAM+TimesNewRomanPSMT" color="#000000"/>
+	<fontspec id="60" size="8" family="AAAAAM+TimesNewRomanPSMT" color="#c00000"/>
+	<fontspec id="61" size="15" family="VBCCOZ+CMEX10" color="#000000"/>
+<image top="92" left="479" width="55" height="110" src="/home/fang/Harmony/文献/应用测试与质量/H037-H039_中文翻译/assets/H039/H039-4_1.jpg"/>
+<image top="174" left="541" width="13" height="13" src="/home/fang/Harmony/文献/应用测试与质量/H037-H039_中文翻译/assets/H039/H039-4_2.png"/>
+<image top="109" left="536" width="13" height="13" src="/home/fang/Harmony/文献/应用测试与质量/H037-H039_中文翻译/assets/H039/H039-4_3.png"/>
+<image top="205" left="480" width="54" height="110" src="/home/fang/Harmony/文献/应用测试与质量/H037-H039_中文翻译/assets/H039/H039-4_4.jpg"/>
+<image top="207" left="819" width="18" height="18" src="/home/fang/Harmony/文献/应用测试与质量/H037-H039_中文翻译/assets/H039/H039-4_5.jpg"/>
+<image top="226" left="818" width="11" height="12" src="/home/fang/Harmony/文献/应用测试与质量/H037-H039_中文翻译/assets/H039/H039-4_6.png"/>
+<image top="197" left="801" width="15" height="15" src="/home/fang/Harmony/文献/应用测试与质量/H037-H039_中文翻译/assets/H039/H039-4_7.png"/>
+<text top="174" left="407" width="20" height="13" font="47"><b>0.75</b></text>
+<text top="174" left="158" width="6" height="13" font="47"><b>0</b></text>
+<text top="174" left="176" width="3" height="13" font="47"><b>.</b></text>
+<text top="174" left="192" width="23" height="13" font="47"><b>7 5</b></text>
+<text top="126" left="97" width="106" height="13" font="48">Large Language Model</text>
+<text top="86" left="114" width="23" height="13" font="48">input</text>
+<text top="126" left="232" width="106" height="13" font="48">Large Language Model</text>
+<text top="86" left="260" width="23" height="13" font="48">input</text>
+<text top="158" left="327" width="58" height="13" font="48">[VG] feature</text>
+<text top="174" left="294" width="24" height="13" font="48">[VG]</text>
+<text top="86" left="315" width="62" height="13" font="48">vision feature</text>
+<text top="106" left="369" width="59" height="13" font="48">Transformer </text>
+<text top="120" left="383" width="27" height="13" font="48">Block</text>
+<text top="124" left="418" width="6" height="9" font="49">×</text>
+<text top="123" left="424" width="6" height="10" font="16">N</text>
+<text top="148" left="407" width="21" height="13" font="48">FFN</text>
+<text top="211" left="81" width="358" height="13" font="4">Figure 3: Comparison of the coordinate generation between</text>
+<text top="227" left="81" width="358" height="13" font="4">prior methods (left) and ours (right). We utilize features in-</text>
+<text top="244" left="81" width="358" height="13" font="4">stead of multiple discrete tokens to obtain continuous coor-</text>
+<text top="260" left="81" width="358" height="13" font="4">dinate values, thereby improving the precision of grounding</text>
+<text top="276" left="81" width="358" height="13" font="4">and speeding up the inference. Note that only one value is</text>
+<text top="293" left="81" width="358" height="13" font="4">displayed to simplify the visualization. In fact, a [VG] token</text>
+<text top="309" left="81" width="337" height="13" font="4">represents coordinates of a bounding box in our method.</text>
+<text top="358" left="81" width="358" height="13" font="4">[REJ] tokens refer to non-existent locations. The [REJ] to-</text>
+<text top="374" left="81" width="358" height="13" font="4">ken is later discarded, while the [VG] token requires further</text>
+<text top="391" left="81" width="358" height="13" font="4">processing to obtain accurate coordinates for each element.</text>
+<text top="407" left="81" width="358" height="13" font="4">The semantic tokens are decoded into natural language text</text>
+<text top="423" left="81" width="322" height="13" font="4">via standard autoregressive generation by the MLLM.</text>
+<text top="448" left="81" width="98" height="13" font="6">Vision Adapter</text>
+<text top="448" left="194" width="245" height="13" font="4">Instead of leveraging a large-scale exter-</text>
+<text top="465" left="81" width="358" height="13" font="4">nal vision encoder to provide visual features for accurately</text>
+<text top="481" left="81" width="358" height="13" font="4">pinpointing the location of elements within the GUI, we uti-</text>
+<text top="498" left="81" width="274" height="13" font="4">lize visual features from the vision encoder</text>
+<text top="497" left="361" width="11" height="14" font="5">F</text>
+<text top="503" left="372" width="21" height="9" font="46">ViE</text>
+<text top="498" left="402" width="37" height="13" font="4">of the</text>
+<text top="514" left="81" width="238" height="13" font="4">MLLM and fine-tune a vision adapter</text>
+<text top="513" left="325" width="11" height="14" font="5">F</text>
+<text top="519" left="336" width="40" height="9" font="46">adapter</text>
+<text top="514" left="384" width="54" height="13" font="4">for more</text>
+<text top="531" left="81" width="358" height="13" font="4">precise GUI-task-specific localization, which in turn outputs</text>
+<text top="547" left="81" width="148" height="13" font="4">enhanced vision features</text>
+<text top="547" left="232" width="7" height="13" font="44">f</text>
+<text top="552" left="240" width="34" height="9" font="45">vision</text>
+<text top="547" left="274" width="144" height="13" font="4">. It can be formulated as</text>
+<text top="572" left="168" width="7" height="13" font="44">f</text>
+<text top="577" left="175" width="34" height="9" font="45">vision</text>
+<text top="572" left="214" width="12" height="13" font="30">=</text>
+<text top="571" left="230" width="11" height="14" font="5">F</text>
+<text top="577" left="241" width="40" height="9" font="46">adapter</text>
+<text top="572" left="283" width="6" height="13" font="30">(</text>
+<text top="571" left="289" width="11" height="14" font="5">F</text>
+<text top="577" left="299" width="21" height="9" font="46">ViE</text>
+<text top="572" left="322" width="6" height="13" font="30">(</text>
+<text top="572" left="328" width="7" height="13" font="44">I</text>
+<text top="572" left="336" width="12" height="13" font="30">))</text>
+<text top="572" left="348" width="4" height="13" font="44">.</text>
+<text top="572" left="421" width="17" height="13" font="4">(2)</text>
+<text top="597" left="81" width="358" height="13" font="4">This allows consistent and efficient integration of visual in-</text>
+<text top="614" left="81" width="358" height="13" font="4">formation with the MLLM’s perception, enhancing the over-</text>
+<text top="630" left="81" width="281" height="13" font="4">all performance and adaptability of the system.</text>
+<text top="655" left="81" width="129" height="13" font="6">Coordinate Decoder</text>
+<text top="655" left="225" width="214" height="13" font="4">A lightweight coordinate decoder is</text>
+<text top="672" left="81" width="358" height="13" font="4">introduced to enable more precise generation of continuous</text>
+<text top="688" left="81" width="358" height="13" font="4">coordinate values. We extract the LLM’s last-layer embed-</text>
+<text top="705" left="81" width="358" height="13" font="4">ding corresponding to the [VG] token as text features. Along</text>
+<text top="721" left="81" width="358" height="13" font="4">with the vision features from the vision adpater, the text fea-</text>
+<text top="737" left="81" width="240" height="13" font="4">tures are fed into the coordinate decoder</text>
+<text top="736" left="325" width="11" height="14" font="5">F</text>
+<text top="743" left="336" width="45" height="9" font="46">deocoder</text>
+<text top="737" left="386" width="53" height="13" font="4">to obtain</text>
+<text top="754" left="81" width="222" height="13" font="4">the precise bounding box coordinates</text>
+<text top="753" left="307" width="12" height="14" font="5">O</text>
+<text top="759" left="319" width="29" height="9" font="46">BBox</text>
+<text top="754" left="353" width="85" height="13" font="4">for each target</text>
+<text top="770" left="81" width="254" height="13" font="4">element. The process can be formulated as</text>
+<text top="794" left="140" width="12" height="14" font="5">O</text>
+<text top="801" left="152" width="29" height="9" font="46">BBox</text>
+<text top="795" left="187" width="12" height="13" font="30">=</text>
+<text top="794" left="203" width="11" height="14" font="5">F</text>
+<text top="801" left="213" width="39" height="9" font="46">decoder</text>
+<text top="795" left="255" width="6" height="13" font="30">(</text>
+<text top="795" left="261" width="7" height="13" font="44">f</text>
+<text top="801" left="268" width="30" height="9" font="45">token</text>
+<text top="805" left="298" width="3" height="7" font="50">[</text>
+<text top="805" left="301" width="16" height="7" font="51">V G</text>
+<text top="805" left="317" width="3" height="7" font="50">]</text>
+<text top="795" left="322" width="14" height="13" font="44">, f</text>
+<text top="801" left="336" width="34" height="9" font="45">vision</text>
+<text top="795" left="370" width="6" height="13" font="30">)</text>
+<text top="795" left="376" width="4" height="13" font="44">.</text>
+<text top="795" left="421" width="17" height="13" font="4">(3)</text>
+<text top="821" left="81" width="358" height="13" font="4">The integration of visual and textual information enables the</text>
+<text top="837" left="81" width="358" height="13" font="4">model to leverage both the semantic understanding from the</text>
+<text top="853" left="81" width="358" height="13" font="4">text and the spatial perception from the visual features to ac-</text>
+<text top="870" left="81" width="358" height="13" font="4">curately pinpoint the location of elements within the GUI.</text>
+<text top="886" left="81" width="358" height="13" font="4">As shown in Fig. 3, by predicting the coordinate with a</text>
+<text top="903" left="81" width="358" height="13" font="4">transformer-based architecture, the limitation of vocabulary-</text>
+<text top="919" left="81" width="358" height="13" font="4">based prediction of the MLLM in continuous visual ground-</text>
+<text top="936" left="81" width="358" height="13" font="4">ing task is mitigated, improving grounding precision. On the</text>
+<text top="952" left="81" width="358" height="13" font="4">other hand, only one special token is required to generate</text>
+<text top="969" left="81" width="358" height="13" font="4">for a bounding box, compressing the tokens compared to di-</text>
+<text top="985" left="81" width="358" height="13" font="4">rectly output bounding box with MLLMs, thus speed up the</text>
+<text top="1001" left="81" width="287" height="13" font="4">inference speed for both grounding and parsing.</text>
+<text top="1026" left="81" width="111" height="13" font="6">Element Matcher</text>
+<text top="1026" left="207" width="232" height="13" font="4">It is observed that the inherent stochas-</text>
+<text top="1043" left="81" width="358" height="13" font="4">ticity in textual outputs poses challenges for accurate loss</text>
+<text top="106" left="544" width="39" height="10" font="52">Grounding </text>
+<text top="116" left="552" width="21" height="10" font="52">DINO</text>
+<text top="167" left="557" width="26" height="10" font="52">Paddle </text>
+<text top="178" left="560" width="18" height="10" font="52">OCR</text>
+<text top="98" left="600" width="16" height="8" font="53"><b>icon1</b></text>
+<text top="98" left="616" width="76" height="8" font="54"> [0.084,0.019,0.140,0.048]</text>
+<text top="107" left="600" width="7" height="8" font="53"><b>…</b></text>
+<text top="116" left="600" width="16" height="8" font="53"><b>icon5</b></text>
+<text top="116" left="616" width="78" height="8" font="54"> [0.740,0.714,0.919,0.806] </text>
+<text top="124" left="600" width="16" height="8" font="53"><b>icon6</b></text>
+<text top="124" left="616" width="76" height="8" font="54"> [0.088,0.901,0.902,0.963]</text>
+<text top="84" left="645" width="51" height="10" font="52">Detected Icons</text>
+<text top="109" left="536" width="13" height="17" font="55">🦕</text>
+<text top="200" left="754" width="23" height="10" font="56"><b>Step 1</b></text>
+<text top="200" left="777" width="23" height="10" font="52">: NMS</text>
+<text top="214" left="732" width="23" height="10" font="56"><b>Step 2</b></text>
+<text top="214" left="754" width="68" height="10" font="52">: MLLM Semantics</text>
+<text top="227" left="739" width="23" height="10" font="56"><b>Step 3</b></text>
+<text top="227" left="761" width="54" height="10" font="52">: Human Check</text>
+<text top="223" left="546" width="19" height="8" font="57">icon1 </text>
+<text top="223" left="565" width="21" height="8" font="58"><b>return</b></text>
+<text top="223" left="586" width="81" height="8" font="59"> [0.084,0.019,0.140,0.048]</text>
+<text top="232" left="546" width="15" height="8" font="60">text1</text>
+<text top="232" left="562" width="2" height="8" font="59"> </text>
+<text top="232" left="564" width="36" height="8" font="58"><b>Dashboard</b></text>
+<text top="232" left="600" width="81" height="8" font="59"> [0.076,0.078,0.426,0.120]</text>
+<text top="241" left="546" width="15" height="8" font="60">text2</text>
+<text top="241" left="562" width="2" height="8" font="59"> </text>
+<text top="241" left="564" width="41" height="8" font="58"><b>Focus mode </b></text>
+<text top="241" left="604" width="79" height="8" font="59">[0.456,0.078,0.911,0.120]</text>
+<text top="250" left="546" width="15" height="8" font="60">text3</text>
+<text top="250" left="562" width="2" height="8" font="59"> </text>
+<text top="250" left="564" width="71" height="8" font="58"><b>Put your phone away </b></text>
+<text top="250" left="635" width="79" height="8" font="59">[0.167,0.617,0.823,0.656]</text>
+<text top="259" left="546" width="8" height="8" font="59">…</text>
+<text top="268" left="546" width="17" height="8" font="57">icon5</text>
+<text top="268" left="563" width="2" height="8" font="59"> </text>
+<text top="268" left="565" width="70" height="8" font="58"><b>add a new focus time </b></text>
+<text top="268" left="636" width="79" height="8" font="59">[0.740,0.714,0.919,0.806]</text>
+<text top="278" left="546" width="19" height="8" font="60">text11</text>
+<text top="278" left="565" width="2" height="8" font="59"> </text>
+<text top="278" left="567" width="60" height="8" font="58"><b>Tap to try (1 min) </b></text>
+<text top="278" left="627" width="79" height="8" font="59">[0.369,0.856,0.622,0.879]</text>
+<text top="287" left="546" width="17" height="8" font="57">icon6</text>
+<text top="287" left="563" width="2" height="8" font="59"> </text>
+<text top="287" left="565" width="69" height="8" font="58"><b>Turn on Focus mode </b></text>
+<text top="287" left="634" width="79" height="8" font="59">[0.088,0.901,0.902,0.963]</text>
+<text top="296" left="546" width="19" height="8" font="60">text12</text>
+<text top="296" left="566" width="2" height="8" font="59"> </text>
+<text top="296" left="568" width="69" height="8" font="58"><b>Turn on Focus mode </b></text>
+<text top="296" left="636" width="79" height="8" font="59">[0.287,0.921,0.706,0.947]</text>
+<text top="161" left="600" width="36" height="8" font="53"><b>Dashboard </b></text>
+<text top="161" left="636" width="74" height="8" font="54">[0.076,0.078,0.911,0.120]</text>
+<text top="169" left="600" width="41" height="8" font="58"><b>Focus mode </b></text>
+<text top="169" left="641" width="79" height="8" font="59">[0.456,0.078,0.911,0.120]</text>
+<text top="179" left="600" width="7" height="8" font="54">…</text>
+<text top="187" left="600" width="64" height="8" font="53"><b>Turn on Focus mode </b></text>
+<text top="187" left="664" width="74" height="8" font="54">[0.287,0.921,0.706,0.947]</text>
+<text top="146" left="642" width="51" height="10" font="52">Detected Texts</text>
+<text top="331" left="479" width="358" height="13" font="4">Figure 4: Examples of data annotation in ScreenParse. Ele-</text>
+<text top="348" left="479" width="358" height="13" font="4">ment types, semantics, bounding boxes for all elements are</text>
+<text top="364" left="479" width="62" height="13" font="4">annotated.</text>
+<text top="424" left="479" width="358" height="13" font="4">computation during training due to potential element mis-</text>
+<text top="440" left="479" width="358" height="13" font="4">alignment between predictions and ground truth. To mitigate</text>
+<text top="457" left="479" width="358" height="13" font="4">this issue, an element matcher is introduced to efficiently</text>
+<text top="473" left="479" width="358" height="13" font="4">pair each ground truth element with its closest predicted</text>
+<text top="490" left="479" width="358" height="13" font="4">counterpart based on a predefined matching score using a</text>
+<text top="506" left="479" width="358" height="13" font="4">modified Hungarian matching algorithm with semantics and</text>
+<text top="523" left="479" width="358" height="13" font="4">locations, which will be stated detailedly in Sec. 3.2. This</text>
+<text top="539" left="479" width="358" height="13" font="4">approach ensures that the model is penalized only for the</text>
+<text top="556" left="479" width="358" height="13" font="4">differences between corresponding elements, rather than be-</text>
+<text top="572" left="479" width="358" height="13" font="4">ing influenced by the order in which elements are generated.</text>
+<text top="588" left="479" width="358" height="13" font="4">This method not only simplifies the training process but also</text>
+<text top="605" left="479" width="358" height="13" font="4">enhances the model’s ability to handle diverse and complex</text>
+<text top="621" left="479" width="358" height="13" font="4">GUI layouts, making it more adaptable to real-world scenar-</text>
+<text top="638" left="479" width="21" height="13" font="4">ios.</text>
+<text top="684" left="479" width="20" height="15" font="31">3.2</text>
+<text top="684" left="516" width="138" height="15" font="31">Training Objectives</text>
+<text top="722" left="479" width="358" height="13" font="4">To train the framework on complex tasks with multiple types</text>
+<text top="738" left="479" width="358" height="13" font="4">of instructions rather than just a simple grounding task, we</text>
+<text top="755" left="479" width="358" height="13" font="4">elaborately design a set of objectives to ensure stable con-</text>
+<text top="771" left="479" width="150" height="13" font="4">vergence during training.</text>
+<text top="793" left="494" width="343" height="13" font="4">The output could be multiple elements with their corre-</text>
+<text top="809" left="479" width="358" height="13" font="4">sponding bounding boxes and there might exist inconsis-</text>
+<text top="825" left="479" width="358" height="13" font="4">tency between the output order and ground truth order of</text>
+<text top="842" left="479" width="358" height="13" font="4">elements. Inspired by object detection methods, DETR (Car-</text>
+<text top="858" left="479" width="358" height="13" font="4">ion et al. 2020), we first compute an optimal bipartite as-</text>
+<text top="875" left="479" width="358" height="13" font="4">signment between predicted elements and ground-truth an-</text>
+<text top="891" left="479" width="358" height="13" font="4">notations using a modified Hungarian matching algorithm</text>
+<text top="908" left="479" width="358" height="13" font="4">that jointly accounts for semantic and spatial attributes, and</text>
+<text top="924" left="479" width="358" height="13" font="4">subsequently minimize the corresponding element-wise loss</text>
+<text top="941" left="479" width="59" height="13" font="4">functions.</text>
+<text top="962" left="494" width="20" height="13" font="4">Let</text>
+<text top="962" left="518" width="7" height="13" font="44">y</text>
+<text top="962" left="530" width="12" height="13" font="30">=</text>
+<text top="961" left="546" width="7" height="14" font="5">{</text>
+<text top="962" left="553" width="6" height="13" font="30">(</text>
+<text top="962" left="559" width="5" height="13" font="44">t</text>
+<text top="967" left="564" width="4" height="9" font="45">i</text>
+<text top="962" left="569" width="13" height="13" font="44">, b</text>
+<text top="967" left="582" width="4" height="9" font="45">i</text>
+<text top="962" left="587" width="6" height="13" font="30">)</text>
+<text top="961" left="593" width="7" height="14" font="5">}</text>
+<text top="962" left="604" width="233" height="13" font="4">denote the ground truth set of elements</text>
+<text top="984" left="479" width="22" height="13" font="4">and</text>
+<text top="984" left="506" width="7" height="13" font="30">ˆ</text>
+<text top="984" left="505" width="7" height="13" font="44">y</text>
+<text top="984" left="517" width="12" height="13" font="30">=</text>
+<text top="977" left="533" width="10" height="7" font="61">n</text>
+<text top="984" left="543" width="13" height="13" font="30">(ˆ</text>
+<text top="984" left="549" width="5" height="13" font="44">t</text>
+<text top="990" left="554" width="4" height="9" font="45">i</text>
+<text top="984" left="559" width="4" height="13" font="44">,</text>
+<text top="980" left="565" width="7" height="13" font="30">ˆ</text>
+<text top="984" left="566" width="6" height="13" font="44">b</text>
+<text top="990" left="572" width="4" height="9" font="45">i</text>
+<text top="984" left="577" width="6" height="13" font="30">)</text>
+<text top="977" left="583" width="10" height="7" font="61">o</text>
+<text top="984" left="597" width="129" height="13" font="4">the set of predictions.</text>
+<text top="984" left="730" width="5" height="13" font="44">t</text>
+<text top="990" left="735" width="4" height="9" font="45">i</text>
+<text top="984" left="744" width="22" height="13" font="4">and</text>
+<text top="981" left="770" width="7" height="13" font="30">ˆ</text>
+<text top="984" left="769" width="5" height="13" font="44">t</text>
+<text top="990" left="775" width="4" height="9" font="45">i</text>
+<text top="984" left="784" width="53" height="13" font="4">is the se-</text>
+<text top="1010" left="479" width="191" height="13" font="4">mantic feature of the text for the</text>
+<text top="1010" left="674" width="5" height="13" font="44">i</text>
+<text top="1007" left="679" width="12" height="9" font="45">th</text>
+<text top="1010" left="695" width="88" height="13" font="4">element, while</text>
+<text top="1010" left="786" width="6" height="13" font="44">b</text>
+<text top="1015" left="792" width="4" height="9" font="45">i</text>
+<text top="1010" left="801" width="22" height="13" font="4">and</text>
+<text top="1006" left="825" width="7" height="13" font="30">ˆ</text>
+<text top="1010" left="826" width="6" height="13" font="44">b</text>
+<text top="1015" left="832" width="4" height="9" font="45">i</text>
+<text top="1026" left="479" width="358" height="13" font="4">represents its bounding box. To find a match for ground truth</text>
+<text top="1043" left="479" width="47" height="13" font="4">element</text>
+<text top="1043" left="531" width="7" height="13" font="44">y</text>
+<text top="1048" left="538" width="4" height="9" font="45">i</text>
+<text top="1043" left="543" width="294" height="13" font="4">, we search the set of predictions using matching</text>
+</page>
+<page number="5" position="absolute" top="0" left="0" height="1188" width="918">
+	<fontspec id="62" size="13" family="CLYLVV+NimbusRomNo9L-Medi" color="#000000"/>
+	<fontspec id="63" size="13" family="CRYFQM+NimbusRomNo9L-ReguItal" color="#000000"/>
+	<fontspec id="64" size="10" family="YRAFNA+CMR7" color="#000000"/>
+<text top="95" left="175" width="37" height="12" font="62">Model</text>
+<text top="95" left="351" width="28" height="12" font="62">Data</text>
+<text top="88" left="412" width="40" height="12" font="62">Mobile</text>
+<text top="88" left="495" width="47" height="12" font="62">Desktop</text>
+<text top="88" left="592" width="26" height="12" font="62">Web</text>
+<text top="95" left="657" width="25" height="12" font="62">Avg.</text>
+<text top="95" left="699" width="44" height="12" font="62">Time(s)</text>
+<text top="110" left="398" width="25" height="12" font="62">Text</text>
+<text top="110" left="441" width="25" height="12" font="62">Icon</text>
+<text top="110" left="484" width="25" height="12" font="62">Text</text>
+<text top="110" left="527" width="25" height="12" font="62">Icon</text>
+<text top="110" left="570" width="25" height="12" font="62">Text</text>
+<text top="110" left="613" width="25" height="12" font="62">Icon</text>
+<text top="132" left="175" width="60" height="12" font="63">ScreenSpot</text>
+<text top="147" left="175" width="42" height="12" font="7">GPT-4o</text>
+<text top="147" left="363" width="4" height="12" font="7">-</text>
+<text top="147" left="399" width="24" height="12" font="7">22.6</text>
+<text top="147" left="442" width="24" height="12" font="7">24.5</text>
+<text top="147" left="485" width="24" height="12" font="7">20.2</text>
+<text top="147" left="528" width="24" height="12" font="7">11.8</text>
+<text top="147" left="574" width="17" height="12" font="7">9.2</text>
+<text top="147" left="618" width="17" height="12" font="7">8.8</text>
+<text top="147" left="657" width="24" height="12" font="7">18.3</text>
+<text top="147" left="719" width="4" height="12" font="7">-</text>
+<text top="162" left="175" width="120" height="12" font="7">Claude Computer Use</text>
+<text top="162" left="363" width="4" height="12" font="7">-</text>
+<text top="162" left="408" width="4" height="12" font="7">-</text>
+<text top="162" left="451" width="4" height="12" font="7">-</text>
+<text top="162" left="494" width="4" height="12" font="7">-</text>
+<text top="162" left="538" width="4" height="12" font="7">-</text>
+<text top="162" left="581" width="4" height="12" font="7">-</text>
+<text top="162" left="624" width="4" height="12" font="7">-</text>
+<text top="162" left="657" width="24" height="12" font="7">83.0</text>
+<text top="162" left="719" width="4" height="12" font="7">-</text>
+<text top="177" left="175" width="158" height="12" font="7">Gemini 2.0 (Project Mariner)</text>
+<text top="177" left="363" width="4" height="12" font="7">-</text>
+<text top="177" left="408" width="4" height="12" font="7">-</text>
+<text top="177" left="451" width="4" height="12" font="7">-</text>
+<text top="177" left="494" width="4" height="12" font="7">-</text>
+<text top="177" left="538" width="4" height="12" font="7">-</text>
+<text top="177" left="581" width="4" height="12" font="7">-</text>
+<text top="177" left="624" width="4" height="12" font="7">-</text>
+<text top="177" left="657" width="24" height="12" font="7">84.0</text>
+<text top="177" left="719" width="4" height="12" font="7">-</text>
+<text top="192" left="175" width="92" height="12" font="7">Qwen2.5-VL-7B</text>
+<text top="192" left="363" width="4" height="12" font="7">-</text>
+<text top="192" left="399" width="24" height="12" font="62">97.1</text>
+<text top="192" left="442" width="24" height="12" font="7">81.2</text>
+<text top="192" left="485" width="24" height="12" font="7">86.6</text>
+<text top="192" left="528" width="24" height="12" font="7">70.0</text>
+<text top="192" left="571" width="24" height="12" font="7">87.4</text>
+<text top="192" left="614" width="24" height="12" font="7">78.6</text>
+<text top="192" left="657" width="24" height="12" font="7">84.9</text>
+<text top="192" left="706" width="30" height="12" font="7">0.763</text>
+<text top="207" left="175" width="87" height="12" font="7">InternVL2.5-8B</text>
+<text top="207" left="363" width="4" height="12" font="7">-</text>
+<text top="207" left="399" width="24" height="12" font="7">82.8</text>
+<text top="207" left="442" width="24" height="12" font="7">58.5</text>
+<text top="207" left="485" width="24" height="12" font="7">47.4</text>
+<text top="207" left="528" width="24" height="12" font="7">28.6</text>
+<text top="207" left="571" width="24" height="12" font="7">47.4</text>
+<text top="207" left="614" width="24" height="12" font="7">26.7</text>
+<text top="207" left="657" width="24" height="12" font="7">48.6</text>
+<text top="207" left="706" width="30" height="12" font="7">0.812</text>
+<text top="222" left="175" width="82" height="12" font="7">CogAgent-18B</text>
+<text top="222" left="350" width="30" height="12" font="7">400K</text>
+<text top="222" left="399" width="24" height="12" font="7">67.0</text>
+<text top="222" left="442" width="24" height="12" font="7">24.0</text>
+<text top="222" left="485" width="24" height="12" font="7">74.2</text>
+<text top="222" left="528" width="24" height="12" font="7">20.0</text>
+<text top="222" left="571" width="24" height="12" font="7">70.4</text>
+<text top="222" left="614" width="24" height="12" font="7">28.6</text>
+<text top="222" left="657" width="24" height="12" font="7">47.4</text>
+<text top="222" left="706" width="30" height="12" font="7">1.112</text>
+<text top="237" left="175" width="79" height="12" font="7">SeeClick-9.6B</text>
+<text top="237" left="356" width="19" height="12" font="7">1M</text>
+<text top="237" left="399" width="24" height="12" font="7">78.0</text>
+<text top="237" left="442" width="24" height="12" font="7">52.0</text>
+<text top="237" left="485" width="24" height="12" font="7">72.2</text>
+<text top="237" left="528" width="24" height="12" font="7">30.0</text>
+<text top="237" left="571" width="24" height="12" font="7">55.7</text>
+<text top="237" left="614" width="24" height="12" font="7">32.5</text>
+<text top="237" left="657" width="24" height="12" font="7">53.4</text>
+<text top="237" left="706" width="30" height="12" font="7">0.872</text>
+<text top="252" left="175" width="64" height="12" font="7">OmniParser</text>
+<text top="252" left="363" width="4" height="12" font="7">-</text>
+<text top="252" left="399" width="24" height="12" font="7">93.9</text>
+<text top="252" left="442" width="24" height="12" font="7">57.0</text>
+<text top="252" left="485" width="24" height="12" font="7">91.3</text>
+<text top="252" left="528" width="24" height="12" font="7">63.6</text>
+<text top="252" left="571" width="24" height="12" font="7">81.3</text>
+<text top="252" left="614" width="24" height="12" font="7">51.0</text>
+<text top="252" left="657" width="24" height="12" font="7">73.0</text>
+<text top="252" left="719" width="4" height="12" font="7">-</text>
+<text top="267" left="175" width="71" height="12" font="7">UGround-7B</text>
+<text top="267" left="351" width="29" height="12" font="7">1.3M</text>
+<text top="267" left="399" width="24" height="12" font="7">82.8</text>
+<text top="267" left="442" width="24" height="12" font="7">60.3</text>
+<text top="267" left="485" width="24" height="12" font="7">82.5</text>
+<text top="267" left="528" width="24" height="12" font="7">63.6</text>
+<text top="267" left="571" width="24" height="12" font="7">80.4</text>
+<text top="267" left="614" width="24" height="12" font="7">70.4</text>
+<text top="267" left="657" width="24" height="12" font="7">73.3</text>
+<text top="267" left="706" width="30" height="12" font="7">0.821</text>
+<text top="282" left="175" width="70" height="12" font="7">OS-Atlas-7B</text>
+<text top="282" left="351" width="29" height="12" font="7">2.3M</text>
+<text top="282" left="399" width="24" height="12" font="7">93.0</text>
+<text top="282" left="442" width="24" height="12" font="7">72.9</text>
+<text top="282" left="485" width="24" height="12" font="7">91.8</text>
+<text top="282" left="528" width="24" height="12" font="7">62.9</text>
+<text top="282" left="571" width="24" height="12" font="62">90.9</text>
+<text top="282" left="614" width="24" height="12" font="7">74.3</text>
+<text top="282" left="657" width="24" height="12" font="7">82.5</text>
+<text top="282" left="706" width="30" height="12" font="7">0.782</text>
+<text top="297" left="175" width="59" height="12" font="7">Aguvis-7B</text>
+<text top="297" left="356" width="19" height="12" font="7">1M</text>
+<text top="297" left="399" width="24" height="12" font="7">95.6</text>
+<text top="297" left="442" width="24" height="12" font="7">77.7</text>
+<text top="297" left="485" width="24" height="12" font="7">93.8</text>
+<text top="297" left="528" width="24" height="12" font="7">67.1</text>
+<text top="297" left="571" width="24" height="12" font="7">88.3</text>
+<text top="297" left="614" width="24" height="12" font="7">75.2</text>
+<text top="297" left="657" width="24" height="12" font="7">84.4</text>
+<text top="297" left="706" width="30" height="12" font="7">0.791</text>
+<text top="311" left="175" width="112" height="12" font="62">SparkUI-Parser-8B</text>
+<text top="312" left="350" width="30" height="12" font="7">515K</text>
+<text top="312" left="399" width="24" height="12" font="7">94.9</text>
+<text top="311" left="442" width="24" height="12" font="62">83.8</text>
+<text top="311" left="485" width="24" height="12" font="62">95.9</text>
+<text top="311" left="528" width="24" height="12" font="62">80.7</text>
+<text top="312" left="571" width="24" height="12" font="7">89.6</text>
+<text top="311" left="614" width="24" height="12" font="62">82.9</text>
+<text top="311" left="657" width="24" height="12" font="62">88.0</text>
+<text top="311" left="706" width="30" height="12" font="62">0.173</text>
+<text top="334" left="175" width="77" height="12" font="63">ScreenSpot-v2</text>
+<text top="349" left="175" width="42" height="12" font="7">GPT-4o</text>
+<text top="349" left="363" width="4" height="12" font="7">-</text>
+<text top="349" left="399" width="24" height="12" font="7">26.6</text>
+<text top="349" left="442" width="24" height="12" font="7">24.2</text>
+<text top="349" left="485" width="24" height="12" font="7">24.2</text>
+<text top="349" left="528" width="24" height="12" font="7">19.3</text>
+<text top="349" left="571" width="24" height="12" font="7">12.8</text>
+<text top="349" left="614" width="24" height="12" font="7">11.8</text>
+<text top="349" left="657" width="24" height="12" font="7">20.1</text>
+<text top="349" left="719" width="4" height="12" font="7">-</text>
+<text top="364" left="175" width="92" height="12" font="7">Qwen2.5-VL-7B</text>
+<text top="364" left="363" width="4" height="12" font="7">-</text>
+<text top="364" left="399" width="24" height="12" font="62">99.0</text>
+<text top="364" left="442" width="24" height="12" font="7">84.4</text>
+<text top="364" left="485" width="24" height="12" font="7">87.6</text>
+<text top="364" left="528" width="24" height="12" font="7">65.7</text>
+<text top="364" left="571" width="24" height="12" font="7">90.2</text>
+<text top="364" left="614" width="24" height="12" font="7">79.8</text>
+<text top="364" left="657" width="24" height="12" font="7">86.5</text>
+<text top="364" left="706" width="30" height="12" font="7">0.756</text>
+<text top="379" left="175" width="87" height="12" font="7">InternVL2.5-8B</text>
+<text top="379" left="363" width="4" height="12" font="7">-</text>
+<text top="379" left="399" width="24" height="12" font="7">84.5</text>
+<text top="379" left="442" width="24" height="12" font="7">58.3</text>
+<text top="379" left="485" width="24" height="12" font="7">48.5</text>
+<text top="379" left="528" width="24" height="12" font="7">30.0</text>
+<text top="379" left="571" width="24" height="12" font="7">43.6</text>
+<text top="379" left="614" width="24" height="12" font="7">27.1</text>
+<text top="379" left="657" width="24" height="12" font="7">48.7</text>
+<text top="379" left="706" width="30" height="12" font="7">0.793</text>
+<text top="394" left="175" width="82" height="12" font="7">CogAgent-18B</text>
+<text top="394" left="350" width="30" height="12" font="7">400K</text>
+<text top="394" left="399" width="24" height="12" font="7">69.3</text>
+<text top="394" left="442" width="24" height="12" font="7">27.0</text>
+<text top="394" left="485" width="24" height="12" font="7">75.8</text>
+<text top="394" left="528" width="24" height="12" font="7">20.7</text>
+<text top="394" left="571" width="24" height="12" font="7">74.4</text>
+<text top="394" left="614" width="24" height="12" font="7">31.5</text>
+<text top="394" left="657" width="24" height="12" font="7">52.8</text>
+<text top="394" left="706" width="30" height="12" font="7">1.104</text>
+<text top="409" left="175" width="79" height="12" font="7">SeeClick-9.6B</text>
+<text top="409" left="356" width="19" height="12" font="7">1M</text>
+<text top="409" left="399" width="24" height="12" font="7">78.4</text>
+<text top="409" left="442" width="24" height="12" font="7">50.7</text>
+<text top="409" left="485" width="24" height="12" font="7">70.1</text>
+<text top="409" left="528" width="24" height="12" font="7">29.3</text>
+<text top="409" left="571" width="24" height="12" font="7">55.2</text>
+<text top="409" left="614" width="24" height="12" font="7">32.5</text>
+<text top="409" left="657" width="24" height="12" font="7">55.1</text>
+<text top="409" left="706" width="30" height="12" font="7">0.864</text>
+<text top="424" left="175" width="71" height="12" font="7">UGround-7B</text>
+<text top="424" left="351" width="29" height="12" font="7">1.3M</text>
+<text top="424" left="399" width="24" height="12" font="7">84.5</text>
+<text top="424" left="442" width="24" height="12" font="7">61.6</text>
+<text top="424" left="485" width="24" height="12" font="7">85.1</text>
+<text top="424" left="528" width="24" height="12" font="7">61.4</text>
+<text top="424" left="571" width="24" height="12" font="7">84.6</text>
+<text top="424" left="614" width="24" height="12" font="7">71.9</text>
+<text top="424" left="657" width="24" height="12" font="7">76.3</text>
+<text top="424" left="706" width="30" height="12" font="7">0.805</text>
+<text top="439" left="175" width="70" height="12" font="7">OS-Atlas-7B</text>
+<text top="439" left="351" width="29" height="12" font="7">2.3M</text>
+<text top="439" left="399" width="24" height="12" font="7">95.2</text>
+<text top="439" left="442" width="24" height="12" font="7">75.8</text>
+<text top="439" left="485" width="24" height="12" font="7">90.7</text>
+<text top="439" left="528" width="24" height="12" font="7">63.6</text>
+<text top="439" left="571" width="24" height="12" font="7">90.6</text>
+<text top="439" left="614" width="24" height="12" font="7">77.3</text>
+<text top="439" left="657" width="24" height="12" font="7">84.1</text>
+<text top="439" left="706" width="30" height="12" font="7">0.774</text>
+<text top="454" left="175" width="59" height="12" font="7">Aguvis-7B</text>
+<text top="454" left="356" width="19" height="12" font="7">1M</text>
+<text top="454" left="399" width="24" height="12" font="7">95.5</text>
+<text top="454" left="442" width="24" height="12" font="7">81.5</text>
+<text top="454" left="485" width="24" height="12" font="7">93.3</text>
+<text top="453" left="528" width="24" height="12" font="62">77.9</text>
+<text top="454" left="571" width="24" height="12" font="7">91.0</text>
+<text top="454" left="614" width="24" height="12" font="7">77.8</text>
+<text top="454" left="657" width="24" height="12" font="7">87.3</text>
+<text top="454" left="706" width="30" height="12" font="7">0.779</text>
+<text top="468" left="175" width="112" height="12" font="62">SparkUI-Parser-8B</text>
+<text top="469" left="350" width="30" height="12" font="7">515K</text>
+<text top="469" left="399" width="24" height="12" font="7">96.9</text>
+<text top="468" left="442" width="24" height="12" font="62">87.7</text>
+<text top="468" left="485" width="24" height="12" font="62">95.9</text>
+<text top="469" left="528" width="24" height="12" font="7">77.1</text>
+<text top="468" left="571" width="24" height="12" font="62">93.4</text>
+<text top="468" left="614" width="24" height="12" font="62">86.2</text>
+<text top="468" left="657" width="24" height="12" font="62">89.5</text>
+<text top="468" left="706" width="30" height="12" font="62">0.168</text>
+<text top="502" left="81" width="756" height="13" font="4">Table 1: GUI grounding accuracy comparison of various methods on ScreenSpot and ScreenSpot-v2. In each column on differ-</text>
+<text top="519" left="81" width="120" height="13" font="4">ent benchmarks, the</text>
+<text top="519" left="204" width="26" height="13" font="6">best</text>
+<text top="519" left="233" width="604" height="13" font="4">and second best performance are marked, where “-” indicates that the information cannot be obtained</text>
+<text top="535" left="81" width="214" height="13" font="4">due to missing values or API usage.</text>
+<text top="585" left="81" width="28" height="13" font="4">cost:</text>
+<text top="634" left="93" width="9" height="13" font="44">σ</text>
+<text top="634" left="106" width="12" height="13" font="30">=</text>
+<text top="618" left="122" width="12" height="7" font="61">(</text>
+<text top="616" left="136" width="48" height="13" font="30">arg min</text>
+<text top="632" left="158" width="5" height="9" font="45">j</text>
+<text top="616" left="191" width="8" height="14" font="5">C</text>
+<text top="622" left="199" width="34" height="9" font="45">match</text>
+<text top="616" left="233" width="6" height="13" font="30">(</text>
+<text top="616" left="239" width="7" height="13" font="44">y</text>
+<text top="622" left="247" width="4" height="9" font="45">i</text>
+<text top="616" left="252" width="4" height="13" font="44">,</text>
+<text top="616" left="259" width="7" height="13" font="30">ˆ</text>
+<text top="616" left="258" width="7" height="13" font="44">y</text>
+<text top="622" left="266" width="5" height="9" font="45">j</text>
+<text top="616" left="272" width="6" height="13" font="30">)</text>
+<text top="617" left="293" width="9" height="13" font="4">if</text>
+<text top="616" left="305" width="8" height="14" font="5">C</text>
+<text top="622" left="313" width="34" height="9" font="45">match</text>
+<text top="616" left="348" width="6" height="13" font="30">(</text>
+<text top="616" left="354" width="7" height="13" font="44">y</text>
+<text top="622" left="361" width="4" height="9" font="45">i</text>
+<text top="616" left="366" width="4" height="13" font="44">,</text>
+<text top="616" left="374" width="7" height="13" font="30">ˆ</text>
+<text top="616" left="373" width="7" height="13" font="44">y</text>
+<text top="622" left="380" width="5" height="9" font="45">j</text>
+<text top="616" left="386" width="6" height="13" font="30">)</text>
+<text top="616" left="396" width="29" height="13" font="44">&gt; µ,</text>
+<text top="649" left="134" width="7" height="14" font="5">∅</text>
+<text top="650" left="156" width="58" height="13" font="4">otherwise</text>
+<text top="650" left="214" width="4" height="13" font="44">,</text>
+<text top="675" left="92" width="37" height="13" font="4">where</text>
+<text top="674" left="132" width="8" height="14" font="5">C</text>
+<text top="680" left="140" width="34" height="9" font="45">match</text>
+<text top="675" left="179" width="12" height="13" font="30">=</text>
+<text top="675" left="195" width="9" height="13" font="44">λ</text>
+<text top="680" left="204" width="20" height="9" font="45">IoU</text>
+<text top="674" left="226" width="10" height="14" font="5">L</text>
+<text top="680" left="236" width="20" height="9" font="45">IoU</text>
+<text top="675" left="258" width="6" height="13" font="30">(</text>
+<text top="675" left="264" width="6" height="13" font="44">b</text>
+<text top="680" left="270" width="4" height="9" font="45">i</text>
+<text top="675" left="275" width="4" height="13" font="44">,</text>
+<text top="671" left="281" width="7" height="13" font="30">ˆ</text>
+<text top="675" left="282" width="6" height="13" font="44">b</text>
+<text top="680" left="288" width="5" height="9" font="45">j</text>
+<text top="675" left="295" width="21" height="13" font="30">) +</text>
+<text top="675" left="319" width="9" height="13" font="44">λ</text>
+<text top="680" left="327" width="22" height="9" font="45">sem</text>
+<text top="674" left="350" width="10" height="14" font="5">L</text>
+<text top="680" left="360" width="22" height="9" font="45">sem</text>
+<text top="675" left="383" width="6" height="13" font="30">(</text>
+<text top="675" left="389" width="5" height="13" font="44">t</text>
+<text top="680" left="394" width="4" height="9" font="45">i</text>
+<text top="675" left="399" width="4" height="13" font="44">,</text>
+<text top="672" left="406" width="7" height="13" font="30">ˆ</text>
+<text top="675" left="406" width="5" height="13" font="44">t</text>
+<text top="680" left="411" width="5" height="9" font="45">j</text>
+<text top="675" left="418" width="6" height="13" font="30">)</text>
+<text top="675" left="423" width="4" height="13" font="44">.</text>
+<text top="692" left="421" width="17" height="13" font="4">(4)</text>
+<text top="708" left="81" width="9" height="13" font="44">µ</text>
+<text top="708" left="95" width="344" height="13" font="4">is the threshold to evaluate whether two elements match,</text>
+<text top="725" left="81" width="179" height="13" font="4">which is experimentally set to</text>
+<text top="724" left="264" width="7" height="13" font="30">0</text>
+<text top="724" left="271" width="4" height="13" font="44">.</text>
+<text top="724" left="275" width="15" height="13" font="30">55</text>
+<text top="725" left="290" width="4" height="13" font="4">.</text>
+<text top="745" left="96" width="343" height="13" font="4">After finding a match for each ground truth element, we</text>
+<text top="762" left="81" width="218" height="13" font="4">use cross-entropy loss for the text,</text>
+<text top="761" left="305" width="10" height="14" font="5">L</text>
+<text top="767" left="315" width="6" height="9" font="64">1</text>
+<text top="762" left="328" width="110" height="13" font="4">loss and IoU loss</text>
+<text top="778" left="81" width="279" height="13" font="4">(Rezatofighi et al. 2019) for the bounding box:</text>
+<text top="815" left="81" width="10" height="14" font="5">L</text>
+<text top="821" left="91" width="4" height="9" font="45">i</text>
+<text top="815" left="100" width="12" height="13" font="30">=</text>
+<text top="815" left="116" width="9" height="13" font="44">λ</text>
+<text top="821" left="125" width="18" height="9" font="45">CE</text>
+<text top="815" left="144" width="10" height="14" font="5">L</text>
+<text top="821" left="155" width="18" height="9" font="45">CE</text>
+<text top="815" left="174" width="6" height="13" font="30">(</text>
+<text top="815" left="180" width="5" height="13" font="44">t</text>
+<text top="821" left="185" width="4" height="9" font="45">i</text>
+<text top="815" left="190" width="4" height="13" font="44">,</text>
+<text top="813" left="197" width="7" height="13" font="30">ˆ</text>
+<text top="815" left="197" width="5" height="13" font="44">t</text>
+<text top="821" left="202" width="7" height="9" font="45">σ</text>
+<text top="815" left="210" width="20" height="13" font="30">) +</text>
+<text top="815" left="233" width="9" height="13" font="44">λ</text>
+<text top="821" left="242" width="6" height="9" font="64">1</text>
+<text top="815" left="249" width="10" height="14" font="5">L</text>
+<text top="821" left="259" width="6" height="9" font="64">1</text>
+<text top="815" left="266" width="6" height="13" font="30">(</text>
+<text top="815" left="272" width="6" height="13" font="44">b</text>
+<text top="821" left="278" width="4" height="9" font="45">i</text>
+<text top="815" left="283" width="4" height="13" font="44">,</text>
+<text top="811" left="289" width="7" height="13" font="30">ˆ</text>
+<text top="815" left="290" width="6" height="13" font="44">b</text>
+<text top="821" left="296" width="7" height="9" font="45">σ</text>
+<text top="815" left="304" width="20" height="13" font="30">) +</text>
+<text top="815" left="327" width="9" height="13" font="44">λ</text>
+<text top="821" left="336" width="20" height="9" font="45">IoU</text>
+<text top="815" left="358" width="10" height="14" font="5">L</text>
+<text top="821" left="368" width="20" height="9" font="45">IoU</text>
+<text top="815" left="390" width="6" height="13" font="30">(</text>
+<text top="815" left="396" width="6" height="13" font="44">b</text>
+<text top="821" left="403" width="4" height="9" font="45">i</text>
+<text top="815" left="408" width="4" height="13" font="44">,</text>
+<text top="811" left="414" width="7" height="13" font="30">ˆ</text>
+<text top="815" left="414" width="6" height="13" font="44">b</text>
+<text top="821" left="421" width="7" height="9" font="45">σ</text>
+<text top="815" left="429" width="6" height="13" font="30">)</text>
+<text top="815" left="435" width="4" height="13" font="44">.</text>
+<text top="832" left="421" width="17" height="13" font="4">(5)</text>
+<text top="849" left="81" width="358" height="13" font="4">Since each element contains semantics and coordinates op-</text>
+<text top="865" left="81" width="223" height="13" font="4">timization, for a ground truth set with</text>
+<text top="865" left="307" width="12" height="13" font="44">N</text>
+<text top="870" left="319" width="11" height="9" font="45">gt</text>
+<text top="865" left="334" width="105" height="13" font="4">elements the total</text>
+<text top="881" left="81" width="105" height="13" font="4">loss is defined as:</text>
+<text top="923" left="225" width="10" height="14" font="5">L</text>
+<text top="924" left="240" width="12" height="13" font="30">=</text>
+<text top="907" left="256" width="9" height="9" font="45">N</text>
+<text top="910" left="266" width="10" height="7" font="51">gt</text>
+<text top="919" left="255" width="22" height="7" font="61">X</text>
+<text top="945" left="264" width="4" height="9" font="45">i</text>
+<text top="923" left="279" width="10" height="14" font="5">L</text>
+<text top="929" left="290" width="4" height="9" font="45">i</text>
+<text top="923" left="421" width="17" height="13" font="4">(6)</text>
+<text top="977" left="96" width="343" height="13" font="4">These training objectives help with more stable learning</text>
+<text top="994" left="81" width="358" height="13" font="4">from complex tasks with indefinite number of elements. The</text>
+<text top="1010" left="81" width="358" height="13" font="4">model can better handle the challenges posed by varying</text>
+<text top="1026" left="81" width="358" height="13" font="4">numbers of elements in different user interfaces, leading to</text>
+<text top="1043" left="81" width="232" height="13" font="4">improved performance and robustness.</text>
+<text top="583" left="600" width="9" height="16" font="1">4</text>
+<text top="583" left="627" width="90" height="16" font="1">Benchmark</text>
+<text top="608" left="479" width="358" height="13" font="4">In this section, to construct a parsing benchmark, Screen-</text>
+<text top="624" left="479" width="358" height="13" font="4">Parse, we introduce the data collection and annotation</text>
+<text top="641" left="479" width="358" height="13" font="4">method, and provide a statistical overview of our bench-</text>
+<text top="657" left="479" width="358" height="13" font="4">mark. We also propose metrics to evaluate the performance</text>
+<text top="674" left="479" width="94" height="13" font="4">of GUI parsing.</text>
+<text top="706" left="479" width="20" height="15" font="31">4.1</text>
+<text top="706" left="516" width="222" height="15" font="31">Data Collection and Annotation</text>
+<text top="730" left="479" width="358" height="13" font="4">We construct the parsing benchmark across different do-</text>
+<text top="746" left="479" width="358" height="13" font="4">mains and applications to ensure diversity in terms of design,</text>
+<text top="763" left="479" width="358" height="13" font="4">functionality, and complexity. Based on the open-source</text>
+<text top="779" left="479" width="358" height="13" font="4">ScreenSpot benchmark (Cheng et al. 2024), we re-annotated</text>
+<text top="796" left="479" width="358" height="13" font="4">all of its interfaces. Each interface is annotated with ele-</text>
+<text top="812" left="479" width="358" height="13" font="4">ment types, semantic labels, and bounding boxes. To cover</text>
+<text top="829" left="479" width="358" height="13" font="4">a broader range of user interfaces and languages, we also</text>
+<text top="845" left="479" width="358" height="13" font="4">annotate a number of user interfaces from common Chinese</text>
+<text top="861" left="479" width="195" height="13" font="4">applications in the same manner.</text>
+<text top="878" left="494" width="343" height="13" font="4">Specifically, we pre-process the user interface with expert</text>
+<text top="895" left="479" width="358" height="13" font="4">models and manually check the quality. For all icon elements</text>
+<text top="911" left="479" width="358" height="13" font="4">in the image, we use the open-domain detection model</text>
+<text top="928" left="479" width="358" height="13" font="4">Grounding DINO (Liu et al. 2024), and we use Paddle-OCR</text>
+<text top="944" left="479" width="358" height="13" font="4">(Authors 2020) to extract all text elements. For potentially</text>
+<text top="961" left="479" width="358" height="13" font="4">overlapping bounding boxes, we use non-maximum sup-</text>
+<text top="977" left="479" width="358" height="13" font="4">pression (NMS) for filtering. There might be some icons</text>
+<text top="994" left="479" width="358" height="13" font="4">that still lack semantics, thus we use a pre-trained MLLM</text>
+<text top="1010" left="479" width="358" height="13" font="4">to supplement the semantics for them. Afterwards, manu-</text>
+<text top="1026" left="479" width="358" height="13" font="4">ally inspection will be conducted on the pre-processed data</text>
+<text top="1043" left="479" width="358" height="13" font="4">to correct any possible errors or omissions for the boxes and</text>
+</page>
+<page number="6" position="absolute" top="0" left="0" height="1188" width="918">
+	<fontspec id="65" size="10" family="PXBGHL+CMSY7" color="#000000"/>
+<text top="88" left="100" width="37" height="12" font="62">Model</text>
+<text top="88" left="246" width="58" height="12" font="62">Func2Box</text>
+<text top="88" left="322" width="54" height="12" font="62">Text2Box</text>
+<text top="88" left="394" width="25" height="12" font="62">Avg.</text>
+<text top="110" left="100" width="42" height="12" font="7">GPT-4o</text>
+<text top="110" left="264" width="24" height="12" font="7">22.1</text>
+<text top="110" left="338" width="24" height="12" font="7">19.9</text>
+<text top="110" left="395" width="24" height="12" font="7">21.0</text>
+<text top="125" left="100" width="128" height="12" font="7">GPT-4o with grounding</text>
+<text top="125" left="264" width="24" height="12" font="7">44.3</text>
+<text top="125" left="338" width="24" height="12" font="7">44.0</text>
+<text top="125" left="395" width="24" height="12" font="7">44.2</text>
+<text top="140" left="100" width="92" height="12" font="7">Qwen2.5-VL-7B</text>
+<text top="140" left="264" width="24" height="12" font="7">59.8</text>
+<text top="140" left="338" width="24" height="12" font="7">59.3</text>
+<text top="140" left="395" width="24" height="12" font="7">59.6</text>
+<text top="155" left="100" width="87" height="12" font="7">InternVL2.5-8B</text>
+<text top="155" left="264" width="24" height="12" font="7">17.2</text>
+<text top="155" left="338" width="24" height="12" font="7">24.2</text>
+<text top="155" left="395" width="24" height="12" font="7">20.7</text>
+<text top="170" left="100" width="70" height="12" font="7">OS-Atlas-7B</text>
+<text top="170" left="264" width="24" height="12" font="7">53.6</text>
+<text top="170" left="338" width="24" height="12" font="7">60.7</text>
+<text top="170" left="395" width="24" height="12" font="7">57.2</text>
+<text top="185" left="100" width="72" height="12" font="7">UI-TARS-7B</text>
+<text top="185" left="264" width="24" height="12" font="7">56.8</text>
+<text top="185" left="338" width="24" height="12" font="7">66.7</text>
+<text top="185" left="395" width="24" height="12" font="7">61.8</text>
+<text top="200" left="100" width="59" height="12" font="7">Aguvis-7B</text>
+<text top="200" left="264" width="24" height="12" font="7">60.8</text>
+<text top="200" left="338" width="24" height="12" font="7">76.5</text>
+<text top="200" left="395" width="24" height="12" font="7">68.7</text>
+<text top="215" left="100" width="110" height="12" font="7">AgentCPM-GUI-8B</text>
+<text top="215" left="264" width="24" height="12" font="7">79.1</text>
+<text top="215" left="338" width="24" height="12" font="7">76.5</text>
+<text top="215" left="395" width="24" height="12" font="7">77.8</text>
+<text top="230" left="100" width="112" height="12" font="62">SparkUI-Parser-8B</text>
+<text top="230" left="264" width="24" height="12" font="62">80.2</text>
+<text top="230" left="338" width="24" height="12" font="62">82.9</text>
+<text top="230" left="395" width="24" height="12" font="62">81.6</text>
+<text top="263" left="81" width="358" height="13" font="4">Table 2: GUI grounding accuracy comparison of various</text>
+<text top="280" left="81" width="225" height="13" font="4">methods on CAGUI-Grounding. The</text>
+<text top="280" left="311" width="26" height="13" font="6">best</text>
+<text top="280" left="343" width="96" height="13" font="4">and second best</text>
+<text top="296" left="81" width="150" height="13" font="4">performance are marked.</text>
+<text top="346" left="81" width="358" height="13" font="4">description information. Fig. 4 illustrates the complete data-</text>
+<text top="363" left="81" width="212" height="13" font="4">processing and annotation pipeline.</text>
+<text top="393" left="81" width="20" height="15" font="31">4.2</text>
+<text top="393" left="118" width="100" height="15" font="31">Data Statistics</text>
+<text top="416" left="81" width="358" height="13" font="4">The benchmark contains both English and Chinese user in-</text>
+<text top="432" left="81" width="358" height="13" font="4">terfaces, consisting of around 800 images (400 in each lan-</text>
+<text top="449" left="81" width="358" height="13" font="4">guage). Each interface is annotated with an average of 36</text>
+<text top="465" left="81" width="358" height="13" font="4">elements. A diverse set of elements is included, with com-</text>
+<text top="481" left="81" width="139" height="13" font="4">mon types being texts (</text>
+<text top="481" left="220" width="15" height="13" font="30">57</text>
+<text top="481" left="235" width="4" height="13" font="44">.</text>
+<text top="481" left="239" width="20" height="13" font="30">5%</text>
+<text top="481" left="259" width="74" height="13" font="4">) and icons (</text>
+<text top="481" left="334" width="15" height="13" font="30">42</text>
+<text top="481" left="348" width="4" height="13" font="44">.</text>
+<text top="481" left="353" width="20" height="13" font="30">5%</text>
+<text top="481" left="373" width="9" height="13" font="4">).</text>
+<text top="512" left="81" width="20" height="15" font="31">4.3</text>
+<text top="512" left="118" width="134" height="15" font="31">Evaluation Metrics</text>
+<text top="535" left="81" width="358" height="13" font="4">Since parsing results of a user interface is evaluated for the</text>
+<text top="551" left="81" width="358" height="13" font="4">first time, we propose to quantize the model in two aspects:</text>
+<text top="567" left="81" width="254" height="13" font="4">bounding box and semantics performance.</text>
+<text top="593" left="81" width="178" height="13" font="6">Bounding Box Performance</text>
+<text top="593" left="274" width="165" height="13" font="4">Two metrics are introduced</text>
+<text top="610" left="81" width="275" height="13" font="4">to evaluate the bounding box performance:</text>
+<text top="609" left="363" width="75" height="13" font="6">element re-</text>
+<text top="626" left="81" width="22" height="13" font="6">call</text>
+<text top="626" left="107" width="22" height="13" font="4">and</text>
+<text top="626" left="132" width="111" height="13" font="6">element precision</text>
+<text top="626" left="243" width="196" height="13" font="4">, which provide a comprehensive</text>
+<text top="642" left="81" width="358" height="13" font="4">view of a model’s performance in GUI parsing task. Element</text>
+<text top="659" left="81" width="358" height="13" font="4">recall is defined as the ratio of correctly localized elements</text>
+<text top="675" left="81" width="358" height="13" font="4">to the total number of ground truth elements, while element</text>
+<text top="692" left="81" width="358" height="13" font="4">precision is defined as the ratio of correctly localized ele-</text>
+<text top="708" left="81" width="358" height="13" font="4">ments to the total number of predicted elements. A high ele-</text>
+<text top="725" left="81" width="358" height="13" font="4">ment recall indicates that the model is effective at identifying</text>
+<text top="741" left="81" width="358" height="13" font="4">the position of elements, ensuring that few actual elements</text>
+<text top="758" left="81" width="358" height="13" font="4">are missed. A high precision indicates that most of the el-</text>
+<text top="774" left="81" width="358" height="13" font="4">ements the model localizes are indeed present in the user</text>
+<text top="790" left="81" width="342" height="13" font="4">interface, minimizing the number of incorrect grounding.</text>
+<text top="816" left="81" width="155" height="13" font="6">Semantics Performance</text>
+<text top="816" left="251" width="128" height="13" font="6">Semantic similarity</text>
+<text top="816" left="388" width="51" height="13" font="4">is intro-</text>
+<text top="833" left="81" width="358" height="13" font="4">duced to assess semantics performance by calculating the</text>
+<text top="849" left="81" width="358" height="13" font="4">alignment between the model’s predicted semantics and</text>
+<text top="865" left="81" width="358" height="13" font="4">ground truth annotations for matched bounding boxes, en-</text>
+<text top="882" left="81" width="358" height="13" font="4">compassing both textual and icon description similarity. Se-</text>
+<text top="898" left="81" width="358" height="13" font="4">mantic similarity evaluates the model’s ability to provide se-</text>
+<text top="915" left="81" width="358" height="13" font="4">mantically accurate descriptions of located elements, which</text>
+<text top="931" left="81" width="358" height="13" font="4">is crucial for tasks demanding deep GUI understanding, such</text>
+<text top="948" left="81" width="353" height="13" font="4">as intelligent user interaction and context-aware assistance.</text>
+<text top="980" left="198" width="9" height="16" font="1">5</text>
+<text top="980" left="225" width="98" height="16" font="1">Experiments</text>
+<text top="1004" left="81" width="20" height="15" font="31">5.1</text>
+<text top="1004" left="118" width="149" height="15" font="31">Experimental Setting</text>
+<text top="1026" left="81" width="140" height="13" font="6">Network Architecture</text>
+<text top="1026" left="236" width="203" height="13" font="4">In our work, we use InternVL2.5-</text>
+<text top="1043" left="81" width="270" height="13" font="4">8B (Chen et al. 2024a) as the base MLLM</text>
+<text top="1042" left="357" width="11" height="14" font="5">F</text>
+<text top="1048" left="368" width="37" height="9" font="46">MLLM</text>
+<text top="1043" left="407" width="31" height="13" font="4">, and</text>
+<text top="86" left="479" width="109" height="13" font="4">the vision adapter</text>
+<text top="85" left="594" width="11" height="14" font="5">F</text>
+<text top="91" left="604" width="40" height="9" font="46">adapter</text>
+<text top="86" left="652" width="185" height="13" font="4">is an MLP module with chan-</text>
+<text top="102" left="479" width="24" height="13" font="4">nels</text>
+<text top="102" left="510" width="34" height="13" font="30">[4096</text>
+<text top="102" left="544" width="4" height="13" font="44">,</text>
+<text top="102" left="551" width="30" height="13" font="30">2048</text>
+<text top="102" left="580" width="4" height="13" font="44">,</text>
+<text top="102" left="587" width="30" height="13" font="30">1024</text>
+<text top="102" left="617" width="4" height="13" font="44">,</text>
+<text top="102" left="624" width="27" height="13" font="30">256]</text>
+<text top="102" left="650" width="187" height="13" font="4">. The coordinate decoder is a</text>
+<text top="119" left="479" width="358" height="13" font="4">transformer-based architecture with cross-attention mecha-</text>
+<text top="135" left="479" width="284" height="13" font="4">nism where the dimension of hidden states is</text>
+<text top="135" left="769" width="22" height="13" font="30">256</text>
+<text top="135" left="792" width="45" height="13" font="4">, and it</text>
+<text top="152" left="479" width="358" height="13" font="4">finally regresses to the coordinates through a decoding head.</text>
+<text top="178" left="479" width="150" height="13" font="6">Implementation Details</text>
+<text top="178" left="644" width="193" height="13" font="4">We adopt 8 NVIDIA 80G A100</text>
+<text top="195" left="479" width="358" height="13" font="4">to train the whole framework, and the vision encoder is un-</text>
+<text top="211" left="479" width="358" height="13" font="4">frozen during training. LoRA (Hu et al. 2022) is applied</text>
+<text top="228" left="479" width="358" height="13" font="4">to fine-tune both vision and language part in MLLM, with</text>
+<text top="244" left="479" width="55" height="13" font="4">lora-rank</text>
+<text top="244" left="538" width="7" height="13" font="44">r</text>
+<text top="244" left="548" width="86" height="13" font="4">and lora-alpha</text>
+<text top="244" left="638" width="10" height="13" font="44">α</text>
+<text top="244" left="651" width="32" height="13" font="4">set to</text>
+<text top="244" left="687" width="15" height="13" font="30">16</text>
+<text top="244" left="705" width="22" height="13" font="4">and</text>
+<text top="244" left="731" width="15" height="13" font="30">32</text>
+<text top="244" left="745" width="92" height="13" font="4">. We also adopt</text>
+<text top="260" left="479" width="358" height="13" font="4">CosineLRScheduler as the learning rate scheduler, where the</text>
+<text top="277" left="479" width="245" height="13" font="4">learning rate and warmup ratio are set to</text>
+<text top="277" left="729" width="7" height="13" font="30">3</text>
+<text top="277" left="736" width="7" height="13" font="44">e</text>
+<text top="274" left="743" width="9" height="10" font="65">−</text>
+<text top="274" left="753" width="6" height="9" font="64">5</text>
+<text top="277" left="764" width="22" height="13" font="4">and</text>
+<text top="277" left="790" width="7" height="13" font="30">0</text>
+<text top="277" left="797" width="4" height="13" font="44">.</text>
+<text top="277" left="801" width="15" height="13" font="30">03</text>
+<text top="277" left="820" width="17" height="13" font="4">re-</text>
+<text top="293" left="479" width="204" height="13" font="4">spectively. In the training process,</text>
+<text top="293" left="687" width="9" height="13" font="44">λ</text>
+<text top="298" left="695" width="18" height="9" font="45">CE</text>
+<text top="293" left="715" width="4" height="13" font="4">,</text>
+<text top="293" left="722" width="9" height="13" font="44">λ</text>
+<text top="298" left="731" width="6" height="9" font="64">1</text>
+<text top="293" left="741" width="22" height="13" font="4">and</text>
+<text top="293" left="767" width="9" height="13" font="44">λ</text>
+<text top="298" left="775" width="20" height="9" font="45">IoU</text>
+<text top="293" left="801" width="36" height="13" font="4">in Eq.</text>
+<text top="310" left="479" width="71" height="13" font="4">5 are set to</text>
+<text top="310" left="555" width="7" height="13" font="30">2</text>
+<text top="310" left="563" width="4" height="13" font="44">.</text>
+<text top="310" left="567" width="7" height="13" font="30">0</text>
+<text top="310" left="575" width="4" height="13" font="4">,</text>
+<text top="310" left="584" width="7" height="13" font="30">4</text>
+<text top="310" left="591" width="4" height="13" font="44">.</text>
+<text top="310" left="596" width="7" height="13" font="30">0</text>
+<text top="310" left="609" width="22" height="13" font="4">and</text>
+<text top="310" left="636" width="7" height="13" font="30">1</text>
+<text top="310" left="643" width="4" height="13" font="44">.</text>
+<text top="310" left="647" width="7" height="13" font="30">0</text>
+<text top="310" left="660" width="113" height="13" font="4">respectively, while</text>
+<text top="310" left="779" width="9" height="13" font="44">λ</text>
+<text top="315" left="788" width="20" height="9" font="45">IoU</text>
+<text top="310" left="815" width="22" height="13" font="4">and</text>
+<text top="326" left="479" width="9" height="13" font="44">λ</text>
+<text top="331" left="488" width="22" height="9" font="45">sem</text>
+<text top="326" left="514" width="203" height="13" font="4">in element matcher are both set to</text>
+<text top="326" left="721" width="7" height="13" font="30">1</text>
+<text top="326" left="728" width="4" height="13" font="44">.</text>
+<text top="326" left="732" width="7" height="13" font="30">0</text>
+<text top="326" left="743" width="51" height="13" font="4">in Eq. 4.</text>
+<text top="353" left="479" width="54" height="13" font="6">Datasets</text>
+<text top="353" left="548" width="289" height="13" font="4">Our training data is composed of open-source</text>
+<text top="369" left="479" width="358" height="13" font="4">English datasets and self-annotated Chinese datasets, in-</text>
+<text top="386" left="479" width="358" height="13" font="4">cluding 515k training samples in the fields of mobile, desk-</text>
+<text top="402" left="479" width="358" height="13" font="4">top and web. For English datasets, we sample 400k train-</text>
+<text top="419" left="479" width="358" height="13" font="4">ing samples for grounding task and additionally annotate 5k</text>
+<text top="435" left="479" width="358" height="13" font="4">parsing samples. For Chinese datasets, we annotate 100k</text>
+<text top="452" left="479" width="358" height="13" font="4">grounding and 10k parsing samples on our self-collected</text>
+<text top="468" left="479" width="358" height="13" font="4">user interfaces. (See Supplementary for more datasets de-</text>
+<text top="484" left="479" width="358" height="13" font="4">tails.) Furthermore, to optimize training efficiency and en-</text>
+<text top="501" left="479" width="358" height="13" font="4">hance model robustness, we implemented a multi-target</text>
+<text top="517" left="479" width="358" height="13" font="4">instruction paradigm, wherein each training instance ran-</text>
+<text top="534" left="479" width="358" height="13" font="4">domly encompasses multiple objectives, departing from the</text>
+<text top="550" left="479" width="217" height="13" font="4">conventional single-target approach.</text>
+<text top="577" left="479" width="59" height="13" font="6">Baselines</text>
+<text top="577" left="553" width="284" height="13" font="4">We compare our SparkUI-Parser with various</text>
+<text top="593" left="479" width="358" height="13" font="4">baselines, including closed-source commercial models GPT-</text>
+<text top="610" left="479" width="358" height="13" font="4">4o (Hurst et al. 2024), Claude Computer Use (Anthropic</text>
+<text top="626" left="479" width="358" height="13" font="4">2024), Gemini 2.0 (Project Mariner) (GoogleDeepmind</text>
+<text top="643" left="479" width="358" height="13" font="4">2024), as well as open-source basic models Qwen2.5-VL se-</text>
+<text top="659" left="479" width="358" height="13" font="4">ries (Bai et al. 2025), InternVL2.5 series (Chen et al. 2024a)</text>
+<text top="676" left="479" width="358" height="13" font="4">and academic GUI models SeeClick, CogAgent (Hong et al.</text>
+<text top="692" left="479" width="358" height="13" font="4">2024), Aguvis (Xu et al. 2024), OS-Atlas (Wu et al. 2024),</text>
+<text top="708" left="479" width="355" height="13" font="4">UGround (Gou et al. 2024) and UI-TARS (Qin et al. 2025).</text>
+<text top="740" left="479" width="20" height="15" font="31">5.2</text>
+<text top="740" left="516" width="132" height="15" font="31">Grounding Results</text>
+<text top="763" left="479" width="358" height="13" font="4">To evaluate GUI grounding capability of the models, we</text>
+<text top="780" left="479" width="358" height="13" font="4">used the following benchmarks: 1. ScreenSpot, a GUI</text>
+<text top="796" left="479" width="358" height="13" font="4">single-step grounding benchmark; 2. ScreenSpot-v2 (Wu</text>
+<text top="813" left="479" width="358" height="13" font="4">et al. 2024), a re-annotation version based on ScreenSpot</text>
+<text top="829" left="479" width="358" height="13" font="4">that corrects some coordinate and instruction errors; 3.</text>
+<text top="846" left="479" width="358" height="13" font="4">CAGUI-Grounding (Zhang et al. 2025), a Chinese mo-</text>
+<text top="862" left="479" width="358" height="13" font="4">bile text and function grounding evaluation benchmark.</text>
+<text top="878" left="479" width="358" height="13" font="4">Compared to traditional models that employ text autore-</text>
+<text top="895" left="479" width="358" height="13" font="4">gression for visual localization, SparkUI-Parser utilizes a</text>
+<text top="911" left="479" width="358" height="13" font="4">transformer-based coordinate decoder to aggregate visual</text>
+<text top="928" left="479" width="358" height="13" font="4">and textual features and project them directly into contin-</text>
+<text top="944" left="479" width="358" height="13" font="4">uous coordinate representations. As shown in Tab. 1, our</text>
+<text top="961" left="479" width="358" height="13" font="4">method achieves SOTA results with only a small amount</text>
+<text top="977" left="479" width="358" height="13" font="4">of data. With the help of token router and coordinate de-</text>
+<text top="994" left="479" width="358" height="13" font="4">coder, our inference speed achieves the fastest, indicating</text>
+<text top="1010" left="479" width="358" height="13" font="4">greater potential for practical deployment across diverse</text>
+<text top="1026" left="479" width="358" height="13" font="4">application scenarios. Meanwhile, SparkUI-Parser outper-</text>
+<text top="1043" left="479" width="358" height="13" font="4">forms other models on CAGUI-grouding in Tab. 2. Evalu-</text>
+</page>
+<page number="7" position="absolute" top="0" left="0" height="1188" width="918">
+	<fontspec id="66" size="15" family="CRYFQM+NimbusRomNo9L-ReguItal" color="#000000"/>
+<text top="95" left="150" width="37" height="12" font="62">Model</text>
+<text top="88" left="366" width="43" height="12" font="62">English</text>
+<text top="88" left="583" width="46" height="12" font="62">Chinese</text>
+<text top="95" left="724" width="44" height="12" font="62">Time(s)</text>
+<text top="110" left="288" width="36" height="12" font="62">Recall</text>
+<text top="110" left="342" width="53" height="12" font="62">Precision</text>
+<text top="110" left="412" width="75" height="12" font="62">SemanticSim</text>
+<text top="110" left="506" width="36" height="12" font="62">Recall</text>
+<text top="110" left="560" width="53" height="12" font="62">Precision</text>
+<text top="110" left="630" width="75" height="12" font="62">SemanticSim</text>
+<text top="132" left="150" width="42" height="12" font="7">GPT-4o</text>
+<text top="132" left="297" width="17" height="12" font="7">5.7</text>
+<text top="132" left="356" width="24" height="12" font="7">11.7</text>
+<text top="132" left="435" width="30" height="12" font="7">0.586</text>
+<text top="132" left="515" width="17" height="12" font="7">4.9</text>
+<text top="132" left="578" width="17" height="12" font="7">7.8</text>
+<text top="132" left="653" width="30" height="12" font="7">0.406</text>
+<text top="132" left="743" width="4" height="12" font="7">-</text>
+<text top="147" left="150" width="120" height="12" font="7">Claude Computer Use</text>
+<text top="147" left="294" width="24" height="12" font="7">17.1</text>
+<text top="147" left="356" width="24" height="12" font="7">35.3</text>
+<text top="147" left="435" width="30" height="12" font="7">0.758</text>
+<text top="147" left="512" width="24" height="12" font="7">19.3</text>
+<text top="147" left="574" width="24" height="12" font="7">31.0</text>
+<text top="147" left="653" width="30" height="12" font="7">0.511</text>
+<text top="147" left="743" width="4" height="12" font="7">-</text>
+<text top="162" left="150" width="92" height="12" font="7">Qwen2.5-VL-7B</text>
+<text top="162" left="294" width="24" height="12" font="7">18.8</text>
+<text top="162" left="356" width="24" height="12" font="7">36.6</text>
+<text top="162" left="435" width="30" height="12" font="7">0.596</text>
+<text top="162" left="512" width="24" height="12" font="7">25.0</text>
+<text top="162" left="574" width="24" height="12" font="7">52.6</text>
+<text top="162" left="653" width="30" height="12" font="7">0.854</text>
+<text top="162" left="731" width="30" height="12" font="7">0.534</text>
+<text top="177" left="150" width="98" height="12" font="7">Qwen2.5-VL-72B</text>
+<text top="177" left="294" width="24" height="12" font="7">22.9</text>
+<text top="177" left="356" width="24" height="12" font="7">43.7</text>
+<text top="177" left="435" width="30" height="12" font="7">0.685</text>
+<text top="177" left="512" width="24" height="12" font="7">42.4</text>
+<text top="177" left="574" width="24" height="12" font="7">70.5</text>
+<text top="177" left="653" width="30" height="12" font="7">0.867</text>
+<text top="177" left="731" width="30" height="12" font="7">2.748</text>
+<text top="192" left="150" width="87" height="12" font="7">InternVL2.5-8B</text>
+<text top="192" left="294" width="24" height="12" font="7">11.7</text>
+<text top="192" left="356" width="24" height="12" font="7">30.4</text>
+<text top="192" left="435" width="30" height="12" font="7">0.615</text>
+<text top="192" left="512" width="24" height="12" font="7">28.6</text>
+<text top="192" left="574" width="24" height="12" font="7">47.9</text>
+<text top="192" left="653" width="30" height="12" font="7">0.812</text>
+<text top="192" left="731" width="30" height="12" font="7">0.558</text>
+<text top="207" left="150" width="94" height="12" font="7">InternVL2.5-78B</text>
+<text top="207" left="294" width="24" height="12" font="7">20.4</text>
+<text top="207" left="356" width="24" height="12" font="7">38.6</text>
+<text top="207" left="435" width="30" height="12" font="7">0.628</text>
+<text top="207" left="512" width="24" height="12" font="7">40.8</text>
+<text top="207" left="574" width="24" height="12" font="7">66.4</text>
+<text top="207" left="653" width="30" height="12" font="7">0.836</text>
+<text top="207" left="731" width="30" height="12" font="7">2.822</text>
+<text top="222" left="150" width="112" height="12" font="62">SparkUI-Parser-8B</text>
+<text top="222" left="294" width="24" height="12" font="62">77.2</text>
+<text top="222" left="356" width="24" height="12" font="62">77.9</text>
+<text top="222" left="435" width="30" height="12" font="62">0.918</text>
+<text top="222" left="512" width="24" height="12" font="62">87.1</text>
+<text top="222" left="574" width="24" height="12" font="62">89.5</text>
+<text top="222" left="653" width="30" height="12" font="62">0.946</text>
+<text top="222" left="731" width="30" height="12" font="62">0.154</text>
+<text top="256" left="81" width="435" height="13" font="4">Table 3: GUI parsing evaluation of various methods on ScreenParse. The</text>
+<text top="255" left="520" width="26" height="13" font="6">best</text>
+<text top="256" left="549" width="288" height="13" font="4">and second best performance are marked, where</text>
+<text top="272" left="81" width="462" height="13" font="4">“-” indicates the time consumption cannot be obtained because of API usage.</text>
+<text top="319" left="173" width="37" height="12" font="62">Model</text>
+<text top="312" left="338" width="83" height="12" font="62">ScreenSpot-v2</text>
+<text top="312" left="567" width="71" height="12" font="62">ScreenParse</text>
+<text top="334" left="317" width="53" height="12" font="62">Text Avg.</text>
+<text top="334" left="388" width="54" height="12" font="62">Icon Avg.</text>
+<text top="334" left="460" width="64" height="12" font="62">Recall Avg.</text>
+<text top="334" left="542" width="81" height="12" font="62">Precision Avg.</text>
+<text top="334" left="641" width="104" height="12" font="62">SemanticSim Avg.</text>
+<text top="356" left="173" width="58" height="12" font="62">full model</text>
+<text top="356" left="332" width="24" height="12" font="62">95.4</text>
+<text top="356" left="403" width="24" height="12" font="62">83.7</text>
+<text top="356" left="480" width="24" height="12" font="62">82.2</text>
+<text top="356" left="571" width="24" height="12" font="62">83.7</text>
+<text top="356" left="678" width="30" height="12" font="62">0.932</text>
+<text top="371" left="173" width="126" height="12" font="7">w/o coordiante decoder</text>
+<text top="371" left="332" width="24" height="12" font="7">91.2</text>
+<text top="371" left="403" width="24" height="12" font="7">80.2</text>
+<text top="371" left="480" width="24" height="12" font="7">77.6</text>
+<text top="371" left="571" width="24" height="12" font="7">78.2</text>
+<text top="371" left="678" width="30" height="12" font="7">0.930</text>
+<text top="386" left="173" width="99" height="12" font="7">w/o vision adapter</text>
+<text top="386" left="332" width="24" height="12" font="7">22.1</text>
+<text top="386" left="403" width="24" height="12" font="7">17.8</text>
+<text top="386" left="484" width="17" height="12" font="7">5.4</text>
+<text top="386" left="574" width="17" height="12" font="7">4.6</text>
+<text top="386" left="678" width="30" height="12" font="7">0.915</text>
+<text top="401" left="173" width="113" height="12" font="7">w/o element matcher</text>
+<text top="401" left="332" width="24" height="12" font="7">94.7</text>
+<text top="401" left="403" width="24" height="12" font="7">83.1</text>
+<text top="401" left="480" width="24" height="12" font="7">79.5</text>
+<text top="401" left="571" width="24" height="12" font="7">80.4</text>
+<text top="401" left="678" width="30" height="12" font="7">0.814</text>
+<text top="416" left="173" width="104" height="12" font="7">w/o parsing dataset</text>
+<text top="416" left="332" width="24" height="12" font="7">95.0</text>
+<text top="416" left="403" width="24" height="12" font="7">83.2</text>
+<text top="416" left="480" width="24" height="12" font="7">20.2</text>
+<text top="416" left="571" width="24" height="12" font="7">39.2</text>
+<text top="416" left="678" width="30" height="12" font="7">0.751</text>
+<text top="450" left="81" width="756" height="13" font="4">Table 4: Ablation study to analyze the effectiveness of each component in our method, for conciseness and clarity of presenta-</text>
+<text top="466" left="81" width="421" height="13" font="4">tion, we primarily focus on results on ScreenSpot-v2 and ScreenParse.</text>
+<text top="516" left="81" width="358" height="13" font="4">ation on multiple GUI grounding benchmarks demonstrates</text>
+<text top="533" left="81" width="358" height="13" font="4">that our method effectively supports and adapts to multilin-</text>
+<text top="549" left="81" width="294" height="13" font="4">gual user interfaces and various instruction tasks.</text>
+<text top="580" left="81" width="20" height="15" font="31">5.3</text>
+<text top="580" left="118" width="108" height="15" font="31">Parsing Results</text>
+<text top="602" left="81" width="358" height="13" font="4">To evaluate the model’s global perception of the semantics</text>
+<text top="619" left="81" width="358" height="13" font="4">and coordinates of user interface elements, we use proposed</text>
+<text top="635" left="81" width="358" height="13" font="4">benchmark ScreenParse that includes both English and Chi-</text>
+<text top="651" left="81" width="358" height="13" font="4">nese user interfaces. The average time consumption of pre-</text>
+<text top="668" left="81" width="189" height="13" font="4">dicted elements is obtained by</text>
+<text top="668" left="276" width="71" height="13" font="66">transformer</text>
+<text top="668" left="353" width="86" height="13" font="4">framework on</text>
+<text top="684" left="81" width="358" height="13" font="4">NVIDIA 80G A100. As shown in Tab. 3, SparkUI-Parser</text>
+<text top="701" left="81" width="358" height="13" font="4">demonstrates superior performance in parsing various user</text>
+<text top="717" left="81" width="358" height="13" font="4">interfaces. Commercial models as well as large-scale mod-</text>
+<text top="734" left="81" width="358" height="13" font="4">els can only locate a small number of elements, showing in-</text>
+<text top="750" left="81" width="358" height="13" font="4">ferior recall and precision scores. Also, the semantic simi-</text>
+<text top="767" left="81" width="358" height="13" font="4">larity of their located elements is low, exhibiting deviations</text>
+<text top="783" left="81" width="358" height="13" font="4">in their semantic understanding of elements. By decoupling</text>
+<text top="799" left="81" width="358" height="13" font="4">the semantics and coordinates of the parsing task and using</text>
+<text top="816" left="81" width="358" height="13" font="4">an element matcher to maintain correct element optimiza-</text>
+<text top="832" left="81" width="358" height="13" font="4">tion during training, our model achieves significant improve-</text>
+<text top="849" left="81" width="358" height="13" font="4">ments on ScreenParse compared to other models, while also</text>
+<text top="865" left="81" width="358" height="13" font="4">significantly reducing the average inference time of a single</text>
+<text top="882" left="81" width="51" height="13" font="4">element.</text>
+<text top="912" left="81" width="20" height="15" font="31">5.4</text>
+<text top="912" left="118" width="106" height="15" font="31">Ablation Study</text>
+<text top="935" left="81" width="358" height="13" font="4">We conduct an ablation study to analyze and verify the ef-</text>
+<text top="951" left="81" width="275" height="13" font="4">fectiveness of each component in our method.</text>
+<text top="977" left="81" width="193" height="13" font="6">Impact of Coordinate Decoder</text>
+<text top="977" left="289" width="149" height="13" font="4">The second row of Tab. 4</text>
+<text top="994" left="81" width="358" height="13" font="4">indicates that our proposed decoupled framework has differ-</text>
+<text top="1010" left="81" width="358" height="13" font="4">ent degrees of improvement compared with the autoregres-</text>
+<text top="1026" left="81" width="358" height="13" font="4">sive generation method of MLLM on various benchmarks.</text>
+<text top="1043" left="81" width="358" height="13" font="4">This also verifies that converting the discrete vocabulary</text>
+<text top="516" left="479" width="358" height="13" font="4">form of coordinates into continuous spatial feature model-</text>
+<text top="533" left="479" width="358" height="13" font="4">ing promotes MLLM to better complete coordinate-related</text>
+<text top="549" left="479" width="34" height="13" font="4">tasks.</text>
+<text top="574" left="479" width="168" height="13" font="6">Impact of Vision Adapater</text>
+<text top="575" left="662" width="175" height="13" font="4">The third row of Tab. 4 shows</text>
+<text top="591" left="479" width="358" height="13" font="4">that when the visual adapter is removed and only text fea-</text>
+<text top="607" left="479" width="358" height="13" font="4">tures are used with self-attention to regress the coordinates,</text>
+<text top="624" left="479" width="358" height="13" font="4">the accuracy greatly drops, indicating that the localization</text>
+<text top="640" left="479" width="358" height="13" font="4">of user interface elements requires sufficient visual feature</text>
+<text top="657" left="479" width="68" height="13" font="4">interaction.</text>
+<text top="682" left="479" width="187" height="13" font="6">Impact of Element Matcher</text>
+<text top="682" left="681" width="156" height="13" font="4">The forth row of Tab. 4</text>
+<text top="699" left="479" width="358" height="13" font="4">demonstrates that removing the element matcher results in</text>
+<text top="715" left="479" width="358" height="13" font="4">diminished parsing accuracy, primarily due to randomness</text>
+<text top="732" left="479" width="358" height="13" font="4">of MLLM generation and target mismatches. This indicates</text>
+<text top="748" left="479" width="358" height="13" font="4">that the element matcher plays a crucial role in aligning the</text>
+<text top="764" left="479" width="358" height="13" font="4">model’s outputs with the ground truth, reducing the focus on</text>
+<text top="781" left="479" width="273" height="13" font="4">learning a completely consistent output order.</text>
+<text top="806" left="479" width="174" height="13" font="6">Impact of Parsing Dataset</text>
+<text top="806" left="668" width="169" height="13" font="4">The incorporation of anno-</text>
+<text top="823" left="479" width="358" height="13" font="4">tated parsing dataset significantly enhances the model’s ca-</text>
+<text top="839" left="479" width="358" height="13" font="4">pability for global structural perception. As shown in the</text>
+<text top="856" left="479" width="358" height="13" font="4">fifth row of Tab. 4, the introduction of parsing dataset</text>
+<text top="872" left="479" width="358" height="13" font="4">demonstrates substantial improvements in both structural</text>
+<text top="889" left="479" width="358" height="13" font="4">perception and grounding precision, while slightly improves</text>
+<text top="905" left="479" width="213" height="13" font="4">the performance of GUI grounding.</text>
+<text top="937" left="602" width="9" height="16" font="1">6</text>
+<text top="937" left="629" width="86" height="16" font="1">Conclusion</text>
+<text top="961" left="479" width="358" height="13" font="4">In this paper, we propose a route-then-predict framework</text>
+<text top="977" left="479" width="358" height="13" font="4">that decouples the semantic and location perception of user</text>
+<text top="994" left="479" width="358" height="13" font="4">interface elements. By leveraging a specialized coordinate</text>
+<text top="1010" left="479" width="358" height="13" font="4">decoder to map location features into a continuous coordi-</text>
+<text top="1026" left="479" width="358" height="13" font="4">nate space instead of generating coordinate tokens via tra-</text>
+<text top="1043" left="479" width="358" height="13" font="4">ditional text autoregressive methods, our method achieves</text>
+</page>
+<page number="8" position="absolute" top="0" left="0" height="1188" width="918">
+<text top="86" left="81" width="358" height="13" font="4">state-of-the-art performance on the following benchmarks</text>
+<text top="102" left="81" width="358" height="13" font="4">while having the highest inference efficiency: ScreenSpot,</text>
+<text top="119" left="81" width="358" height="13" font="4">ScreenSpot-v2, CAGUI-Grounding and ScreenParse. Mean-</text>
+<text top="135" left="81" width="358" height="13" font="4">while, a rejection mechanism is introduced in GUI scenario</text>
+<text top="152" left="81" width="358" height="13" font="4">to avoid the model generating erroneous hallucination re-</text>
+<text top="168" left="81" width="358" height="13" font="4">sults and enhance the robustness and reliability. Moreover,</text>
+<text top="184" left="81" width="358" height="13" font="4">we release a benchmark for user interface parsing to assess</text>
+<text top="201" left="81" width="358" height="13" font="4">the model’s global semantics and location perception of the</text>
+<text top="217" left="81" width="276" height="13" font="4">user interface for furthur community research.</text>
+<text top="252" left="218" width="83" height="16" font="1">References</text>
+<text top="277" left="81" width="358" height="13" font="4">Anthropic. 2024. Developing a computer use model. Tech-</text>
+<text top="293" left="81" width="140" height="13" font="4">nical report, Anthropic.</text>
+<text top="315" left="81" width="113" height="13" font="4">Authors, P. 2020.</text>
+<text top="315" left="215" width="224" height="13" font="4">PaddleOCR, Awesome multilingual</text>
+<text top="332" left="81" width="358" height="13" font="4">OCR toolkits based on PaddlePaddle. https://github.com/</text>
+<text top="348" left="81" width="160" height="13" font="4">PaddlePaddle/PaddleOCR.</text>
+<text top="370" left="81" width="358" height="13" font="4">Bai, J.; Bai, S.; Yang, S.; Wang, S.; Tan, S.; Wang, P.; Lin, J.;</text>
+<text top="386" left="81" width="358" height="13" font="4">Zhou, C.; and Zhou, J. 2023. Qwen-VL: A Versatile Vision-</text>
+<text top="403" left="81" width="358" height="13" font="4">Language Model for Understanding, Localization, Text</text>
+<text top="419" left="81" width="133" height="13" font="4">Reading, and Beyond.</text>
+<text top="419" left="219" width="198" height="13" font="66">arXiv preprint arXiv:2308.12966</text>
+<text top="419" left="417" width="4" height="13" font="4">.</text>
+<text top="441" left="81" width="358" height="13" font="4">Bai, S.; Chen, K.; Liu, X.; Wang, J.; Ge, W.; Song, S.; Dang,</text>
+<text top="457" left="81" width="358" height="13" font="4">K.; Wang, P.; Wang, S.; Tang, J.; et al. 2025. Qwen2. 5-vl</text>
+<text top="474" left="81" width="97" height="13" font="4">technical report.</text>
+<text top="474" left="183" width="198" height="13" font="66">arXiv preprint arXiv:2502.13923</text>
+<text top="474" left="382" width="4" height="13" font="4">.</text>
+<text top="496" left="81" width="358" height="13" font="4">Carion, N.; Massa, F.; Synnaeve, G.; Usunier, N.; Kirillov,</text>
+<text top="512" left="81" width="358" height="13" font="4">A.; and Zagoruyko, S. 2020. End-to-end object detection</text>
+<text top="529" left="81" width="128" height="13" font="4">with transformers. In</text>
+<text top="529" left="213" width="226" height="13" font="66">European conference on computer vi-</text>
+<text top="545" left="81" width="25" height="13" font="66">sion</text>
+<text top="545" left="106" width="122" height="13" font="4">, 213–229. Springer.</text>
+<text top="567" left="81" width="358" height="13" font="4">Chen, Z.; Wang, W.; Cao, Y.; Liu, Y.; Gao, Z.; Cui, E.; Zhu,</text>
+<text top="583" left="81" width="358" height="13" font="4">J.; Ye, S.; Tian, H.; Liu, Z.; et al. 2024a. Expanding Per-</text>
+<text top="600" left="81" width="358" height="13" font="4">formance Boundaries of Open-Source Multimodal Models</text>
+<text top="616" left="81" width="260" height="13" font="4">with Model, Data, and Test-Time Scaling.</text>
+<text top="616" left="352" width="87" height="13" font="66">arXiv preprint</text>
+<text top="633" left="81" width="109" height="13" font="66">arXiv:2412.05271</text>
+<text top="633" left="190" width="4" height="13" font="4">.</text>
+<text top="654" left="81" width="358" height="13" font="4">Chen, Z.; Wu, J.; Wang, W.; Su, W.; Chen, G.; Xing, S.;</text>
+<text top="671" left="81" width="358" height="13" font="4">Zhong, M.; Zhang, Q.; Zhu, X.; Lu, L.; et al. 2024b. In-</text>
+<text top="687" left="81" width="358" height="13" font="4">ternvl: Scaling up vision foundation models and aligning</text>
+<text top="704" left="81" width="235" height="13" font="4">for generic visual-linguistic tasks. In</text>
+<text top="704" left="323" width="116" height="13" font="66">Proceedings of the</text>
+<text top="720" left="81" width="358" height="13" font="66">IEEE/CVF Conference on Computer Vision and Pattern</text>
+<text top="737" left="81" width="72" height="13" font="66">Recognition</text>
+<text top="737" left="153" width="93" height="13" font="4">, 24185–24198.</text>
+<text top="758" left="81" width="358" height="13" font="4">Cheng, K.; Sun, Q.; Chu, Y.; Xu, F.; Li, Y.; Zhang, J.; and</text>
+<text top="775" left="81" width="358" height="13" font="4">Wu, Z. 2024. Seeclick: Harnessing gui grounding for ad-</text>
+<text top="791" left="81" width="150" height="13" font="4">vanced visual gui agents.</text>
+<text top="791" left="236" width="198" height="13" font="66">arXiv preprint arXiv:2401.10935</text>
+<text top="791" left="435" width="4" height="13" font="4">.</text>
+<text top="813" left="81" width="152" height="13" font="4">GoogleDeepmind. 2024.</text>
+<text top="813" left="252" width="186" height="13" font="4">Gemini-2.0 (project mariner).</text>
+<text top="829" left="81" width="215" height="13" font="4">Technical report, GoogleDeepmind.</text>
+<text top="851" left="81" width="358" height="13" font="4">Gou, B.; Wang, R.; Zheng, B.; Xie, Y.; Chang, C.; Shu, Y.;</text>
+<text top="868" left="81" width="358" height="13" font="4">Sun, H.; and Su, Y. 2024. Navigating the digital world as</text>
+<text top="884" left="81" width="321" height="13" font="4">humans do: Universal visual grounding for gui agents.</text>
+<text top="884" left="406" width="33" height="13" font="66">arXiv</text>
+<text top="901" left="81" width="161" height="13" font="66">preprint arXiv:2410.05243</text>
+<text top="901" left="242" width="4" height="13" font="4">.</text>
+<text top="922" left="81" width="358" height="13" font="4">Hong, W.; Wang, W.; Lv, Q.; Xu, J.; Yu, W.; Ji, J.; Wang,</text>
+<text top="939" left="81" width="358" height="13" font="4">Y.; Wang, Z.; Dong, Y.; Ding, M.; et al. 2024. Cogagent:</text>
+<text top="955" left="81" width="263" height="13" font="4">A visual language model for gui agents. In</text>
+<text top="955" left="349" width="90" height="13" font="66">Proceedings of</text>
+<text top="972" left="81" width="358" height="13" font="66">the IEEE/CVF Conference on Computer Vision and Pattern</text>
+<text top="988" left="81" width="72" height="13" font="66">Recognition</text>
+<text top="988" left="153" width="93" height="13" font="4">, 14281–14290.</text>
+<text top="1010" left="81" width="358" height="13" font="4">Hu, E. J.; Shen, Y.; Wallis, P.; Allen-Zhu, Z.; Li, Y.; Wang,</text>
+<text top="1026" left="81" width="358" height="13" font="4">S.; Wang, L.; Chen, W.; et al. 2022. Lora: Low-rank adapta-</text>
+<text top="1043" left="81" width="181" height="13" font="4">tion of large language models.</text>
+<text top="1043" left="267" width="32" height="13" font="66">ICLR</text>
+<text top="1043" left="300" width="51" height="13" font="4">, 1(2): 3.</text>
+<text top="86" left="479" width="358" height="13" font="4">Hurst, A.; Lerer, A.; Goucher, A. P.; Perelman, A.; Ramesh,</text>
+<text top="102" left="479" width="358" height="13" font="4">A.; Clark, A.; Ostrow, A.; Welihinda, A.; Hayes, A.; Rad-</text>
+<text top="119" left="479" width="261" height="13" font="4">ford, A.; et al. 2024. Gpt-4o system card.</text>
+<text top="119" left="750" width="87" height="13" font="66">arXiv preprint</text>
+<text top="135" left="479" width="109" height="13" font="66">arXiv:2410.21276</text>
+<text top="135" left="588" width="4" height="13" font="4">.</text>
+<text top="154" left="479" width="358" height="13" font="4">Li, Z.; You, K.; Zhang, H.; Feng, D.; Agrawal, H.; Li, X.;</text>
+<text top="171" left="479" width="358" height="13" font="4">Moorthy, M. P. S.; Nichols, J.; Yang, Y.; and Gan, Z. 2024.</text>
+<text top="187" left="479" width="358" height="13" font="4">Ferret-ui 2: Mastering universal user interface understanding</text>
+<text top="203" left="479" width="102" height="13" font="4">across platforms.</text>
+<text top="204" left="587" width="198" height="13" font="66">arXiv preprint arXiv:2410.18967</text>
+<text top="203" left="785" width="4" height="13" font="4">.</text>
+<text top="222" left="479" width="358" height="13" font="4">Liu, H.; Li, C.; Wu, Q.; and Lee, Y. J. 2023. Visual Instruc-</text>
+<text top="239" left="479" width="73" height="13" font="4">tion Tuning.</text>
+<text top="258" left="479" width="358" height="13" font="4">Liu, S.; Zeng, Z.; Ren, T.; Li, F.; Zhang, H.; Yang, J.; Jiang,</text>
+<text top="274" left="479" width="358" height="13" font="4">Q.; Li, C.; Yang, J.; Su, H.; et al. 2024. Grounding dino:</text>
+<text top="291" left="479" width="358" height="13" font="4">Marrying dino with grounded pre-training for open-set ob-</text>
+<text top="307" left="479" width="100" height="13" font="4">ject detection. In</text>
+<text top="307" left="582" width="251" height="13" font="66">European Conference on Computer Vision</text>
+<text top="307" left="833" width="4" height="13" font="4">,</text>
+<text top="324" left="479" width="99" height="13" font="4">38–55. Springer.</text>
+<text top="343" left="479" width="358" height="13" font="4">Qin, Y.; Ye, Y.; Fang, J.; Wang, H.; Liang, S.; Tian, S.;</text>
+<text top="359" left="479" width="358" height="13" font="4">Zhang, J.; Li, J.; Li, Y.; Huang, S.; et al. 2025. UI-TARS:</text>
+<text top="376" left="479" width="358" height="13" font="4">Pioneering Automated GUI Interaction with Native Agents.</text>
+<text top="392" left="479" width="198" height="13" font="66">arXiv preprint arXiv:2501.12326</text>
+<text top="392" left="678" width="4" height="13" font="4">.</text>
+<text top="411" left="479" width="358" height="13" font="4">Rezatofighi, H.; Tsoi, N.; Gwak, J.; Sadeghian, A.; Reid, I.;</text>
+<text top="427" left="479" width="358" height="13" font="4">and Savarese, S. 2019. Generalized intersection over union:</text>
+<text top="444" left="479" width="326" height="13" font="4">A metric and a loss for bounding box regression. In</text>
+<text top="444" left="810" width="27" height="13" font="66">Pro-</text>
+<text top="460" left="479" width="358" height="13" font="66">ceedings of the IEEE/CVF conference on computer vision</text>
+<text top="477" left="479" width="141" height="13" font="66">and pattern recognition</text>
+<text top="477" left="621" width="64" height="13" font="4">, 658–666.</text>
+<text top="496" left="479" width="358" height="13" font="4">Team, G.; Anil, R.; Borgeaud, S.; Alayrac, J.-B.; Yu, J.; Sori-</text>
+<text top="512" left="479" width="358" height="13" font="4">cut, R.; Schalkwyk, J.; Dai, A. M.; Hauth, A.; Millican, K.;</text>
+<text top="529" left="479" width="358" height="13" font="4">et al. 2023. Gemini: a family of highly capable multimodal</text>
+<text top="545" left="479" width="47" height="13" font="4">models.</text>
+<text top="545" left="532" width="198" height="13" font="66">arXiv preprint arXiv:2312.11805</text>
+<text top="545" left="730" width="4" height="13" font="4">.</text>
+<text top="564" left="479" width="358" height="13" font="4">Wan, J.; Song, S.; Yu, W.; Liu, Y.; Cheng, W.; Huang, F.;</text>
+<text top="580" left="479" width="358" height="13" font="4">Bai, X.; Yao, C.; and Yang, Z. 2024. Omniparser: A unified</text>
+<text top="597" left="479" width="358" height="13" font="4">framework for text spotting key information extraction and</text>
+<text top="613" left="479" width="123" height="13" font="4">table recognition. In</text>
+<text top="613" left="606" width="231" height="13" font="66">Proceedings of the IEEE/CVF Confer-</text>
+<text top="630" left="479" width="305" height="13" font="66">ence on Computer Vision and Pattern Recognition</text>
+<text top="630" left="784" width="53" height="13" font="4">, 15641–</text>
+<text top="646" left="479" width="41" height="13" font="4">15653.</text>
+<text top="665" left="479" width="358" height="13" font="4">Wu, Z.; Wu, Z.; Xu, F.; Wang, Y.; Sun, Q.; Jia, C.; Cheng,</text>
+<text top="682" left="479" width="358" height="13" font="4">K.; Ding, Z.; Chen, L.; Liang, P. P.; et al. 2024. Os-atlas:</text>
+<text top="698" left="479" width="317" height="13" font="4">A foundation action model for generalist gui agents.</text>
+<text top="698" left="804" width="33" height="13" font="66">arXiv</text>
+<text top="715" left="479" width="161" height="13" font="66">preprint arXiv:2410.23218</text>
+<text top="715" left="641" width="4" height="13" font="4">.</text>
+<text top="734" left="479" width="358" height="13" font="4">Xu, Y.; Wang, Z.; Wang, J.; Lu, D.; Xie, T.; Saha, A.; Sa-</text>
+<text top="750" left="479" width="358" height="13" font="4">hoo, D.; Yu, T.; and Xiong, C. 2024. Aguvis: Unified pure</text>
+<text top="766" left="479" width="268" height="13" font="4">vision agents for autonomous gui interaction.</text>
+<text top="767" left="752" width="85" height="13" font="66">arXiv preprint</text>
+<text top="783" left="479" width="109" height="13" font="66">arXiv:2412.04454</text>
+<text top="783" left="588" width="4" height="13" font="4">.</text>
+<text top="802" left="479" width="358" height="13" font="4">Yang, Y.; Wang, Y.; Li, D.; Luo, Z.; Chen, B.; Huang, C.; and</text>
+<text top="818" left="479" width="358" height="13" font="4">Li, J. 2024. Aria-UI: Visual Grounding for GUI Instructions.</text>
+<text top="835" left="479" width="198" height="13" font="66">arXiv preprint arXiv:2412.16256</text>
+<text top="835" left="678" width="4" height="13" font="4">.</text>
+<text top="854" left="479" width="358" height="13" font="4">Yang, Z.; Li, L.; Lin, K.; Wang, J.; Lin, C.-C.; Liu, Z.; and</text>
+<text top="870" left="479" width="358" height="13" font="4">Wang, L. 2023. The dawn of lmms: Preliminary explorations</text>
+<text top="887" left="479" width="116" height="13" font="4">with gpt-4v (ision).</text>
+<text top="887" left="602" width="199" height="13" font="66">arXiv preprint arXiv:2309.17421</text>
+<text top="887" left="800" width="37" height="13" font="4">, 9(1):</text>
+<text top="903" left="479" width="11" height="13" font="4">1.</text>
+<text top="922" left="479" width="358" height="13" font="4">You, K.; Zhang, H.; Schoop, E.; Weers, F.; Swearngin, A.;</text>
+<text top="938" left="479" width="358" height="13" font="4">Nichols, J.; Yang, Y.; and Gan, Z. 2024. Ferret-ui: Grounded</text>
+<text top="955" left="479" width="296" height="13" font="4">mobile ui understanding with multimodal llms. In</text>
+<text top="955" left="779" width="58" height="13" font="66">European</text>
+<text top="971" left="479" width="191" height="13" font="66">Conference on Computer Vision</text>
+<text top="971" left="671" width="122" height="13" font="4">, 240–255. Springer.</text>
+<text top="990" left="479" width="358" height="13" font="4">Zhang, Z.; Lu, Y.; Fu, Y.; Huo, Y.; Yang, S.; Wu, Y.; Si, H.;</text>
+<text top="1007" left="479" width="358" height="13" font="4">Cong, X.; Chen, H.; Lin, Y.; et al. 2025. AgentCPM-GUI:</text>
+<text top="1023" left="479" width="358" height="13" font="4">Building Mobile-Use Agents with Reinforcement Fine-</text>
+<text top="1040" left="479" width="46" height="13" font="4">Tuning.</text>
+<text top="1040" left="531" width="198" height="13" font="66">arXiv preprint arXiv:2506.01391</text>
+<text top="1040" left="729" width="4" height="13" font="4">.</text>
+</page>
+</pdf2xml>

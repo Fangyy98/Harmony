@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<title>H037 中文阅读版</title>
+<style>
+body {
+  font-family: "Noto Sans CJK SC", "Noto Sans CJK", sans-serif;
+  max-width: 860px;
+  margin: 42px auto;
+  color: #111;
+  line-height: 1.72;
+  font-size: 17px;
+}
+h1 { font-size: 28px; line-height: 1.25; margin-bottom: 8px; }
+.meta { color: #555; font-size: 14px; margin-bottom: 28px; }
+p { margin: 0 0 14px; }
+</style>
+<h1>DRS-GUI: Dynamic Region Search for Training-Free GUI Grounding<br>中文阅读版</h1>
+<div class="meta">源文件：/home/fang/Harmony/文献/应用测试与质量/H037_DRS_GUI_Dynamic_Region_Search_for_Training_Free_GUI_Grounding/H037.pdf<br>说明：由 PDF 文本层抽取并自动翻译，供个人阅读；原文图像和复杂表格未重排。</div>
+<p>DRS-GUI：用于免训练 GUI 定位的动态区域搜索</p>
+<p>Liu Yu1 Shiyu Liu1 Zeyu Chen1 Yu Zhou1 *  
+1 南开大学  
+2 中国科学院信息工程研究所</p>
+<p>arXiv:2605.15542v1 [cs.AI] 2026 年 5 月 15 日</p>
+<p>Yichao Liu1</p>
+<p>Huawen Shen2</p>
+<p>摘要 由多模态大语言模型（MLLMs）驱动的图形用户界面（GUI）智能体在理解和执行用户指令方面已经展现出令人印象深刻的能力。然而，从充斥着无关 UI 组件的高分辨率截图中准确定位与指令相关的元素，对于现有方法而言仍然具有挑战性。受到人类如何动态调整其感知范围以在复杂屏幕上定位任务相关区域的启发，我们提出 DRS-GUI，这是一个用于 GUI 定位的免训练动态区域搜索框架，可以无缝集成到现有 MLLMs 中。DRS-GUI 引入了一个轻量级 UI Perceptor，它执行三种类人的感知动作（Focus、Shift 和 Scatter），以逐步探索界面并生成区域候选。为了动态调度这些动作，我们进一步设计了一个基于蒙特卡洛树搜索（Monte Carlo Tree Search，MCTS）的 Action Planner。采用区域质量奖励来评估并选择高度与指令相关的区域，从而高效剪除冗余 UI 元素。实验表明，对于通用和 GUI 专用 MLLMs（Qwen2.5-VL-7B 和 UGround-V1-7B），DRS-GUI 在 ScreenSpot-Pro 上带来了 14% 的提升，显著增强了定位性能和泛化能力。</p>
+<p>1. 引言 图形用户界面（GUI）智能体在多模态大语言模型（MLLMs）[11, 27, 42, 43, 46] 近期进展的推动下，正在从基于规则的脚本化控制转向自然语言交互。此类交互的可靠性从根本上取决于定位——即准确地定位用户指令所指定的可执行 UI 元素 [20, 50]。然而，真实的 GUI 截图通常具有高分辨率且视觉密集，其中包含大量冗余元素，会分散 MLLMs 对指令相关线索的注意力，而这些线索对于可靠地分离真实目标是必要的 [19]。由此产生的失败不仅源于 * 通讯作者。</p>
+<p>截图图像：[1387,373 ]</p>
+<p>gt bbox：[1282,329,1308,352]</p>
+<p>M L L M</p>
+<p>指令：Add output port to the project in Quartus.</p>
+<p>Action Planner</p>
+<p>Plan</p>
+<p>Focus</p>
+<p>预测 Bbox</p>
+<p>最终区域</p>
+<p>Focus ×N</p>
+<p>裁剪与缩放</p>
+<p>无质量评估</p>
+<p>M L L M</p>
+<p>（a）现有方法</p>
+<p>仅前向 Focus</p>
+<p>UI Perceptor</p>
+<p>[1293, 348 ]</p>
+<p>Shift</p>
+<p>Scatter</p>
+<p>重新定位视图</p>
+<p>扩展视图</p>
+<p>M L L M 与指令相关的区域</p>
+<p>缩小视图</p>
+<p>动态感知</p>
+<p>区域质量评估</p>
+<p>（b）DRS-GUI（我们的方法）</p>
+<p>图 1. （a）单阶段方法通过仅前向的 focus 逐步裁剪和缩放，导致错误累积。（b）DRS-GUI 使用一个 action planner 和一个 UI Perceptor，通过三种感知动作探索区域，并在区域质量评估的引导下选择与指令相关的区域。</p>
+<p>视觉杂乱，也源于在交互过程中缺乏一种用于自适应调整感知范围的显式机制。现有 GUI 定位方法通常可归为两种范式，但二者都缺乏真正自适应的感知行为。第一种范式将定位表述为单步全屏预测，直接在整张截图上回归一个点或边界框 [9, 17, 41]。由于缺乏对注意力的显式控制，此类模型常常无法从背景杂乱中分离出与指令相关的线索。第二种范式采用多步细化策略，例如迭代裁剪或缩放 [16, 23, 36]，以逐渐将视图缩小到目标位置。尽管这些方法提供了渐进式聚焦，但其细化过程通常是仅前向的，并且缺乏机制来评估每一步是否改进了与指令的对齐，或在早期决策偏离正确轨迹时进行回溯 [39]。如图 1（a）所示，当轨迹偏离语义线索时，最终区域可能无法包含目标，从而使错误不可恢复。相比之下，人类行为遵循一种更灵活的模式：并非停留在单一路径上不断缩小范围，人类会</p>
+<p>人类会扫描布局，逐步细化注意力，并在出现不确定性时后退或将注意力转移到替代区域。这种自适应且可逆的搜索过程自然地评估注意力是在朝向还是真正目标远离移动 [31, 37, 38]，而这是当前 GUI 定位流程所缺乏的能力。这些观察表明，一个可靠的 GUI 定位框架应具备两个关键能力：（1）动态感知，即当当前证据较弱时，能够修正或转移查看区域，而不是致力于单一的、不可逆的逐步缩小路径；以及（2）区域质量评估，即每个感知步骤都提供一个可测量的信号，用于指示搜索是否正在更接近目标，从而帮助防止早期错误不断累积。为实现这些能力，我们提出 DRS-GUI，这是一个免训练框架，引入动态区域搜索和决策过程来指导定位流程。DRS-GUI 通过提出候选区域、借助语义和结构线索评估其与指令的相关性，并在必要时选择细化或重定向动作，动态调整感知范围。这种自适应感知过程呼应了人类在视觉密集界面中选择性探索并调整注意力的方式。为支持这一过程，DRS-GUI 纳入了一个辅助 UI Perceptor，它建立在 UI 元素解析器 [21] 和文本嵌入模块 [29] 之上。Perceptor 提供结构化 UI 表征，有助于确定哪些区域携带与指令相关的线索。在这些线索的引导下，系统执行三种感知动作：Focus（收缩视图以获得更精细的细节）、Shift（将注意力重新定位到替代区域）和 Scatter（向外扩展以恢复更广的上下文）。为了动态调度这些动作，DRS-GUI 采用了一个 Action Planner，该规划器集成蒙特卡罗树搜索（Monte Carlo Tree Search, MCTS）[28]，以实现类人的视野调整规划。我们进一步设计了一种奖励，用于评估区域质量并确定候选区域是否应被进一步探索或被选为最终结果。这种逐步评估缓解了早期错误的累积，解决了纯前向细化所固有的脆弱性。DRS-GUI 不需要额外的模型训练或微调，使其成为现有多模态大语言模型（Multimodal Large Language Models, MLLMs）[4, 7] 的即插即用增强组件。通过动态生成和评估感知区域，DRS-GUI 减少了冗余的视觉杂乱，并提升了在高分辨率、元素密集界面上的定位鲁棒性。总之，我们的贡献如下：• 我们提出 DRS-GUI，这是一种免训练的 GUI 定位方法，可执行动态区域搜索，有效增强 MLLMs 的定位性能。• 我们引入了一种类人的感知–动作过程，以获得可靠的目标区域：UI Perceptor 提供与指令相关的线索来驱动三种感知动作，</p>
+<p>而基于 MCTS 的 Action Planner 结合区域质量奖励来调控这些动作，以达成稳定的逐步决策。• 实验表明，DRS-GUI 在高分辨率 ScreenSpot-Pro 基准上取得了显著提升，突显了其鲁棒性和通用性。</p>
+<p>2. 相关工作 GUI 智能体。随着强大的多模态大语言模型（MLLMs）[2, 7, 32, 48] 的出现，GUI 智能体自动化复杂任务 [10, 33, 44] 的能力迅速提升。这一能力的基石是定位 [41, 52]。当前方法主要分为两种范式。第一种是静态全屏范式，其中 SeeClick [9]、OSAtlas [42] 和 UGround [11] 等代表性系统构建大规模标注数据集，以微调 MLLMs 进行文本到坐标预测。尽管该静态范式在结构化布局中有效，但在高分辨率、元素密集的界面上往往会退化，因为视觉杂乱会分散注意力并导致定位不稳定。静态模型的局限性，加上近期“think-with-image”策略 [6, 53, 54] 的兴起，推动了第二种基于迭代细化的范式。这些方法采用多步放大过程：ECP [16] 和 R-VLM [23] 首先定位候选区域，再进行高分辨率细化；DiMo-GUI [39] 通过模态分离和迭代区域放大执行免训练 GUI 定位；LASER [36] 是一个自演化框架，使 VLMs 具备多步感知和自适应区域推理能力，以实现精确的指令相关坐标预测。然而，这些放大方法本质上是不可逆的：一旦正确区域在早期被丢弃，搜索便无法恢复，错误也会累积。相比之下，我们的方法采用一种动态感知规划器，可根据需要重定向并重新访问区域，从而在密集界面中实现更可靠的定位。视觉搜索。早期视觉搜索模型受人类眼动启发，将显著性先验与概率搜索或学习策略相结合，以顺序选择注视位置 [26, 31, 47, 49, 51]，但它们通常使用固定大小的注意力窗口，并侧重于复现扫描路径，而不是在杂乱场景中准确定位小目标。较新的工作如 SEAL [40] 将定位模块和视觉记忆与大型多模态模型耦合，以引导注意力转向有前景的区域；ViGoRL [25] 将视觉搜索表述为序贯决策过程，并使用强化学习（RL）学习具备空间定位能力的注视策略；DyFo [18] 模拟类人的动态聚焦机制，使 MLLMs 能够放大到细粒度区域；FaST [30] 通过轻量级适配器控制视觉推理速度，以实现快–慢视觉搜索。尽管这些方法在自然图像场景中显示出潜力，</p>
+<p>但它们并未充分考虑 GUI 布局的极端密度和结构异质性。相反，我们将 GUI 定位表述为一个视觉搜索问题，并将 DRS-GUI 设计为动态区域级规划器，在语言引导下自适应探索候选区域，以更可靠地定位细粒度 GUI 目标。</p>
+<p>3. 方法论</p>
+<p>我们将动态区域搜索视为 GUI 定位的预备阶段，目标是在基础多模态大语言模型（MLLM）执行最终坐标预测之前识别出一个可靠的推理区域。DRS-GUI 通过在语言引导下生成、评估并细化候选区域来调整视野，使得定位仅在到达语义上合适的界面区域之后才发生。如图 2 所示，DRS-GUI 包含两个协同工作的模块。UI 感知器（UI Perceptor）将当前区域解析为结构化 UI 元素，并提供与指令对齐的语义线索，同时还执行三种区域级动作（Focus、Shift、Scatter）以生成候选视图。随后，MCTS 动作规划器（MCTS Action Planner）调度这些动作以构建区域搜索树。在区域质量奖励的引导下，DRS-GUI 动态搜索并修正其感知范围，以在将其传递给基础 MLLM 进行最终坐标预测之前识别出最合适的区域。这种先搜索后预测的范式减少了视觉冗余并缓解了错误累积，从而在密集、高分辨率的 GUI 环境中实现更稳定且更可解释的定位。</p>
+<p>3.1. 问题形式化</p>
+<p>GUI 定位任务是将自然语言指令 T 映射到截图 Sfull ∈ RH×W ×3 中其对应 UI 元素的像素级坐标 p = (x, y)。然而，直接在 Sfull 上进行定位并不可靠，因为界面分辨率高，并且密集填充了视觉上相似但与指令无关的元素。因此，我们将定位重新表述为一个先搜索后预测的过程。区域搜索策略 πS 首先识别与指令相关的区域 Rbest ⊂ Sfull，而基础定位模型 M 仅在该区域内执行定位：</p>
+<p>R_{\text {best}} = \pi _S(S_{\text {full}}, T), \qquad p = M(R_{\text {best}}, T) (1)</p>
+<p>DRS-GUI 的目标是将 πS 实现为一种高效且可逆的动态搜索过程，从而在不进行模型再训练的情况下提高定位稳定性。</p>
+<p>3.2. UI 感知器</p>
+<p>UI 感知器为 DRS-GUI 提供感知基础。给定一个区域 R ⊂ Sfull，它将可见界面解析为一组结构化 UI 元素，并生成</p>
+<p>具有 UI 领域感知能力的语义嵌入，用以引导感知动作的执行，从而优先考虑有意义且与用户指令在语义上对齐的区域。我们采用 OmniParser V2 [21] 来提取 UI 元素：</p>
+<p>U = \{\, u_i \mid u_i = [\, b_i, d_i, i_i \,] \,\}_{i=1}^{N}</p>
+<p>(2)</p>
+<p>其中 bi 表示元素 i 的边界框，di 表示其语义描述（来自 OCR 识别文本或图标描述生成），ii ∈ {0, 1} 表示该元素是否可交互。为了建立更好的语义对齐，我们使用 instructor-large embedder [29] 为指令 T 和元素描述 di 生成领域特定嵌入。领域特定前缀 Pd 根据当前 GUI 截图的应用类型和系统类型进行设计，并在编码时前置，从而确保指令和 UI 元素都被嵌入到与当前活动 GUI 环境对齐的统一交互语境中。具体而言，我们计算</p>
+<p>\begin {aligned} e_T &amp;= \text {Embedder}(P_d \oplus T), \\ e_{d_i} &amp;= \text {Embedder}(P_d \oplus d_i) \end {aligned} (3)</p>
+<p>并对最终隐藏状态进行均值池化，以获得固定长度向量。共享的领域前缀将指令嵌入 eT 和元素嵌入 edi 置于一致的语义空间中。随后，为每个元素计算语义相关性得分 si = cosine(eT , edi )，这些得分作为感知动作执行和区域奖励评估的核心线索。利用相关性得分列表 {si}，UI 感知器支持三种类似人类的感知动作，用于在定位之前动态调整搜索区域的空间焦点：</p>
+<p>Focus。Focus 将当前查看区域收缩到与指令高度相关的 UI 元素周围。在相关性得分 {si} 的引导下，感知器选择排名前 p% 的 UI 元素，并移除其框中心显著偏离簇质心的空间离群点。其余元素由最小外接边界框包围，以形成紧凑裁剪区域。如果相对于前一区域，该裁剪区域收缩不够充分，则迭代剪除最远的元素，直到满足目标收缩比例。这一聚类与剪枝步骤在抑制视觉杂乱的同时集中语义内容。</p>
+<p>Shift。Shift 将搜索迁移到界面的不同区域。当高相关性线索出现在与当前视图在空间上分离的区域中时，Shift 会围绕这些线索重新居中该区域。为保持稳定性，这些元素会根据一致的布局方向（例如，上方区域、左侧区域）进行分组，并且构建所得区域时尽量与前一个区域保持最小重叠。因此，Shift 执行的是一种有目的的注意力迁移——允许搜索移出信息不足的区域。</p>
+<p>动作规划器</p>
+<p>UI 感知器</p>
+<p>指令：在 word 中将图像设置为以穿越模式环绕文字。</p>
+<p>MCTS</p>
+<p>区域质量奖励：
+① 交互加权相关性
+② UI 覆盖一致性
+③ 语义集中度</p>
+<p>Focus 奖励</p>
+<p>Focus 奖励</p>
+<p>Scatter 奖励</p>
+<p>低</p>
+<p>Scatter 奖励</p>
+<p>Focus 奖励</p>
+<p>奖励</p>
+<p>高</p>
+<p>领域特定前缀：表示 Word macOS UI 元素：</p>
+<p>OmniParser</p>
+<p>感知与评分</p>
+<p>截图图像：</p>
+<p>UI 元素</p>
+<p>描述</p>
+<p>Embedder</p>
+<p>Bbox</p>
+<p>交互</p>
+<p>描述</p>
+<p>Bbox 0</p>
+<p>True</p>
+<p>文本 0：Comments Editing</p>
+<p>Bbox 1</p>
+<p>True</p>
+<p>图标 1：Change Picture</p>
+<p>Bbox 2</p>
+<p>True</p>
+<p>文本 2：In Line with Text</p>
+<p>Bbox 3</p>
+<p>False</p>
+<p>图标 3：ODate &amp; Time</p>
+<p>奖励</p>
+<p>奖励</p>
+<p>相似度</p>
+<p>语义相关性得分</p>
+<p>基于相关性的 UI 元素选择</p>
+<p>Shift</p>
+<p>Shift</p>
+<p>指令</p>
+<p>Focus</p>
+<p>Scatter 奖励</p>
+<p>Shift</p>
+<p>Scatter</p>
+<p>Shift 奖励</p>
+<p>MLLM</p>
+<p>最佳区域</p>
+<p>感知动作空间</p>
+<p>图 2. DRS-GUI 的处理流程。UI 感知器解析 UI 元素并评估其与指令的相关性，而动作规划器（MCTS）利用区域质量奖励探索感知动作，以定位适合最终定位的区域。</p>
+<p>区域，并以结构化且有引导的方式探索剩余界面空间。Scatter。当当前区域缺乏强烈或连贯的语义线索时，Scatter 会扩展感知范围。它会收集当前区域之外的其他高相关性元素，并扩大视野以包含这些元素，同时施加尺度约束以避免过度扩展。这种受控扩展恢复了更广泛的上下文感知，并防止搜索陷入过窄的局部区域。这三种动作共同支持对感知范围的动态控制：当语义置信度提高时收紧，当需要额外上下文时扩展，当更有信息量的线索出现在其他位置时转移。这产生了一种与人类一致、由上下文驱动的搜索行为 [31, 38]，构成了规划器的区域搜索空间基础。</p>
+<p>3.3. 蒙特卡洛树搜索动作规划器 MCTS Action Planner 作为决策模块，用于调度感知动作并在区域上构建可逆的搜索轨迹。我们将每个区域状态 S = (R, U, {si }) 视为搜索树中的一个节点，其中 R 是当前区域裁剪，U 是解析得到的 UI 元素集合，{si } 表示由 UI Perceptor 计算的元素级语义相关性分数。感知动作 a 的空间定义为 A = {Focus, Shift, Scatter}，其中每个动作都会直接将当前区域变换为一个新的候选区域，从而形成感知树的边。在固定搜索预算下，规划器迭代执行以下四个阶段：节点选择。搜索从根节点开始，根节点通过对完整图像执行一步 Focus 初始化，以获得粗略的全局视图，确保后续 Scatter 和 Shift 动作在有意义的区域上运行。在每次迭代中，规划器根据应用于树的置信上界（Upper Confidence bounds applied to Trees, UCT）策略 [15] 选择子节点来遍历感知树，该策略在利用高奖励区域和探索访问较少的备选区域之间取得平衡。</p>
+<p>a^\ast = \arg \max _{a \in A(S)} \left [ Q(S, a) + c \sqrt {\frac {\ln V(S)}{V(S, a)}} \right ]</p>
+<p>(4)</p>
+<p>其中 Q(S, a) 估计在状态 S 下采取动作 a 的预期未来奖励，V (S) 是 S 的访问次数，V (S, a) 记录动作 a 从该状态被选择的次数。常数 c 控制探索，A(S) ⊆ A 表示仍可用的感知动作集合。选择阶段持续进行，直到到达叶节点。扩展。在被选中的叶节点 s 处，应用一个尚未执行的动作 a ∈ A(S)，以产生新的区域 R′，形成后继状态 s′。新状态 s′ 被插入为 S 的一个子节点。如果 A(S) 中的所有动作都已被探索，或搜索次数已达到最大值，则跳过扩展。模拟与反向传播。使用复合区域质量奖励（第 3.4 节）评估新提出的区域。随后，所得奖励沿访问路径向上传播，更新每个节点的 Q 值和访问次数 V，使搜索树能够积累引导信息。通过迭代扩展搜索树，MCTS 在探索新区域和细化有前景的区域之间取得平衡，同时避免过早承诺于单一感知路径。如图 4 所示，规划器通过应用感知动作（Focus、Shift、Scatter）并根据区域质量奖励更新其值，逐步生成一棵区域状态树。搜索终止后，选择奖励最高的区域，并将其转发给基础 MLLM 进行最终定位：R_{\text {best}} = \arg \max _{R} r(R, T)</p>
+<p>(5)</p>
+<p>较高的覆盖率表示该区域包含有意义的界面组件，而较低的覆盖率则表明存在视觉冗余或信息量不足的区域。语义集中度。我们评估裁剪区域内的相关性是集中还是分散。使用全部 N 个元素，我们以温度 τ 对分数进行归一化：p_i = \frac {\exp (s_i/\tau )}{\sum _{j=1}^{N}\exp (s_j/\tau )}</p>
+<p>并在完整集合上计算归一化熵：r_{\text {con}} = 1 - \frac {-\sum _{i=1}^{N} p_i \log p_i}{\log (N + \varepsilon )}</p>
+<p>3.4. 区域质量奖励 为了引导搜索过程，每个候选区域都通过一个复合奖励函数进行评估，该函数反映该区域在给定指令下用于定位的适合程度，以及它是否值得进一步探索。给定区域 R 和解析得到的 UI 元素 U = {ui }N i=1，UI Perceptor 提供以指令为条件的相关性分数 {si }。利用这些线索，我们计算三个互补项：交互加权相关性。交互元素通常是更好的定位目标。因此，相关性应强调此类元素。我们采用一个简单的交互感知权重：w_i = \begin {cases} 1, &amp; i_i = 1 \\ \lambda , &amp; \text {otherwise} \end {cases}, \quad 0 &lt; \lambda &lt; 1</p>
+<p>(6)</p>
+<p>并计算加权相关性分数：r_{\text {rel}} = \frac {\sum _{i=1}^{N} w_i \cdot s_i}{\sum _{i=1}^{N} w_i + \varepsilon }</p>
+<p>(7)</p>
+<p>这会鼓励高相关性线索对应于交互目标的区域，抑制装饰性或静态文本。UI 覆盖一致性。当感知区域包含实际 UI 结构而不是空白背景或装饰性空间时，定位更可靠。我们量化检测到的 UI 元素所占据的区域比例：r_{\text {cov}} = \frac {\sum _{i=1}^{N} \text {Area}(b_i)}{\text {Area}(R)}</p>
+<p>(8)</p>
+<p>(10)</p>
+<p>较高的 rcon 表示具有清晰语义焦点，适合进行定位。最终奖励。总体区域奖励定义为三个组成部分的加权组合：r(R, T) = \alpha \cdot r_{\text {rel}} + \beta \cdot r_{\text {cov}} + \gamma \cdot r_{\text {con}}</p>
+<p>这种选择机制将基础模型限制在一个紧凑且与指令相关的区域内，并且无需任何额外的 MLLM 推理即可提高定位稳定性。</p>
+<p>(9)</p>
+<p>(11)</p>
+<p>其中 α、β、γ 控制三个奖励项的相对贡献。该奖励引导规划器朝向语义上有意义、操作上相关且视觉上信息丰富的区域，从而实现稳健定位。</p>
+<p>4. 实验</p>
+<p>4.1. 实验设置</p>
+<p>数据集与评估指标 我们在三个广泛使用的 GUI 定位基准上评估 DRS-GUI：ScreenSpotV1 [9]、ScreenSpot-v2 [42] 和 ScreenSpotPro [19]。ScreenSpot-V1 和 ScreenSpot-v2 覆盖移动端、Web 和桌面界面等通用 GUI 领域。ScreenSpot-Pro 关注高分辨率专业应用，包含 23 个真实软件界面，其 UI 布局更密集且更复杂，使定位任务显著更具挑战性。按照标准做法，如果预测点位于真实边界框内，则认为一次定位预测是正确的 [9]。我们在所有实验中报告定位准确率作为主要评估指标。</p>
+<p>基线方法 为了展示 DRS-GUI 的通用性和即插即用特性，我们在通用开源 MLLM 和 GUI 专用模型上对其进行评估，覆盖小规模和大规模参数量。对于通用 MLLM，我们采用 Qwen2.5-VL-3B-Instruct 和 Qwen2.5VL-7B-Instruct [45]。对于 GUI 专用模型，我们使用 UGround-V1-2B 和 UGround-V1-7B [11] 进行实验，它们是在 GUI 定位数据集上显式训练的。这些模型使我们能够评估 DRS-GUI 作为 GUI 智能体免训练增强方法的鲁棒性和有效性。</p>
+<p>实现细节 所有开放权重模型（OmniParser V2 和 Instructor-large）均直接使用，不进行</p>
+<p>表 1. 各种模型在 ScreenSpot-Pro [19] 上的比较。在没有任何额外训练或外部数据的情况下，DRS-GUI 显著提升了 Qwen2.5-VL-3&amp;7B [4] 和 UGround-V1-2&amp;7B [11] 的定位性能。</p>
+<p>智能体模型</p>
+<p>开发</p>
+<p>创意</p>
+<p>CAD</p>
+<p>科学</p>
+<p>办公</p>
+<p>OS</p>
+<p>平均</p>
+<p>文本 图标 平均 文本 图标 平均 文本 图标 平均 文本 图标 平均 文本 图标 平均 文本 图标 平均 文本 图标 平均</p>
+<p>QwenVL-7B [3] GPT-4o [1] SeeClick [9] Qwen2-VL-7B [34] OS-Atlas-4B [42] ShowUI-2B[20] CogAgent-18B [13] Aria-UI [46] UGround-7B [11] Claude Comp.Use [14] OS-Atlas-7B [42] UI-TARS-7B [24]</p>
+<p>0.0 1.3 0.6 2.6 7.1 16.9 14.9 16.2 26.6 22.0 33.1 58.4</p>
+<p>0.0 0.0 0.0 0.0 0.0 1.4 0.7 0.0 2.1 3.9 1.4 12.4</p>
+<p>0.0 0.0 0.7 1.0 0.3 1.0 1.3 1.5 3.7 3.0 9.4 9.1 8.0 9.6 8.4 23.7 14.7 27.3 12.6 25.9 17.7 28.8 36.1 50.0</p>
+<p>0.0 0.0 0.0 0.0 1.4 0.0 0.0 2.1 2.8 3.4 2.8 9.1</p>
+<p>0.0 0.0 0.6 2.0 0.6 2.5 0.9 0.5 2.3 2.0 5.3 2.5 5.6 7.1 14.7 7.6 17.0 14.2 16.8 14.5 17.9 12.2 32.8 20.8</p>
+<p>0.0 0.0 0.0 0.0 0.0 0.0 3.1 1.6 1.6 3.7 4.7 9.4</p>
+<p>0.0 0.7 1.5 2.1 1.9 3.5 0.4 6.3 1.5 9.0 1.9 13.2 6.1 22.2 6.1 27.1 11.1 31.9 11.9 33.9 10.3 37.5 18.0 63.9</p>
+<p>0.0 0.0 0.0 0.0 5.5 7.3 1.8 6.4 2.7 15.8 7.3 31.8</p>
+<p>0.4 0.0 1.2 1.1 2.0 1.1 3.5 3.4 7.5 5.1 10.6 15.3 13.4 13.0 18.1 20.3 19.3 31.6 25.8 30.1 24.4 33.9 50.0 63.3</p>
+<p>0.0 0.0 0.0 1.9 3.8 7.5 0.0 1.9 11.3 16.3 5.7 20.8</p>
+<p>0.0 0.6 0.5 3.0 4.4 13.5 6.5 16.1 27.9 26.2 27.4 53.5</p>
+<p>0.0 0.0 2.8 0.9 5.6 10.3 5.6 4.7 17.8 11.0 27.1 30.8</p>
+<p>0.0 0.0 0.0 0.0 0.0 2.2 0.0 0.0 0.0 4.5 4.5 16.9</p>
+<p>0.0 0.1 0.0 1.3 1.5 1.8 0.5 2.5 3.1 5.0 6.6 10.8 3.1 12.0 2.6 17.1 9.7 25.0 8.1 23.4 16.8 28.1 24.5 47.8</p>
+<p>0.0 0.0 0.0 0.2 1.7 2.6 0.8 2.0 2.8 7.1 4.0 16.2</p>
+<p>0.1 0.8 1.1 1.6 3.7 7.7 7.7 11.3 16.5 17.1 18.9 35.7</p>
+<p>Qwen2.5-VL-3B [4] + DRS-GUI Qwen2.5-VL-7B [4] + DRS-GUI</p>
+<p>22.1 44.8 46.8 60.4</p>
+<p>1.4 6.9 4.1 13.1</p>
+<p>12.0 26.8 26.4 44.9 26.1 35.9 37.5 54.6</p>
+<p>2.1 7.7 7.7 16.8</p>
+<p>16.4 9.1 29.3 21.3 24.0 16.8 38.7 42.1</p>
+<p>7.3 7.3 38.2 7.3 9.4 18.4 50.0 11.8 1.6 13.0 49.3 7.3 9.4 34.1 59.7 16.4</p>
+<p>24.8 33.9 33.5 52.0 31.1 52.5 41.0 66.7</p>
+<p>15.1 24.5 20.8 26.4</p>
+<p>29.6 45.7 45.2 57.4</p>
+<p>10.3 26.2 37.4 52.3</p>
+<p>1.1 10.1 6.7 23.6</p>
+<p>6.1 23.6 18.9 40.1 23.5 38.9 39.3 55.7</p>
+<p>3.8 10.3 7.1 16.9</p>
+<p>16.1 28.7 26.8 40.9</p>
+<p>UGround-V1-2B [11] + DRS-GUI UGround-V1-7B [11] + DRS-GUI</p>
+<p>48.7 62.3 51.9 66.9</p>
+<p>4.1 11.7 3.4 21.4</p>
+<p>27.1 43.4 37.8 49.5 28.4 48.0 44.8 56.6</p>
+<p>4.8 12.6 9.1 16.1</p>
+<p>27.3 17.8 34.0 32.5 31.7 20.0 39.6 43.7</p>
+<p>6.3 12.5 1.6 15.6</p>
+<p>36.2 44.6 40.6 62.7 39.8 61.6 52.4 73.4</p>
+<p>13.2 28.3 13.2 30.2</p>
+<p>37.4 54.8 50.4 63.5</p>
+<p>27.1 52.3 37.4 52.3</p>
+<p>4.5 22.5 7.9 25.8</p>
+<p>16.8 38.7 38.8 51.8 25.0 45.6 40.3 60.6</p>
+<p>7.5 16.6 8.4 21.7</p>
+<p>26.8 38.3 31.4 45.7</p>
+<p>14.9 52.1 27.6 56.3 15.3 57.6 36.8 73.0</p>
+<p>15.5 20.0 16.4 25.5</p>
+<p>表 2. 各种模型在 ScreenSpot-V1 [9] 上的比较。</p>
+<p>方法</p>
+<p>移动端 桌面 Web 平均 文本 图标/组件 文本 图标/组件 文本 图标/组件</p>
+<p>Llama 3.2-V-11B [12] 14.7 GPT-4V[22] 22.6 Fuyu-8B [5] 41.0 InternVL2-8B [8] 74.0 CogAgent-18B [13] 67.0 SeeClick [9] 78.0 Qwen2.5-VL-7B [4] 96.7 + DRS-GUI 97.8 UGround-V1-7B [11] 93.0 + DRS-GUI 94.2</p>
+<p>5.7 24.5 1.3 25.8 24.0 52.0 77.3 81.7 79.9 84.7</p>
+<p>9.3 20.2 33.0 54.6 74.2 72.2 89.2 94.3 93.8 95.9</p>
+<p>4.3 11.8 3.6 27.1 20.0 30.0 70.7 77.1 76.4 82.3</p>
+<p>4.3 9.2 33.9 38.3 70.4 55.7 88.7 92.2 90.9 93.5</p>
+<p>4.4 8.8 4.4 31.6 28.6 32.5 79.1 84.5 84.0 86.9</p>
+<p>7.1 16.2 19.5 41.9 47.4 53.4 84.9 88.9 86.3 89.9</p>
+<p>（a）</p>
+<p>表 3. 各种模型在 ScreenSpot-V2 [42] 上的比较。</p>
+<p>方法</p>
+<p>移动端 桌面 Web 平均 文本 图标/组件 文本 图标/组件 文本 图标/组件</p>
+<p>InternVL2-4B [8] 9.2 Fuyu-8B [5] 41.0 Qwen2-VL-7B [35] 61.3 CogAgent-18B [13] 67.0 SeeClick [9] 78.0 OS-Atlas-4B [42] 85.7 UGround-7B [11] 82.8 Qwen2.5-VL-7B [4] 99.0 + DRS-GUI 99.1 UGround-V1-7B [11] 95.0 + DRS-GUI 96.6</p>
+<p>4.8 1.3 39.3 24.0 52.0 58.5 60.3 84.4 87.7 83.3 88.2</p>
+<p>4.6 33.0 52.0 74.2 72.2 72.2 82.5 87.6 92.8 95.0 94.9</p>
+<p>4.3 3.6 45.0 20.0 30.0 45.7 63.6 65.7 74.3 77.8 84.3</p>
+<p>0.9 33.9 33.0 70.4 55.7 82.6 80.4 90.2 96.6 92.1 94.0</p>
+<p>0.1 4.4 21.8 28.6 32.5 63.1 70.4 79.8 83.3 77.2 87.7</p>
+<p>4.3 19.5 42.9 47.4 53.4 70.1 73.3 86.5 90.5 87.6 91.8</p>
+<p>微调。在实践中，Focus 保留相关性最高的前 15% 元素；Scatter 添加相关性最高的前 10% 外部元素，同时将区域扩张限制为 1.5×；Shift 以 IoU ≤ 0.3 的相关性最高的前 15% 外部锚点重新居中，以避免重叠。MCTS 规划器以 N = 8 的 rollout 预算、H = 3 的深度限制和 c = 1 的 UCT 探索常数运行。对于区域评估，我们使用复合奖励 de-</p>
+<p>（b）</p>
+<p>图 3. 我们的动态区域搜索在各应用类别中的冗余减少。（a）平均图像像素大小和（b）Original 与 Bst 区域的平均 UI 元素数量；聚焦裁剪平均将输入面积和 UI 元素分别减少 64% 和 54%。</p>
+<p>如第 3.4 节所述，权重 α = 0.4、β = 0.4 和 γ = 0.2，并且这些超参数的进一步分析在补充材料中提供。所有实验均</p>
+<p>初始聚焦 0.42</p>
+<p>移动 0.64</p>
+<p>在 word 中设置纵向页面方向。</p>
+<p>分散 0.66</p>
+<p>移动 0.49</p>
+<p>聚焦 0.56</p>
+<p>分散 0.36</p>
+<p>聚焦 0.74</p>
+<p>移动 0.60</p>
+<p>聚焦 0.57</p>
+<p>最佳区域</p>
+<p>图 4. 基于 MCTS 的感知规划过程可视化。该树展示了规划器如何动态调整感知动作，以逐步定位最优区域。顶部节点显示初始聚焦及其奖励。在 UCT 策略的引导下，规划器通过选择三种动作之一来扩展节点，每个动作都会产生一个候选区域，并由区域质量奖励进行评估。通过迭代探索和反向传播，搜索收敛到最佳区域。为选定变量创建饼图。初始聚焦</p>
+<p>移动</p>
+<p>更改图中的线宽。初始聚焦</p>
+<p>分散</p>
+<p>图 5. 感知动作的定性示例。左侧红框表示初始聚焦区域，而右侧红框表示应用相应感知动作后的最终最佳区域。黄色框表示真实 UI 元素，绿色点标记最终预测坐标。</p>
+<p>在两块 NVIDIA A6000 GPU 上进行。</p>
+<p>4.2. 主要结果 ScreenSpot-V1&amp;V2 我们通过将 DRS-GUI 集成到 Qwen2.5VL-7B 和 UGround-V1-7B 中，在 ScreenSpot 和 ScreenSpot-V2 上评估 DRS-GUI。如表 2 和表 3 所示，DRS-GUI 在所有设置下都一致提高了定位准确率。在 ScreenSpot-V2 上，它使 Qwen2.5-VL-7B 提升约 4%，使 UGround-V1-7B 提升约 4.2%。在 ScreenSpot-V1 上，两个模型也观察到了相当的提升。值得注意的是，在图标和组件场景中提升更为明显，因为这些场景中的视觉歧义更高，这表明动态区域</p>
+<p>搜索能够有效抑制无关 UI 元素并稳定定位行为。代表性定性案例见图 6。ScreenSpot-Pro 我们进一步在具有挑战性的 ScreenSpot-Pro 基准上验证我们的方法（表 1）。在全部六个高分辨率应用领域中，我们的免训练框架都带来了显著增益：Qwen2.5-VL-7B 的准确率提高了 14.1%，UGround-V17B 的准确率提高了 14.3%。值得注意的是，Qwen2.5-VL-3B + DRS-GUI（28.7%）甚至超过了 OS-Atlas-7B（18.9%）等更大的专用模型，这表明有效定位更多依赖于自适应感知搜索，而非模型规模。冗余减少分析（图 3）进一步证实，DRS-GUI 通过聚焦于紧凑且与指令相关的区域，持续缩小搜索空间，使模型能够在充满杂乱元素的专业界面下保持精确定位。代表性定性案例见图 7。</p>
+<p>表 4. 使用 UGround-V1-7B 在 ScreenSpot-V2 上研究不同感知动作组合效果的消融实验</p>
+<p>聚焦 ✓ ✓ ✓</p>
+<p>移动</p>
+<p>✓ ✓</p>
+<p>分散</p>
+<p>Mobile</p>
+<p>Desktop</p>
+<p>Web</p>
+<p>Avg</p>
+<p>✓</p>
+<p>90.0 92.0↑ 2.0 91.4↓ 0.6 93.0↑ 1.6</p>
+<p>87.8 89.8↑ 2.0 91.0↑ 1.2 91.1↑ 0.1</p>
+<p>85.2 87.4↑ 2.2 90.4↑ 3.0 90.5↑ 0.1</p>
+<p>87.6 89.8↑ 2.2 91.0↑ 1.2 91.8↑ 0.8</p>
+<p>4.3. 消融实验 感知动作空间的影响 我们进一步分析感知动作设计对定位性能的影响。如表 4 所示，仅引入聚焦动作就将准确率提高了 2.2%，证实了其在</p>
+<p>表 5. 使用 UGround-V1-7B 在 ScreenSpot-V2 上研究不同区域质量奖励组合效果的消融实验。</p>
+<p>rrel ✓ ✓ ✓</p>
+<p>rcov</p>
+<p>✓ ✓</p>
+<p>rcon</p>
+<p>Mobile</p>
+<p>Desktop</p>
+<p>Web</p>
+<p>Avg</p>
+<p>✓</p>
+<p>90.0 91.8↑ 1.8 92.2↑ 0.4 93.0↑ 0.8</p>
+<p>87.8 89.5↑ 1.7 90.1↑ 0.6 91.1↑ 1.0</p>
+<p>85.2 87.2↑ 2.0 87.0↓ 0.2 90.5↑ 3.5</p>
+<p>87.6 89.6↑ 2.0 89.9↑ 0.3 91.8↑ 1.9</p>
+<p>细化视觉注意方面的关键作用。结合聚焦和移动进一步将性能提升到 91.0%，尽管由于紧凑布局偶尔出现过度移动，Mobile 子集上略有下降。加入分散后取得最佳结果 91.8%，表明完整的动作空间能够产生最均衡且最鲁棒的感知搜索行为。为了进一步说明不同感知动作的作用，图 5 给出了两个代表性案例。在第一个案例中，初始聚焦区域未能关注到包含真实目标的区域，而通过一次移动操作产生的最终最佳区域与其准确对齐，展示了空间重定位的益处。在第二个案例中，分散动作有效扩大了上下文覆盖范围，并捕获了聚焦最初遗漏的真实目标。这些定性结果直观地证实，当初始注意位置错误时，移动和分散都能通过自适应地细化和扩展感知来补充聚焦。打开 memo 应用。</p>
+<p>Qwen2.5VL</p>
+<p>DRS-GUI</p>
+<p>获取免费试用。</p>
+<p>Qwen2.5VL</p>
+<p>DRS-GUI</p>
+<p>图 6. Qwen2.5-VL 与我们的方法 DRS-GUI 在 ScreenSpot-v2 案例上的响应对比。最终最佳区域在图像中用红色边界框突出显示。插入音频。</p>
+<p>Qwen2.5VL</p>
+<p>我想删除所有空白音轨。</p>
+<p>DRS-GUI</p>
+<p>Qwen2.5VL</p>
+<p>DRS-GUI</p>
+<p>图 7. Qwen2.5-VL 与我们的方法 DRS-GUI 在 ScreenSpot-Pro 案例上的响应对比。最终最佳区域在图像中用红色边界框突出显示。</p>
+<p>图 8. 在 Mobile、Desktop 和 Web 界面上，不同感知迭代次数 N 下的准确率。</p>
+<p>区域质量奖励的影响 接下来，我们分析不同的区域质量奖励如何影响定位准确率。如表 5 所示，仅引入交互式加权相关性（Interactive Weighted Relevance）项即可带来 2.0% 的增益，突显了其在引导注意力转向语义上有意义且可操作区域方面的重要性。加入 UI 覆盖一致性（UI Coverage Consistency）奖励通过鼓励空间完整性带来了轻微的额外提升，尽管过度扩张有时会引入冗余，并在 Web 布局上造成小幅下降。纳入语义集中度（Semantic Concentration）奖励后，取得了 91.8% 的最佳整体准确率，并显著提升了在复杂 Web 场景上的表现。这表明，促进语义紧凑性有助于模型保持关注和稳定性，并与相关性和覆盖性的作用互补，从而实现均衡的区域评估。感知迭代预算 为了研究迭代预算的影响，我们在将最大树深度固定为 3 的情况下改变 N。如图 8 所示，随着 N 增加，准确率持续提升，但当迭代次数超过 N = 8 后，性能增益变得很小，表明额外探索会引入冗余的区域评估，从而产生收益递减。因此，我们选择 N = 8 作为默认迭代预算，因为它在准确率和计算效率之间取得了较强的平衡。</p>
+<p>5. 结论 我们提出了 DRS-GUI，这是一个免训练框架，通过在坐标预测之前插入动态区域搜索阶段来改进 GUI 定位。轻量级 UI 感知器（UI Perceptor）和三种感知动作在基于 MCTS 的规划器和区域质量奖励的引导下，有助于将“看哪里”与“预测什么”解耦，并聚焦于紧凑且与指令相关的区域。在 ScreenSpot、ScreenSpot-V2 和 ScreenSpot-Pro 上的实验表明，相较于强大的通用 MLLM 和 GUI 专用 MLLM，该方法实现了持续提升，尤其是在高分辨率、元素密集的界面上。</p>
+<p>致谢 本工作得到国家自然科学基金（Grant NO 62376266 and 62406318）的支持。</p>
+<p>参考文献 [1] Josh Achiam, Steven Adler, Sandhini Agarwal, Lama Ahmad, Ilge Akkaya, Florencia Leoni Aleman, Diogo Almeida, Janko Altenschmidt, Sam Altman, Shyamal Anadkat, et al. Gpt-4 technical report. arXiv preprint arXiv:2303.08774, 2023. 6 [2] Jinze Bai, Shuai Bai, Yunfei Chu, Zeyu Cui, Kai Dang, Xiaodong Deng, Yang Fan, Wenbin Ge, Yu Han, Fei Huang, et al. Qwen technical report. arXiv preprint arXiv:2309.16609, 2023. 2 [3] Jinze Bai, Shuai Bai, Shusheng Yang, Shijie Wang, Sinan Tan, Peng Wang, Junyang Lin, Chang Zhou, and Jingren Zhou. Qwen-vl: A versatile vision-language model for understanding, localization, text reading, and beyond. arXiv preprint arXiv:2308.12966, 2023. 6 [4] Shuai Bai, Keqin Chen, Xuejing Liu, Jialin Wang, Wenbin Ge, Sibo Song, Kai Dang, Peng Wang, Shijie Wang, Jun Tang, et al. Qwen2. 5-vl technical report. arXiv preprint arXiv:2502.13923, 2025. 2, 6 [5] Rohan Bavishi, Erich Elsen, Curtis Hawthorne, Maxwell Nye, Augustus Odena, Arushi Somani, and Sağnak Taşırlar. Introducing our multimodal models, 2023. 6 [6] Meng Cao, Haoze Zhao, Can Zhang, Xiaojun Chang, Ian Reid, and Xiaodan Liang. Ground-r1: Incentivizing grounded visual reasoning via reinforcement learning. arXiv preprint arXiv:2505.20272, 2025. 2 [7] Zhe Chen, Jiannan Wu, Wenhai Wang, Weijie Su, Guo Chen, Sen Xing, Muyan Zhong, Qinglong Zhang, Xizhou Zhu, Lewei Lu, Bin Li, Ping Luo, Tong Lu, Yu Qiao, and Jifeng Dai. Internvl: Scaling up vision foundation models and aligning for generic visual-linguistic tasks. arXiv preprint arXiv:2312.14238, 2023. 2 [8] Zhe Chen, Weiyun Wang, Hao Tian, Shenglong Ye, Zhangwei Gao, Erfei Cui, Wenwen Tong, Kongzhi Hu, Jiapeng Luo, Zheng Ma, et al. How far are we to gpt-4v? closing the gap to commercial multimodal models with open-source suites. arXiv preprint arXiv:2404.16821, 2024. 6 [9] Kanzhi Cheng, Qiushi Sun, Yougang Chu, Fangzhi Xu, Yantao Li, Jianbing Zhang, and Zhiyong Wu. Seeclick: Harnessing GUI grounding for advanced visual GUI agents. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), ACL 2024, Bangkok, Thailand, August 11-16, 2024, pages 9313– 9332. Association for Computational Linguistics, 2024. 1, 2, 5, 6 [10] Xiang Deng, Yu Gu, Boyuan Zheng, Shijie Chen, Samual Stevens, Boshi Wang, Huan Sun, and Yu Su. Mind2web: Towards a generalist agent for the web. In Advances in Neural Information Processing Systems 36: Annual Conference on Neural Information Processing Systems 2023, NeurIPS 2023, New Orleans, LA, USA, December 10 - 16, 2023, 2023. 2</p>
+<p>[11] Boyu Gou, Ruohan Wang, Boyuan Zheng, Yanan Xie, Cheng Chang, Yiheng Shu, Huan Sun, and Yu Su. Navigating the digital world as humans do: Universal visual grounding for gui agents. arXiv preprint arXiv:2410.05243, 2024. 1, 2, 5, 6</p>
+<p>[12] Aaron Grattafiori, Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, Abhishek Kadian, Ahmad Al-Dahle, Aiesha Letman, Akhil Mathur, Alan Schelten, Alex Vaughan, et al. The llama 3 herd of models. arXiv preprint arXiv:2407.21783, 2024. 6</p>
+<p>[13] Wenyi Hong, Weihan Wang, Qingsong Lv, Jiazheng Xu, Wenmeng Yu, Junhui Ji, Yan Wang, Zihan Wang, Yuxiao Dong, Ming Ding, and Jie Tang. Cogagent: A visual language model for GUI agents. In IEEE/CVF Conference on Computer Vision and Pattern Recognition, CVPR 2024, Seattle, WA, USA, June 16-22, 2024, pages 14281–14290. IEEE, 2024. 6</p>
+<p>[14] Siyuan Hu, Mingyu Ouyang, Difei Gao, and Mike Zheng Shou. The dawn of gui agent: A preliminary case study with claude 3.5 computer use. arXiv preprint arXiv:2411.10323, 2024. 6</p>
+<p>[15] Levente Kocsis and Csaba Szepesvári. Bandit based montecarlo planning. In European conference on machine learning, pages 282–293, 2006. 4</p>
+<p>[16] Jaeseong Lee, Yeeun Choi, Heechan Choi, Hanjung Kim, and Seonjoo Kim. A training-free, task-agnostic framework for enhancing mllm performance on high-resolution images. arXiv preprint arXiv:2507.10202, 2025. 1, 2</p>
+<p>[17] Weixian Lei, Difei Gao, and Mike Zheng Shou. Grounding multimodal large language model in gui world. In The Thirteenth International Conference on Learning Representations. 1</p>
+<p>[18] Geng Li, Jinglin Xu, Yunzhen Zhao, and Yuxin Peng. Dyfo: A training-free dynamic focus visual search for enhancing lmms in fine-grained visual understanding. In Proceedings of the Computer Vision and Pattern Recognition Conference, pages 9098–9108, 2025. 2</p>
+<p>[19] Kaixin Li, Ziyang Meng, Hongzhan Lin, Ziyang Luo, Yuchen Tian, Jing Ma, Zhiyong Huang, and Tat-Seng Chua. Screenspot-pro: Gui grounding for professional highresolution computer use. arXiv preprint arXiv:2504.07981, 2025. 1, 5, 6</p>
+<p>[20] Kevin Qinghong Lin, Linjie Li, Difei Gao, Zhengyuan Yang, Zechen Bai, Weixian Lei, Lijuan Wang, and Mike Zheng Shou. Showui: One vision-language-action model for generalist gui agent. In NeurIPS 2024 Workshop on Open-World Agents, 2024. 1, 6</p>
+<p>[21] Yadong Lu, Jianwei Yang, Yelong Shen, and Ahmed Awadallah. Omniparser for pure vision based gui agent. arXiv preprint arXiv:2408.00203, 2024. 2, 3</p>
+<p>[22] OpenAI. Gpt-4v(ision) system card. CoRR, 2023. 6</p>
+<p>[23] Joonhyung Park, Peng Tang, Sagnik Das, Srikar Appalaraju, Kunwar Yashraj Singh, R Manmatha, and Shabnam Ghadar. R-vlm: Region-aware vision language model for precise gui grounding. arXiv preprint arXiv:2507.05673, 2025. 1, 2</p>
+<p>[24] Yujia Qin, Yining Ye, Junjie Fang, Haoming Wang, Shihao Liang, Shizuo Tian, Junda Zhang, Jiahao Li, Yunxin Li, Shijue Huang, et al. Ui-tars: Pioneering automated gui interaction with native agents. arXiv preprint arXiv:2501.12326, 2025. 6</p>
+<p>[25] Gabriel Sarch, Snigdha Saha, Naitik Khandelwal, Ayush Jain, Michael J Tarr, Aviral Kumar, and Katerina Fragkiadaki. Grounded reinforcement learning for visual reasoning. arXiv preprint arXiv:2505.23678, 2025. 2</p>
+<p>[26] Melanie Sclar, Gaston Bujia, Sebastian Vita, Guillermo Solovey, and Juan Esteban Kamienkowski. Modeling human visual search: A combined bayesian searcher and saliency map approach for eye movement guidance in natural scenes. In NeurIPS Workshop SVRHM, 2020. 2</p>
+<p>[27] Huawen Shen, Chang Liu, Gengluo Li, Xinlong Wang, Yu Zhou, Can Ma, and Xiangyang Ji. Falcon-ui: Understanding gui before following user instructions. arXiv preprint arXiv:2412.09362, 2024. 1</p>
+<p>[28] David Silver, Aja Huang, Chris J Maddison, Arthur Guez, Laurent Sifre, George Van Den Driessche, Julian Schrittwieser, Ioannis Antonoglou, Veda Panneershelvam, Marc Lanctot, et al. Mastering the game of go with deep neural networks and tree search. nature, 529(7587):484–489, 2016. 2</p>
+<p>[29] Hongjin Su, Weijia Shi, Jungo Kasai, Yizhong Wang, Yushi Hu, Mari Ostendorf, Wen-tau Yih, Noah A Smith, Luke Zettlemoyer, and Tao Yu. One embedder, any task: Instruction-finetuned text embeddings. arXiv preprint arXiv:2212.09741, 2022. 2, 3</p>
+<p>[30] Guangyan Sun, Mingyu Jin, Zhenting Wang, Cheng-Long Wang, Siqi Ma, Qifan Wang, Tong Geng, Ying Nian Wu, Yongfeng Zhang, and Dongfang Liu. Visual agents as fast and slow thinkers. arXiv preprint arXiv:2408.08862, 2024. 2</p>
+<p>[31] Antonio Torralba, Aude Oliva, Monica S Castelhano, and John M Henderson. Contextual guidance of eye movements and attention in real-world scenes: the role of global features in object search. Psychological Review, 2006. 2, 4</p>
+<p>[32] Hugo Touvron, Thibaut Lavril, Gautier Izacard, Xavier Martinet, Marie-Anne Lachaux, Timothée Lacroix, Baptiste Rozière, Naman Goyal, Eric Hambro, Faisal Azhar, et al. Llama: Open and efficient foundation language models. arXiv preprint arXiv:2302.13971, 2023. 2</p>
+<p>[33] Junyang Wang, Haiyang Xu, Jiabo Ye, Ming Yan, Weizhou Shen, Ji Zhang, Fei Huang, and Jitao Sang. Mobile-agent: Autonomous multi-modal mobile device agent with visual perception. arXiv preprint arXiv:2401.16158, 2024. 2</p>
+<p>[34] Peng Wang, Shuai Bai, Sinan Tan, Shijie Wang, Zhihao Fan, Jinze Bai, Keqin Chen, Xuejing Liu, Jialin Wang, Wenbin Ge, Yang Fan, Kai Dang, Mengfei Du, Xuancheng Ren, Rui Men, Dayiheng Liu, Chang Zhou, Jingren Zhou, and Junyang Lin. Qwen2-vl: Enhancing vision-language model’s perception of the world at any resolution. arXiv preprint arXiv:2409.12191, 2024. 6</p>
+<p>[35] Peng Wang, Shuai Bai, Sinan Tan, Shijie Wang, Zhihao Fan, Jinze Bai, Keqin Chen, Xuejing Liu, Jialin Wang, Wenbin Ge, et al. Qwen2-vl: Enhancing vision-language model’s perception of the world at any resolution. arXiv preprint arXiv:2409.12191, 2024. 6</p>
+<p>[36] Wanfu Wang, Qipeng Huang, Guangquan Xue, Xiaobo Liang, and Juntao Li. Learning active perception via selfevolving preference optimization for gui grounding. arXiv preprint arXiv:2509.04243, 2025. 1, 2</p>
+<p>[37] Jeremy M Wolfe. Visual search: How do we find what we are looking for? Annual review of vision science, 2020. 2</p>
+<p>[38] Jeremy M Wolfe, Melissa L-H Võ, Karla K Evans, and Michelle R Greene. Visual search in scenes involves selective and nonselective pathways. Trends in Cognitive Sciences, 2011. 2, 4</p>
+<p>[39] Hang Wu, Hongkai Chen, Yujun Cai, Chang Liu, Qingwen Ye, Ming-Hsuan Yang, and Yiwei Wang. Dimo-gui: Advancing test-time scaling in gui grounding via modalityaware visual reasoning. arXiv preprint arXiv:2507.00008, 2025. 1, 2</p>
+<p>[40] Penghao Wu and Saining Xie. V*: Guided visual search as a core mechanism in multimodal llms. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 13084–13094, 2024. 2</p>
+<p>[41] Qianhui Wu, Kanzhi Cheng, Rui Yang, Chaoyun Zhang, Jianwei Yang, Huiqiang Jiang, Jian Mu, Baolin Peng, Bo Qiao, Reuben Tan, et al. Gui-actor: Coordinate-free visual grounding for gui agents. arXiv preprint arXiv:2506.03143, 2025. 1, 2</p>
+<p>[42] Zhiyong Wu, Zhenyu Wu, Fangzhi Xu, Yian Wang, Qiushi Sun, Chengyou Jia, Kanzhi Cheng, Zichen Ding, Liheng Chen, Paul Pu Liang, et al. Os-atlas: A foundation action model for generalist gui agents. arXiv preprint arXiv:2410.23218, 2024. 1, 2, 5, 6</p>
+<p>[43] Yiheng Xu, Zekun Wang, Junli Wang, Dunjie Lu, Tianbao Xie, Amrita Saha, Doyen Sahoo, Tao Yu, and Caiming Xiong. Aguvis: Unified pure vision agents for autonomous gui interaction. arXiv preprint arXiv:2412.04454, 2024. 1</p>
+<p>[44] An Yan, Zhengyuan Yang, Wanrong Zhu, Kevin Lin, Linjie Li, Jianfeng Wang, Jianwei Yang, Yiwu Zhong, Julian McAuley, Jianfeng Gao, et al. Gpt-4v in wonderland: Large multimodal models for zero-shot smartphone gui navigation. arXiv preprint arXiv:2311.07562, 2023. 2</p>
+<p>[45] An Yang, Baosong Yang, Beichen Zhang, Binyuan Hui, Bo Zheng, Bowen Yu, Chengyuan Li, Dayiheng Liu, Fei Huang, Haoran Wei, et al. Qwen2. 5 technical report. arXiv preprint arXiv:2412.15115, 2024. 5</p>
+<p>[46] Yuhao Yang, Yue Wang, Dongxu Li, Ziyang Luo, Bei Chen, Chao Huang, and Junnan Li. Aria-ui: Visual grounding for gui instructions. In Findings of the Association for Computational Linguistics: ACL 2025, pages 22418–22433, 2025. 1, 6</p>
+<p>[47] Qilang Ye, Zitong Yu, Rui Shao, Xinyu Xie, Philip Torr, and Xiaochun Cao. CAT: enhancing multimodal large language model to answer questions in dynamic audio-visual scenarios. In Computer Vision - ECCV 2024 - 18th European Conference, Milan, Italy, September 29-October 4, 2024, Proceedings, Part X, pages 146–164, 2024. 2</p>
+<p>[48] Qilang Ye, Zitong Yu, Rui Shao, Yawen Cui, Xiangui Kang, Xin Liu, Philip Torr, and Xiaochun Cao. Cat+: Investigating and enhancing audio-visual understanding in large language models. IEEE Transactions on Pattern Analysis and Machine Intelligence, 2025. 2</p>
+<p>[49] Qilang Ye, Wei Zeng, Meng Liu, Jie Zhang, Yupeng Hu, Zitong Yu, and Yu Zhou. When eyes and ears disagree: Can mllms discern audio-visual confusion? In AAAI Conference on Artificial Intelligence, 2026. 2</p>
+<p>[50] Xinbin Yuan, Jian Zhang, Kaixin Li, Zhuoxuan Cai, Lujian Yao, Jie Chen, Enguang Wang, Qibin Hou, Jinwei Chen, Peng-Tao Jiang, et al. Enhancing visual grounding for gui agents via self-evolutionary reinforcement learning. arXiv preprint arXiv:2505.12370, 2025. 1</p>
+<p>[51] Mengmi Zhang, Jiashi Feng, Keng Teck Ma, Joo Hwee Lim, Qi Zhao, and Gabriel Kreiman. Finding any waldo with zeroshot invariant and efficient visual search. Nature communications, 2018. 2</p>
+<p>[52] Yu Zhao, Wei-Ning Chen, Huseyin Atahan Inan, Samuel Kessler, Lu Wang, Lukas Wutschitz, Fangkai Yang, Chaoyun Zhang, Pasquale Minervini, Saravan Rajmohan, et al. Learning gui grounding with spatial reasoning from visual feedback. arXiv preprint arXiv:2509.21552, 2025. 2</p>
+<p>[53] Ziwei Zheng, Michael Yang, Jack Hong, Chenxiao Zhao, Guohai Xu, Le Yang, Chao Shen, and Xing Yu. Deepeyes: Incentivizing” thinking with images” via reinforcement learning. arXiv preprint arXiv:2505.14362, 2025. 2</p>
+<p>[54] Muzhi Zhu, Hao Zhong, Canyu Zhao, Zongze Du, Zheng Huang, Mingyu Liu, Hao Chen, Cheng Zou, Jingdong Chen, Ming Yang, et al. Active-o3: Empowering multimodal large language models with active perception via grpo. arXiv preprint arXiv:2505.21457, 2025. 2</p>
+</html>
