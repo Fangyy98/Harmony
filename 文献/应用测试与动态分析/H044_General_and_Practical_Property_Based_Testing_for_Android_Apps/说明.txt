@@ -1,0 +1,17 @@
+General and Practical Property-based Testing for Android Apps
+中文译名：面向 Android 应用的通用实用性质测试
+
+编号：H044
+分类：应用测试与动态分析
+相关性：移动应用测试相关（工具已扩展支持 HarmonyOS/OpenHarmony）
+年份/来源：2024 / ASE 2024
+DOI：10.1145/3691620.3694986
+
+为什么收录：
+论文提出 Kea，将性质测试用于移动应用功能缺陷检测，用性质描述语言（PDL）表达前置条件、交互场景和后置条件，并结合随机探索与主路径引导探索生成 GUI 事件序列。虽然论文实验对象是 Android 应用，但开源 Kea 项目已提供 HarmonyOS/OpenHarmony 支持和 HarmonyOS PDL 文档；Kea2 是其面向工业使用的增强版，可作为鸿蒙应用自动化功能测试和性质驱动探索的参考。
+
+PDF状态：
+已保存本地 PDF：H044.pdf
+
+核验说明：
+已核验：本地 PDF 标题、DOI、作者单位与 ASE 2024 论文一致；pdfinfo 可正常读取，共 12 页；Kea 仓库 README 和文档包含 HarmonyOS/OpenHarmony 支持说明；Kea2 仓库说明为 Kea 的增强版/工业版。

@@ -1,0 +1,10 @@
+Title: General and Practical Property-based Testing for Android Apps
+DOI: 10.1145/3691620.3694986
+Paper: https://doi.org/10.1145/3691620.3694986
+PDF source: https://tingsu.github.io/files/ASE24-Kea.pdf
+Local PDF: ./H044.pdf
+Code: https://github.com/ecnusse/Kea
+Kea2: https://github.com/ecnusse/Kea2
+Project homepage: https://mobile-app-analysis.github.io/
+Google Scholar: https://scholar.google.com/scholar?q=General+and+Practical+Property-based+Testing+for+Android+Apps
+Web search: https://www.google.com/search?q=%22General+and+Practical+Property-based+Testing+for+Android+Apps%22

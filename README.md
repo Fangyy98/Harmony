@@ -10,7 +10,7 @@
 文献/
 ├── 代码智能与数据集/        # ArkTS 代码检索、代码生成评测、框架感知生成
 ├── 安全与静态分析/          # 污点分析、指针分析、跨语言分析、静态分析框架、应用加固
-├── 应用测试与动态分析/      # 动态分析框架、自动化测试、跨设备音频冲突检测
+├── 应用测试与动态分析/      # 动态分析框架、自动化测试、性质测试、跨设备音频冲突检测
 ├── 应用测试与质量/          # UI 重叠、缺陷修复、幽灵渲染、符号执行测试、静态缺陷检测、移动 UI 显示/布局质量与 GUI 元素/屏幕解析基线
 ├── 生态治理与合规/          # 开源许可证兼容性分析
 ├── 生态移植与兼容/          # C/C++ 与 TS/JS 库向 OpenHarmony / ArkTS 移植
@@ -28,9 +28,9 @@
 
 ## 总览
 
-- 文献目录数：43
-- 本地 PDF：41 个（H019、H034 暂未发现公开 PDF）
-- 相关性口径：**强相关** = 直接研究 OpenHarmony / HarmonyOS / ArkTS / HAP / ArkUI；**平台相关** = 鸿蒙系统服务或 HarmonyOS NEXT 等平台能力；**移动应用 UI 质量相关** = Android/移动端/通用 GUI 的 UI 显示、布局缩放、组件检测、屏幕解析、跨平台 GUI 一致性与质量检测相关工作，可作为 OpenHarmony UI 质量研究的背景或基线；**设备生态弱相关** = 通信、离线查找、星闪等设备生态。
+- 文献目录数：44
+- 本地 PDF：42 个（H019、H034 暂未发现公开 PDF）
+- 相关性口径：**强相关** = 直接研究 OpenHarmony / HarmonyOS / ArkTS / HAP / ArkUI；**平台相关** = 鸿蒙系统服务或 HarmonyOS NEXT 等平台能力；**移动应用测试相关** = Android/移动端/通用 GUI 的自动化测试、性质测试、功能缺陷检测等工作，可作为 OpenHarmony 应用测试研究的背景或基线；**移动应用 UI 质量相关** = Android/移动端/通用 GUI 的 UI 显示、布局缩放、组件检测、屏幕解析、跨平台 GUI 一致性与质量检测相关工作，可作为 OpenHarmony UI 质量研究的背景或基线；**设备生态弱相关** = 通信、离线查找、星闪等设备生态。
 
 ---
 
@@ -129,6 +129,14 @@
 - **发表信息**：2025 / arXiv（arXiv:2504.07472）
 - **论文**：<https://arxiv.org/abs/2504.07472>
 - **本地 PDF**：[文献/应用测试与动态分析/H016_.../H016.pdf](文献/应用测试与动态分析/H016_HACMony_Automatically_Detecting_Hopping_related_Audio_stream_Conflict/H016.pdf)
+
+#### H044 General and Practical Property-based Testing for Android Apps
+- **中文译名**：面向 Android 应用的通用实用性质测试
+- **简介**：提出 Kea，把性质测试思想用于移动应用功能缺陷检测。它用性质描述语言（PDL）表达前置条件、交互场景和后置条件，并结合随机探索与主路径引导探索生成 GUI 事件序列。论文实验对象是 Android 应用，但开源 Kea 项目已提供 HarmonyOS/OpenHarmony 支持和 HarmonyOS PDL 文档；Kea2 是其面向工业使用的增强版，可作为鸿蒙应用自动化功能测试和性质驱动探索的参考。
+- **发表信息**：2024 / ASE 2024（DOI: 10.1145/3691620.3694986）
+- **论文**：<https://doi.org/10.1145/3691620.3694986>
+- **开源代码**：<https://github.com/ecnusse/Kea>、<https://github.com/ecnusse/Kea2>
+- **本地 PDF**：[文献/应用测试与动态分析/H044_.../H044.pdf](文献/应用测试与动态分析/H044_General_and_Practical_Property_Based_Testing_for_Android_Apps/H044.pdf)
 
 ### 应用测试与质量
 
