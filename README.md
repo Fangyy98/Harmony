@@ -28,8 +28,8 @@
 
 ## 总览
 
-- 文献目录数：44
-- 本地 PDF：42 个（H019、H034 暂未发现公开 PDF）
+- 文献目录数：45
+- 本地 PDF：43 个（H019、H034 暂未发现公开 PDF）
 - 相关性口径：**强相关** = 直接研究 OpenHarmony / HarmonyOS / ArkTS / HAP / ArkUI；**平台相关** = 鸿蒙系统服务或 HarmonyOS NEXT 等平台能力；**移动应用测试相关** = Android/移动端/通用 GUI 的自动化测试、性质测试、功能缺陷检测等工作，可作为 OpenHarmony 应用测试研究的背景或基线；**移动应用 UI 质量相关** = Android/移动端/通用 GUI 的 UI 显示、布局缩放、组件检测、屏幕解析、跨平台 GUI 一致性与质量检测相关工作，可作为 OpenHarmony UI 质量研究的背景或基线；**设备生态弱相关** = 通信、离线查找、星闪等设备生态。
 
 ---
@@ -137,6 +137,15 @@
 - **论文**：<https://doi.org/10.1145/3691620.3694986>
 - **开源代码**：<https://github.com/ecnusse/Kea>、<https://github.com/ecnusse/Kea2>
 - **本地 PDF**：[文献/应用测试与动态分析/H044_.../H044.pdf](文献/应用测试与动态分析/H044_General_and_Practical_Property_Based_Testing_for_Android_Apps/H044.pdf)
+
+#### H045 Kea2: Practical Property-based Testing for Mobile Apps
+- **中文译名**：Kea2：面向移动应用的实用性质测试
+- **简介**：正式介绍 Kea2，一种面向移动应用的实用性质测试工具。Kea2 是 Kea 的后续工作，但从工程实现上重新设计，使用 Python unittest 管理性质、uiautomator2 与设备交互，并复用 Fastbot 作为 GUI fuzzing 输入生成器。它支持用 Python 灵活表达前置条件、交互场景和后置断言，在探索过程中自动检查性质并生成 HTML 测试报告。论文报告 Kea2 已开源，并被腾讯、海尔、华为等工业团队采用或试用。
+- **发表信息**：2026 / FSE Companion 2026 Tool Demo（DOI: 10.1145/3803437.3806416）
+- **论文**：<https://doi.org/10.1145/3803437.3806416>
+- **开源代码**：<https://github.com/ecnusse/Kea2>
+- **演示视频**：<https://youtu.be/HS4rTCcaSPE>
+- **本地 PDF**：[文献/应用测试与动态分析/H045_.../H045.pdf](文献/应用测试与动态分析/H045_Kea2_Practical_Property_Based_Testing_for_Mobile_Apps/H045.pdf)
 
 ### 应用测试与质量
 

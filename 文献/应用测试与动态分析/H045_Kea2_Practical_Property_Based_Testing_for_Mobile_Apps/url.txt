@@ -1,0 +1,9 @@
+Title: Kea2: Practical Property-based Testing for Mobile Apps
+DOI: 10.1145/3803437.3806416
+Paper: https://doi.org/10.1145/3803437.3806416
+PDF source: https://tingsu.github.io/files/fse26-Kea2.pdf
+Local PDF: ./H045.pdf
+Code: https://github.com/ecnusse/Kea2
+Demo video: https://youtu.be/HS4rTCcaSPE
+Google Scholar: https://scholar.google.com/scholar?q=Kea2%3A+Practical+Property-based+Testing+for+Mobile+Apps
+Web search: https://www.google.com/search?q=%22Kea2%3A+Practical+Property-based+Testing+for+Mobile+Apps%22

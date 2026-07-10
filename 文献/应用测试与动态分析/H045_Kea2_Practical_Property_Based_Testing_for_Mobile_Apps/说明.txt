@@ -1,0 +1,17 @@
+Kea2: Practical Property-based Testing for Mobile Apps
+中文译名：Kea2：面向移动应用的实用性质测试
+
+编号：H045
+分类：应用测试与动态分析
+相关性：移动应用测试相关
+年份/来源：2026 / FSE Companion 2026 Tool Demo
+DOI：10.1145/3803437.3806416
+
+为什么收录：
+该论文正式介绍 Kea2，一种面向移动应用的实用性质测试工具。Kea2 是 Kea 的后续工作，但从工程实现上重新设计，使用 Python unittest 管理性质、uiautomator2 与设备交互，并复用 Fastbot 作为 GUI fuzzing 输入生成器。它支持用 Python 灵活表达前置条件、交互场景和后置断言，自动在探索过程中检查性质并生成 HTML 测试报告。论文报告 Kea2 已开源，并被腾讯、海尔、华为等工业团队采用或试用；可作为鸿蒙/移动应用自动化功能测试、性质驱动探索和 GUI fuzzing 融合的直接参考。
+
+PDF状态：
+已保存本地 PDF：H045.pdf
+
+核验说明：
+已核验：本地 PDF 标题、DOI、作者单位与 FSE Companion 2026 tool demo 论文一致；pdfinfo 可正常读取，共 5 页；论文正文明确写到 “we present Kea2” 和开源仓库 https://github.com/ecnusse/Kea2。
